@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>WSL2 配置 tensorflow 环境 | Sentixxx's Blog</title><meta name="author" content="Sentixxx"><meta name="copyright" content="Sentixxx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content=" Windows 系统中更新 NVIDA 驱动 这里可以直接通过 Geforce Experience 直接更新 更新完成后可以在命令行/wsl 中输入 nvidia-smi 可以看到输出  这里的 CUDA Version 指的是该驱动版本最高可支持的 CUDA 版本  安装 CUDA 到..."><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "WSL2 配置 tensorflow 环境",
+  "url": "https://sentixxx.github.io/posts/9832/",
+  "image": "https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg",
+  "datePublished": "2025-01-23T16:12:00.000Z",
+  "dateModified": "2025-01-23T16:15:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Sentixxx",
+      "url": "https://sentixxx.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://sentixxx.github.io/posts/9832/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'WSL2 配置 tensorflow 环境',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/.css/callout_blocks.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Sentixxx's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/IMG_0006.PNG);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Sentixxx's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">WSL2 配置 tensorflow 环境</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">WSL2 配置 tensorflow 环境</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-23T16:12:00.000Z" title="发表于 2025-01-24 00:12:00">2025-01-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-23T16:15:00.000Z" title="更新于 2025-01-24 00:15:00">2025-01-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="windows-系统中更新-nvida-驱动"><a class="markdownIt-Anchor" href="#windows-系统中更新-nvida-驱动"></a> Windows 系统中更新 NVIDA 驱动</h2>
+<p>这里可以直接通过 Geforce Experience 直接更新</p>
+<p>更新完成后可以在命令行/wsl 中输入 <code>nvidia-smi</code></p>
+<p>可以看到输出</p>
+<p><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/image-20240317172921071.png" alt="image-20240317172921071.png" /></p>
+<p>这里的 CUDA Version 指的是该驱动版本最高可支持的 CUDA 版本</p>
+<h2 id="安装-cuda"><a class="markdownIt-Anchor" href="#安装-cuda"></a> 安装 CUDA</h2>
+<p>到 <a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;Distribution=WSL-Ubuntu&amp;target_version=2.0&amp;target_type=deb_local">NVIDIA官网</a>下载符合条件的 CUDA</p>
+<p><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/image-20240317172200178.png" alt="image-20240317172200178.png" /></p>
+<p>这里我一开始直接选择安装了最新版的 CUDA 12.4，随后发现 Tensorflow 目前 (2024.3.17) 并不支持 12.4，于是重新安装，选择了 CUDA 11.2</p>
+<p><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/image-20240317172422147.png" alt="image-20240317172422147.png" /></p>
+<p><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/image-20240317172500352.png" alt="image-20240317172500352.png" /></p>
+<p>直接下载 EXE 版本安装即可</p>
+<p>在安装时，会发现安装报错 <code>cuda you already have a newer version of the nvidia frameview sdk installed</code></p>
+<p>这里需要到系统设置里卸载<strong>NVIDIA frameview sdk</strong> 组件，我使用的是 <a target="_blank" rel="noopener" href="https://geekuninstaller.com/download">Geek</a> 进行卸载，很干净</p>
+<p><strong>注意：不要直接到 NVIDIA 文件夹删除对应文件</strong></p>
+<h2 id="下载-anaconda"><a class="markdownIt-Anchor" href="#下载-anaconda"></a> 下载 ANACONDA</h2>
+<p>到<a target="_blank" rel="noopener" href="https://repo.anaconda.com/archive/">最新下载地址</a>找到对应的 ANACONDA 版本，复制链接</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">https://www.anaconda.com/products/distribution#linux</span><br><span class="line">wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh</span><br><span class="line">bash ./Anaconda3-2021.11-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+<p>根据脚本说明安装并编辑环境变量</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export PATH=&quot;/path/to/conda/bin:$PATH&quot;</span><br></pre></td></tr></table></figure>
+<p>使用 <code>conda init</code> 进行初始化</p>
+<h3 id="wsl-中下载-cuda-toolkit"><a class="markdownIt-Anchor" href="#wsl-中下载-cuda-toolkit"></a> WSL 中下载 CUDA TOOLKIT</h3>
+<p>前往官网找到对应版本的 TOOLKIT：<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
+<p>复制官网指令进行安装</p>
+<p><strong>注意：如果不是最新版本，需要将最后一行修改为对应的版本号</strong></p>
+<h3 id="错误处理"><a class="markdownIt-Anchor" href="#错误处理"></a> 错误处理</h3>
+<p>这里如果之前安装过不同版本的 TOOLKIT，可能会报错</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Errors were encountered while processing:</span><br><span class="line"> /tmp/apt-dpkg-install-vFgFO4/00-cuda-cudart-11-2_11.2.72-1_amd64.deb</span><br><span class="line">E: Sub-process /usr/bin/dpkg returned an error code (1)</span><br></pre></td></tr></table></figure>
+<p>这里需要卸载已有的 CUDA TOOLKIT</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo dpkg --force-all -P $(dpkg -l | grep cuda | awk &#x27;&#123;print $2&#125;&#x27;)</span><br></pre></td></tr></table></figure>
+<p>发现报错：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Removing cuda-toolkit-12-4-config-common (12.4.99-1) ...</span><br><span class="line">Removing alternatives</span><br><span class="line">Purging configuration files for cuda-toolkit-12-4-config-common (12.4.99-1) ...</span><br><span class="line">Removing alternatives</span><br><span class="line">Processing triggers for libc-bin (2.31-0ubuntu9.14) ...</span><br><span class="line">/sbin/ldconfig.real: /usr/lib/wsl/lib/libcuda.so.1 is not a symbolic link</span><br></pre></td></tr></table></figure>
+<p>运行 <code>   ls -l /usr/lib/wsl/lib/libcuda.so*</code></p>
+<p>发现对应文件不是一个符号链接</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-r-xr-xr-x 1 root root 162552 Mar  2 07:04 /usr/lib/wsl/lib/libcuda.so</span><br><span class="line">-r-xr-xr-x 1 root root 162552 Mar  2 07:04 /usr/lib/wsl/lib/libcuda.so.1</span><br><span class="line">-r-xr-xr-x 1 root root 162552 Mar  2 07:04 /usr/lib/wsl/lib/libcuda.so.1.1</span><br></pre></td></tr></table></figure>
+<p>删除错误的 <code>libcuda.so.1</code> 文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo rm /usr/lib/wsl/lib/libcuda.so.1</span><br></pre></td></tr></table></figure>
+<p>创建一个新的符号链接，使 <code>libcuda.so.1</code> 指向具体版本的文件，如 <code>libcuda.so.1.1</code>：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ln -s /usr/lib/wsl/lib/libcuda.so.1.1 /usr/lib/wsl/lib/libcuda.so.1</span><br></pre></td></tr></table></figure>
+<p>运行 <code>ldconfig</code> 来更新库的缓存信息：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+<p>使用</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get autoclean</span><br></pre></td></tr></table></figure>
+<p>清理本地存储库里的软件包信息</p>
+<p>重新安装即可</p>
+<h2 id="安装-cudnn"><a class="markdownIt-Anchor" href="#安装-cudnn"></a> 安装 cuDNN</h2>
+<p>还是一样，找到对应的安装文件：<a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-archive%EF%BC%8C%E8%BF%99%E9%87%8C%E9%9C%80%E8%A6%81%E6%B3%A8%E5%86%8C%E7%99%BB%E5%BD%95%E5%90%8E%E6%89%8D%E8%83%BD%E4%B8%8B%E8%BD%BD">https://developer.nvidia.com/rdp/cudnn-archive，这里需要注册登录后才能下载</a></p>
+<p>使用 windows 下载完成后移动到 Ubuntu 系统中。WLS 2 中：</p>
+<ul>
+<li>Linux 文件系统被映射到\wsl$\Ubuntu-20.04\</li>
+<li>Windows 的磁盘被挂载到了/mnt 下，可以直接访问</li>
+</ul>
+<p>完成后通过 <code>sudo dpkg -i NAME</code> 即可安装</p>
+<h2 id="使用-conda-建立对应版本的-python-虚拟环境"><a class="markdownIt-Anchor" href="#使用-conda-建立对应版本的-python-虚拟环境"></a> 使用 conda 建立对应版本的 python 虚拟环境</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create --name myenv python=3.8</span><br><span class="line">conda activate myenv</span><br></pre></td></tr></table></figure>
+<p>之后即可使用对应指令安装对应版本的 TensorFlow</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tensorflow-gpu==2.11.0</span><br></pre></td></tr></table></figure>
+<h2 id="jupyter"><a class="markdownIt-Anchor" href="#jupyter"></a> Jupyter</h2>
+<p><code>pip install jupyterlab</code></p>
+<p>使用如下命令启动 jupyter lab：<code>jupyter lab --no-browser</code></p>
+<h3 id="测试-tensorflow"><a class="markdownIt-Anchor" href="#测试-tensorflow"></a> 测试 tensorflow</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">tf.config.list_physical_devices()</span><br></pre></td></tr></table></figure>
+<p>发现报错</p>
+<p><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/image-20240317173159625.png" alt="image-20240317173159625.png" /></p>
+<p>在 windows 桌面右键打开 NVIDIA 控制面板</p>
+<p><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/image-20240317173236552.png" alt="image-20240317173236552.png" /></p>
+<p>将 PhysX 设置修改为指定显卡</p>
+<p><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/image-20240317173257487.png" alt="image-20240317173257487.png" /></p>
+<p>成功解决</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://sentixxx.github.io">Sentixxx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://sentixxx.github.io/posts/9832/">https://sentixxx.github.io/posts/9832/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://sentixxx.github.io" target="_blank">Sentixxx's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AE%89%E8%A3%85/">安装</a><a class="post-meta__tags" href="/tags/%E7%BB%8F%E9%AA%8C/">经验</a><a class="post-meta__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></div><div class="post-share"><div class="social-share" data-image="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/7519/" title="基于Nexus的第三方Nuget源搭建"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-23</div><div class="info-item-2">基于Nexus的第三方Nuget源搭建</div></div><div class="info-2"><div class="info-item-1"> Nexus 是支持 Nuget、Docker、Npm 等多种包的仓库管理器，可用做私有包的存储分发，缓存官方包。 https://help.sonatype.com/en/sonatype-nexus-repository.html   环境需求  Docker   安装  创建数据挂载目录并赋予权限 mkdir data &amp;&amp; chown -R 200 data 创建 docker-compose. Yml 文件  version: &#x27;3.1&#x27;services:  nexus:  # 这里使用latest可能拉不动    image: m.daocloud.io/docker.io/sonatype/nexus3:3.61.0    container_name: nexus3    restart: always    environment:    # Nexus 上下文路径       NEXUS_CONTEXT: /           # 指定jvm参数       INSTALL4J_ADD_VM_PARAMS: -Xms1g...</div></div></div></a><a class="pagination-related" href="/posts/44007/" title="记一次个人博客的安装配置(Obsidian + Hexo + Github Page)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-23</div><div class="info-item-2">记一次个人博客的安装配置(Obsidian + Hexo + Github Page)</div></div><div class="info-2"><div class="info-item-1"> Hexo 首先进行工具的安装 npm install -g hexo-cli 找一个文件夹，执行 hexo init &lt;folder&gt;cd &lt;folder&gt;npm i 输入 hexo generate 即可生成静态文件 输入 hexo server ，即可在本地访问界面  设置远端仓库托管 GitHub 上建立一个仓库 在 hexo 的 folder 打开命令行 git initgit remote add origin &lt;url&gt;git add .git commit -m &quot;Initial commit&quot;git push -u origin master  Github Page 同样建立一个仓库，这里需要命名为 &#123;username&#125;.github.io  这是因为 GitHub Pages 具有两种基本的类型：用户/组织页面 (User/Organization Pages) 和项目页面 (Project...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Sentixxx</div><div class="author-info-description">闲得无聊的产物</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a><a class="social-icon" href="https://github.com/Sentixxx" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%9B%B4%E6%96%B0-nvida-%E9%A9%B1%E5%8A%A8"><span class="toc-number">1.</span> <span class="toc-text"> Windows 系统中更新 NVIDA 驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-cuda"><span class="toc-number">2.</span> <span class="toc-text"> 安装 CUDA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-anaconda"><span class="toc-number">3.</span> <span class="toc-text"> 下载 ANACONDA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wsl-%E4%B8%AD%E4%B8%8B%E8%BD%BD-cuda-toolkit"><span class="toc-number">3.1.</span> <span class="toc-text"> WSL 中下载 CUDA TOOLKIT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">3.2.</span> <span class="toc-text"> 错误处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-cudnn"><span class="toc-number">4.</span> <span class="toc-text"> 安装 cuDNN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-conda-%E5%BB%BA%E7%AB%8B%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%AC%E7%9A%84-python-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">5.</span> <span class="toc-text"> 使用 conda 建立对应版本的 python 虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jupyter"><span class="toc-number">6.</span> <span class="toc-text"> Jupyter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-tensorflow"><span class="toc-number">6.1.</span> <span class="toc-text"> 测试 tensorflow</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/9832/" title="WSL2 配置 tensorflow 环境">WSL2 配置 tensorflow 环境</a><time datetime="2025-01-23T16:12:00.000Z" title="发表于 2025-01-24 00:12:00">2025-01-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/7519/" title="基于Nexus的第三方Nuget源搭建">基于Nexus的第三方Nuget源搭建</a><time datetime="2025-01-23T15:30:00.000Z" title="发表于 2025-01-23 23:30:00">2025-01-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/44007/" title="记一次个人博客的安装配置(Obsidian + Hexo + Github Page)">记一次个人博客的安装配置(Obsidian + Hexo + Github Page)</a><time datetime="2025-01-23T11:49:00.000Z" title="发表于 2025-01-23 19:49:00">2025-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3c4a82e6/" title="渲染测试"><img src="https://cdn.gallery.uuanqin.top/img/mdcover65465.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="渲染测试"/></a><div class="content"><a class="title" href="/posts/3c4a82e6/" title="渲染测试">渲染测试</a><time datetime="2023-06-01T14:06:06.000Z" title="发表于 2023-06-01 22:06:06">2023-06-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2025 By Sentixxx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
