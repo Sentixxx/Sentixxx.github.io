@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sentixxx.github.io/categories/index.html</loc>
-    
-    <lastmod>2025-01-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://sentixxx.github.io/tags/index.html</loc>
     
     <lastmod>2025-01-25</lastmod>
@@ -21,6 +12,15 @@
   
   <url>
     <loc>https://sentixxx.github.io/templates/article.html</loc>
+    
+    <lastmod>2025-01-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sentixxx.github.io/categories/index.html</loc>
     
     <lastmod>2025-01-25</lastmod>
     
