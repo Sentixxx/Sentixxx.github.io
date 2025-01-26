@@ -6,7 +6,7 @@
   <link href="https://sentixxx.github.io/atom.xml" rel="self"/>
   
   <link href="https://sentixxx.github.io/"/>
-  <updated>2025-01-26T16:01:15.681Z</updated>
+  <updated>2025-01-26T16:13:09.563Z</updated>
   <id>https://sentixxx.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</title>
     <link href="https://sentixxx.github.io/posts/63310/"/>
     <id>https://sentixxx.github.io/posts/63310/</id>
-    <published>2025-01-26T16:01:15.681Z</published>
-    <updated>2025-01-26T16:01:15.681Z</updated>
+    <published>2025-01-26T16:13:09.563Z</published>
+    <updated>2025-01-26T16:13:09.563Z</updated>
     
     
     <summary type="html">记录FTP同步程序因未处理SIGPIPE信号导致的静默崩溃问题，分享使用VS Code调试器定位EPIPE错误的过程，总结网络编程中必须注意的信号处理实践与防御性编码经验</summary>
@@ -45,8 +45,8 @@
     <title>基于ARM架构交叉编译libpcap库的技术指南</title>
     <link href="https://sentixxx.github.io/posts/31746/"/>
     <id>https://sentixxx.github.io/posts/31746/</id>
-    <published>2025-01-26T16:01:15.681Z</published>
-    <updated>2025-01-26T16:01:15.681Z</updated>
+    <published>2025-01-26T16:13:09.563Z</published>
+    <updated>2025-01-26T16:13:09.563Z</updated>
     
     
       
