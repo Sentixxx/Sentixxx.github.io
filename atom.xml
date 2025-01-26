@@ -6,7 +6,7 @@
   <link href="https://sentixxx.github.io/atom.xml" rel="self"/>
   
   <link href="https://sentixxx.github.io/"/>
-  <updated>2025-01-26T15:08:36.537Z</updated>
+  <updated>2025-01-26T16:01:15.681Z</updated>
   <id>https://sentixxx.github.io/</id>
   
   <author>
@@ -17,42 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>基于ARM架构交叉编译libpcap库的技术指南</title>
-    <link href="https://sentixxx.github.io/posts/31746/"/>
-    <id>https://sentixxx.github.io/posts/31746/</id>
-    <published>2025-01-26T15:08:36.537Z</published>
-    <updated>2025-01-26T15:08:36.537Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;以下是为您润色并添加标题后的技术文档：&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h1 id=&quot;基于-arm-架构交叉编译-libpcap-库的技术指南&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
-    <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
-    
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</title>
     <link href="https://sentixxx.github.io/posts/63310/"/>
     <id>https://sentixxx.github.io/posts/63310/</id>
-    <published>2025-01-26T15:08:16.412Z</published>
-    <updated>2025-01-26T15:08:16.412Z</updated>
+    <published>2025-01-26T16:01:15.681Z</published>
+    <updated>2025-01-26T16:01:15.681Z</updated>
     
     
     <summary type="html">记录FTP同步程序因未处理SIGPIPE信号导致的静默崩溃问题，分享使用VS Code调试器定位EPIPE错误的过程，总结网络编程中必须注意的信号处理实践与防御性编码经验</summary>
@@ -69,6 +38,35 @@
     <category term="DEBUG" scheme="https://sentixxx.github.io/tags/DEBUG/"/>
     
     <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于ARM架构交叉编译libpcap库的技术指南</title>
+    <link href="https://sentixxx.github.io/posts/31746/"/>
+    <id>https://sentixxx.github.io/posts/31746/</id>
+    <published>2025-01-26T16:01:15.681Z</published>
+    <updated>2025-01-26T16:01:15.681Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基于-arm-架构交叉编译-libpcap-库的技术指南&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基于-arm-架构交叉编译-libpcap-库的技术指南&quot;&gt;&lt;/a&gt; 基于 ARM 架构交叉编译 libpcap</summary>
+        
+      
+    
+    
+    
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+    <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
+    
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
