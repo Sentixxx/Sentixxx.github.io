@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>20250127001036</title>
+      <link href="/posts/51303/"/>
+      <url>/posts/51303/</url>
+      
+        <content type="html"><![CDATA[<p>本来以为 workflow 已经很完善了，没想到随便一测又报错了，尝试解决未果，无奈删除子模块引用，直接暴力 clone</p><p>复杂度果然是自动化之敌</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于ARM架构交叉编译libpcap库的技术指南</title>
       <link href="/posts/31746/"/>
       <url>/posts/31746/</url>
