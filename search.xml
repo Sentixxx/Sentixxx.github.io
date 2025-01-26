@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</title>
+      <link href="/posts/63310/"/>
+      <url>/posts/63310/</url>
+      
+        <content type="html"><![CDATA[<h1 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h1><h2 id="故障情景"><a class="markdownIt-Anchor" href="#故障情景"></a> 故障情景</h2><ul><li>业务背景：<ul><li>技术栈：C++线程池 + FTP 协议长连接</li><li>分布式系统中的文件 FTP 同步服务</li></ul></li><li>故障描述：<ul><li>本地FTP目录同步服务存在非正常进程终止缺陷。当远程FTP服务器发生非计划性停机（服务崩溃/网络中断/强制kill进程）时，本地同步进程发生静默崩溃（无退出状态码、无异常抛出）</li></ul></li></ul><h2 id="故障分析"><a class="markdownIt-Anchor" href="#故障分析"></a> 故障分析</h2><p>首先通过打印的 LOG 信息，快速定位到了 tcpSocket 的 <code>Send()</code> 方法中，<code>Send()</code> 方法的实现如下：</p><figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">ssize_t</span> <span class="hljs-title">TcpSocket::Send</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *buf, <span class="hljs-type">int</span> len)</span> <span class="hljs-type">const</span> </span>&#123;<br>  <span class="hljs-keyword">if</span> (!connected_) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> ::<span class="hljs-built_in">write</span>(skt_, buf, len);<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="添加-try-catch-语句"><a class="markdownIt-Anchor" href="#添加-try-catch-语句"></a> 添加 try-catch 语句</h3><p>首先先对其添加了 try-catch 语句尝试捕获异常，发现程序仍然直接退出<br /><strong>事后查阅资料发现，POSIX 的系统调用的错误以返回值出现，因此这里 try-catch 完全无效，应该针对返回值进行 DEBUG</strong></p><h3 id="查看系统内核-log"><a class="markdownIt-Anchor" href="#查看系统内核-log"></a> 查看系统内核 LOG</h3><p>既然程序直接退出，没有任何错误出现，这里怀疑有可能是程序抛出错误到了内核层 (程序运行在一个定制版的 Linux 系统上)，使用 <code>dmesg</code> 查看内核日志，发现不存在任何相关的错误。<br />于是尝试更换运行环境，编译到了另一台设备上，发现仍然出现这个错误。</p><h3 id="使用-vscode-debugger-进行单步调试"><a class="markdownIt-Anchor" href="#使用-vscode-debugger-进行单步调试"></a> 使用 VSCode Debugger 进行单步调试</h3><p>在 <code>Send()</code> 处打上了断点，经过调试发现这里出现了 <code>Broken PIPE Error</code>，上网进行相关搜索，得知这是一个信号的相关问题。</p><blockquote><p>对一个对端已经关闭的socket调用两次write, 第二次将会生成SIGPIPE信号, 该信号默认结束进程。</p></blockquote><h1 id="tcp-过程详解"><a class="markdownIt-Anchor" href="#tcp-过程详解"></a> TCP 过程详解</h1><p>当远程 FTP 服务端发生非正常断开时，TCP 连接状态变化时序：</p><ol><li><strong>正常建立连接阶段</strong><br />本地客户端与服务端完成三次握手，<code>connected_</code> 标志为 <code>true</code></li><li><strong>服务端异常中断阶段</strong><br />服务端进程被强制 kill 或发生网络中断：<ul><li>服务端未发送 FIN：直接触发 RST（如进程被 kill）</li><li>服务端发送 FIN：进入四次挥手流程（如正常关闭）</li></ul></li><li><strong>客户端首次发送数据阶段</strong><br />当本地线程池中的工作线程调用 <code>TcpSocket::Send()</code> 时：<ul><li>若连接已收到 RST：<ul><li>第一次 <code>::write()</code> 将返回 <code>-1</code>，<code>errno=ECONNRESET</code></li></ul></li><li>若连接处于半关闭状态（收到 FIN）：<ul><li>第一次 <code>::write()</code> 成功返回（数据进入发送缓冲区）</li><li>第二次 <code>::write()</code> 触发 <code>SIGPIPE</code>（内核检测到无效写入）</li></ul></li></ul></li></ol><h2 id="半关闭状态"><a class="markdownIt-Anchor" href="#半关闭状态"></a> 半关闭状态</h2><p>半关闭状态（Half-Close State）是 TCP 协议栈实现的特殊连接状态，其特征表现为：<strong>通信双方中某一端主动关闭数据发送通道，同时保持数据接收通道开放</strong>。这种机制使得 TCP 连接具备非对称数据传输能力，类似现实中的单行道交通模式。</p><h2 id="技术原理剖析"><a class="markdownIt-Anchor" href="#技术原理剖析"></a> 技术原理剖析</h2><h3 id="全双工信道解构"><a class="markdownIt-Anchor" href="#全双工信道解构"></a> 全双工信道解构</h3><p>TCP 协议的全双工特性本质上是将物理信道虚拟划分为两条独立的单工信道：</p><ol><li><strong>发送信道</strong><ul><li>本地端口 → 远程端口</li><li>由本地端点完全控制</li></ul></li><li><strong>接收信道</strong><ul><li>远程端口 → 本地端口</li><li>由远程端点完全控制</li></ul></li></ol><h3 id="操作指令不可见性"><a class="markdownIt-Anchor" href="#操作指令不可见性"></a> 操作指令不可见性</h3><p>TCP 协议栈存在以下重要设计特征：</p><ul><li><strong>系统调用屏蔽</strong>：无法通过协议层直接判断对端调用的是：<ul><li><code>close()</code>：完全关闭套接字（双通道）</li><li><code>shutdown(SHUT_WR)</code>：仅关闭发送通道</li></ul></li></ul><table><thead><tr><th>操作</th><th>系统调用层面</th><th>协议层表现</th><th>文件描述符状态</th></tr></thead><tbody><tr><td><strong><code>close()</code></strong></td><td>释放文件描述符引用计数</td><td>当引用计数归零时发送 FIN</td><td>彻底销毁</td></tr><tr><td><strong><code>shutdown(SHUT_WR)</code></strong></td><td>立即关闭发送通道（无视引用计数）</td><td>立即发送 FIN</td><td>保留可用</td></tr></tbody></table><h2 id="sigpipe-的产生条件"><a class="markdownIt-Anchor" href="#sigpipe-的产生条件"></a> SIGPIPE 的产生条件</h2><p>由于 TCP 是全双工通道，因此在应用层来看，即使对端调用了 <code>close()</code> 也只能关闭对方的发送信道，我方仍能发送数据。<br />当对端 close 一个连接时，若本地接着发数据。根据 TCP 协议的规定，会收到一个 RST 响应，本地再往对端发送数据时，系统会发出一个 <code>SIGPIPE</code> 信号给进程，告诉进程这个连接已经断开了，不要再写了。</p><blockquote><p>对一个已经收到FIN包的socket调用read方法, 如果接收缓冲已空, 则返回0, 这就是常说的表示连接关闭. 但第一次对其调用write方法时, 如果发送缓冲没问题, 会返回正确写入(发送). 但发送的报文会导致对端发送RST报文, 因为对端的socket已经调用了close, 完全关闭, 既不发送, 也不接收数据. 所以, 第二次调用write方法(假设在收到RST之后), 会生成SIGPIPE信号, 导致进程退出.</p></blockquote><h1 id="修复"><a class="markdownIt-Anchor" href="#修复"></a> 修复</h1><p>在原有的基础上添加了链接的检查机制</p><figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">ssize_t</span> <span class="hljs-title">TcpSocket::Send</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *buf, <span class="hljs-type">int</span> len)</span> </span>&#123;<br>  <span class="hljs-keyword">if</span> (!connected_) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>  &#125;<br>  <span class="hljs-type">ssize_t</span> ret = <span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">struct</span> <span class="hljs-title class_">pollfd</span> pollfd;<br>  pollfd.fd = skt_;<br>  pollfd.events = POLLOUT;<br>  <span class="hljs-type">int</span> poll_result = <span class="hljs-built_in">poll</span>(&amp;pollfd , <span class="hljs-number">1</span> , <span class="hljs-number">1000</span>);<br>  <span class="hljs-keyword">if</span> (poll_result == <span class="hljs-number">0</span>) &#123;<br>    <span class="hljs-comment">// timeout can not write</span><br>    <span class="hljs-built_in">Close</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>  &#125;<br>  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ((pollfd.revents &amp; (POLLERR | POLLHUP | POLLNVAL)) &gt; <span class="hljs-number">0</span> ||<br>    poll_result &lt; <span class="hljs-number">0</span>) &#123;<br>    <span class="hljs-built_in">Close</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>  ret = ::<span class="hljs-built_in">write</span>(skt_, buf, len);<br>  &#125;<br>  <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure><h1 id="反思与更多的改进"><a class="markdownIt-Anchor" href="#反思与更多的改进"></a> 反思与更多的改进</h1><h2 id="线程池对信号的处理机制"><a class="markdownIt-Anchor" href="#线程池对信号的处理机制"></a> 线程池对信号的处理机制</h2><p><strong>统一信号处理器</strong></p><ul><li>在进程启动时注册全局信号处理函数（如 <code>SIGPIPE/SIGSEGV</code>），禁止在线程池工作线程中单独设置信号处理，避免不可控行为<br /><strong>线程信号屏蔽</strong></li><li>使用 <code>pthread_sigmask</code> 屏蔽工作线程对关键信号的响应，仅允许主线程处理信号</li></ul><h2 id="日志监控增强"><a class="markdownIt-Anchor" href="#日志监控增强"></a> 日志监控增强</h2><p>应当增加系统调用错误日志与线程池事件日志</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cpp </tag>
+            
+            <tag> 网络 </tag>
+            
+            <tag> DEBUG </tag>
+            
+            <tag> 经验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>WSL2 配置 tensorflow 环境</title>
       <link href="/posts/9832/"/>
       <url>/posts/9832/</url>
@@ -20,9 +51,9 @@
       
         <tags>
             
-            <tag> 安装 </tag>
-            
             <tag> 经验 </tag>
+            
+            <tag> 安装 </tag>
             
             <tag> 机器学习 </tag>
             
@@ -51,9 +82,9 @@
             
             <tag> 杂项 </tag>
             
-            <tag> 安装 </tag>
-            
             <tag> 经验 </tag>
+            
+            <tag> 安装 </tag>
             
         </tags>
       
@@ -78,9 +109,9 @@
       
         <tags>
             
-            <tag> 安装 </tag>
-            
             <tag> 经验 </tag>
+            
+            <tag> 安装 </tag>
             
         </tags>
       
