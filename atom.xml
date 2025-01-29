@@ -6,7 +6,7 @@
   <link href="https://sentixxx.github.io/atom.xml" rel="self"/>
   
   <link href="https://sentixxx.github.io/"/>
-  <updated>2025-01-29T12:22:22.557Z</updated>
+  <updated>2025-01-29T12:27:02.340Z</updated>
   <id>https://sentixxx.github.io/</id>
   
   <author>
@@ -17,39 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>记一次个人博客的安装配置(Obsidian + Hexo + Github Page)</title>
-    <link href="https://sentixxx.github.io/posts/44007/"/>
-    <id>https://sentixxx.github.io/posts/44007/</id>
-    <published>2025-01-29T12:22:22.557Z</published>
-    <updated>2025-01-29T12:22:22.557Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;hexo&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#hexo&quot;&gt;&lt;/a&gt; Hexo&lt;/h1&gt;
-&lt;p&gt;首先进行工具的安装 &lt;code&gt;npm install -g</summary>
-        
-      
-    
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>20250127001036</title>
     <link href="https://sentixxx.github.io/posts/51303/"/>
     <id>https://sentixxx.github.io/posts/51303/</id>
-    <published>2025-01-29T12:22:07.561Z</published>
-    <updated>2025-01-29T12:22:07.561Z</updated>
+    <published>2025-01-29T12:27:02.340Z</published>
+    <updated>2025-01-29T12:27:02.340Z</updated>
     
     
       
@@ -68,36 +40,11 @@
   </entry>
   
   <entry>
-    <title>FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</title>
-    <link href="https://sentixxx.github.io/posts/63310/"/>
-    <id>https://sentixxx.github.io/posts/63310/</id>
-    <published>2025-01-29T12:22:07.561Z</published>
-    <updated>2025-01-29T12:22:07.561Z</updated>
-    
-    
-    <summary type="html">记录FTP同步程序因未处理SIGPIPE信号导致的静默崩溃问题，分享使用VS Code调试器定位EPIPE错误的过程，总结网络编程中必须注意的信号处理实践与防御性编码经验</summary>
-    
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
-    <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
-    
-    <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-    <category term="DEBUG" scheme="https://sentixxx.github.io/tags/DEBUG/"/>
-    
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>基于ARM架构交叉编译libpcap库的技术指南</title>
     <link href="https://sentixxx.github.io/posts/31746/"/>
     <id>https://sentixxx.github.io/posts/31746/</id>
-    <published>2025-01-29T12:22:07.561Z</published>
-    <updated>2025-01-29T12:22:07.561Z</updated>
+    <published>2025-01-26T14:47:00.000Z</published>
+    <updated>2025-01-29T12:26:00.000Z</updated>
     
     
       
@@ -122,11 +69,36 @@
   </entry>
   
   <entry>
+    <title>FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</title>
+    <link href="https://sentixxx.github.io/posts/63310/"/>
+    <id>https://sentixxx.github.io/posts/63310/</id>
+    <published>2025-01-26T13:24:00.000Z</published>
+    <updated>2025-01-29T12:26:00.000Z</updated>
+    
+    
+    <summary type="html">记录FTP同步程序因未处理SIGPIPE信号导致的静默崩溃问题，分享使用VS Code调试器定位EPIPE错误的过程，总结网络编程中必须注意的信号处理实践与防御性编码经验</summary>
+    
+    
+    
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+    <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
+    
+    <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="DEBUG" scheme="https://sentixxx.github.io/tags/DEBUG/"/>
+    
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>WSL2 配置 tensorflow 环境</title>
     <link href="https://sentixxx.github.io/posts/9832/"/>
     <id>https://sentixxx.github.io/posts/9832/</id>
     <published>2025-01-23T16:12:00.000Z</published>
-    <updated>2025-01-23T16:15:00.000Z</updated>
+    <updated>2025-01-29T12:26:00.000Z</updated>
     
     
       
@@ -156,7 +128,7 @@
     <link href="https://sentixxx.github.io/posts/7519/"/>
     <id>https://sentixxx.github.io/posts/7519/</id>
     <published>2025-01-23T15:30:00.000Z</published>
-    <updated>2025-01-23T16:04:00.000Z</updated>
+    <updated>2025-01-29T12:26:00.000Z</updated>
     
     
       
@@ -175,6 +147,34 @@
     
     
     <category term="杂项" scheme="https://sentixxx.github.io/tags/%E6%9D%82%E9%A1%B9/"/>
+    
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次个人博客的安装配置(Obsidian + Hexo + Github Page)</title>
+    <link href="https://sentixxx.github.io/posts/44007/"/>
+    <id>https://sentixxx.github.io/posts/44007/</id>
+    <published>2025-01-23T11:49:00.000Z</published>
+    <updated>2025-01-29T12:26:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;hexo&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#hexo&quot;&gt;&lt;/a&gt; Hexo&lt;/h1&gt;
+&lt;p&gt;首先进行工具的安装 &lt;code&gt;npm install -g</summary>
+        
+      
+    
+    
+    
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    
     
     <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
