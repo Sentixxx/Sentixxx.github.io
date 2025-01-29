@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>20250127001036</title>
-      <link href="/posts/51303/"/>
-      <url>/posts/51303/</url>
-      
-        <content type="html"><![CDATA[<p>本来以为 workflow 已经很完善了，没想到随便一测又报错了，尝试解决未果，无奈删除子模块引用，直接暴力 clone</p><p>复杂度果然是自动化之敌</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 日常 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>zerotier自建planet容器迁移</title>
       <link href="/posts/28320/"/>
       <url>/posts/28320/</url>
@@ -44,6 +25,25 @@
             <tag> 安装 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>20250127001036</title>
+      <link href="/posts/51303/"/>
+      <url>/posts/51303/</url>
+      
+        <content type="html"><![CDATA[<p>本来以为 workflow 已经很完善了，没想到随便一测又报错了，尝试解决未果，无奈删除子模块引用，直接暴力 clone</p><p>复杂度果然是自动化之敌</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常 </category>
+          
+      </categories>
+      
       
     </entry>
     
