@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>tcpdump指定dst端口抓包</title>
+      <link href="/posts/20647/"/>
+      <url>/posts/20647/</url>
+      
+        <content type="html"><![CDATA[<p>tcpdump 在抓包时使用 <a href="https://www.tcpdump.org/manpages/pcap-filter.7.html">libpcap filter</a> 作为过滤，这种过滤语法又叫 BPF 语法，其中可以使用 <code>port num</code> 作为语法过滤指定端口的报文，但是有时会发现，当启用过滤后，反而无法从指定端口抓到包，而没有过滤时却可以看到相关的包</p><p>遇到这种问题，可能是由于你监听的网卡是 VLAN，VLAN 网卡在发送报文时会加上一个 VLAN 头来标识，这时需要改变原来的语法，使用 <code>vlan and port num</code> 进行过滤，这样就可以识别出 vlan 报文，进而对报文的端口进行识别。</p><blockquote><p><strong>vlan</strong> <em>[vlan_id]</em></p><p>True if the packet is an IEEE 802.1Q VLAN packet. If the optional <em>vlan_id</em> is specified, only true if the packet has the specified <em>vlan_id</em>. Note that the first <strong>vlan</strong> keyword encountered in an expression changes the decoding offsets for the remainder of the expression on the assumption that the packet is a VLAN packet. The <code>vlan [vlan_id]</code> keyword may be used more than once, to filter on VLAN hierarchies. Each use of that keyword increments the filter offsets by 4.</p><p>For example:</p><p>vlan 100 &amp;&amp; vlan 200</p><p>filters on VLAN 200 encapsulated within VLAN 100, and</p><p>vlan &amp;&amp; vlan 300 &amp;&amp; ip</p><p>filters IPv 4 protocol encapsulated in VLAN 300 encapsulated within any higher order VLAN.</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络 </tag>
+            
+            <tag> 经验 </tag>
+            
+            <tag> BPF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>zerotier自建planet容器迁移</title>
       <link href="/posts/28320/"/>
       <url>/posts/28320/</url>
