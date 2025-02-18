@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>阿里云OSS资源路径避坑 | 墨池码窖 | Sentixxx's Blog</title><meta name="author" content="Sentixxx"><meta name="copyright" content="Sentixxx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="阿里云 OSS 在解析请求时会把 + 转义成  （空格），这点与 S3 恰恰相反，需要做预处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云OSS资源路径避坑">
+<meta property="og:url" content="https://sentixxx.github.io/posts/10362/index.html">
+<meta property="og:site_name" content="墨池码窖 | Sentixxx&#39;s Blog">
+<meta property="og:description" content="阿里云 OSS 在解析请求时会把 + 转义成  （空格），这点与 S3 恰恰相反，需要做预处理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg">
+<meta property="article:published_time" content="2025-02-18T14:56:00.000Z">
+<meta property="article:modified_time" content="2025-02-18T14:57:28.000Z">
+<meta property="article:author" content="Sentixxx">
+<meta property="article:tag" content="经验">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "阿里云OSS资源路径避坑",
+  "url": "https://sentixxx.github.io/posts/10362/",
+  "image": "https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg",
+  "datePublished": "2025-02-18T14:56:00.000Z",
+  "dateModified": "2025-02-18T14:57:28.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Sentixxx",
+      "url": "https://sentixxx.github.io/Sentixxx"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://sentixxx.github.io/posts/10362/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xPPGDBmsB6lrA0CjgdkkWl0aVW38-ffad9pLicXVq2k"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-5685560564188912',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '阿里云OSS资源路径避坑',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/.css/callout_blocks.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="墨池码窖 | Sentixxx's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/IMG_0006.PNG);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">墨池码窖 | Sentixxx's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">阿里云OSS资源路径避坑</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">阿里云OSS资源路径避坑</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2025-02-18T14:57:28.000Z" title="更新于 2025-02-18 22:57:28">2025-02-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BB%8F%E9%AA%8C/">经验</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>阿里云 OSS 在解析请求时会把 <code>+</code> 转义成 <code> </code>（空格），这点与 S3 恰恰相反，需要做预处理</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="Sentixxx">Sentixxx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://sentixxx.github.io/posts/10362/">https://sentixxx.github.io/posts/10362/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://sentixxx.github.io" target="_blank">墨池码窖 | Sentixxx's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BB%8F%E9%AA%8C/">经验</a></div><div class="post-share"><div class="social-share" data-image="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/27904/" title="C++CLI将第三方DLL链接到C#项目、"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-14</div><div class="info-item-2">C++CLI将第三方DLL链接到C#项目、</div></div><div class="info-2"><div class="info-item-1"> 最近需要将第三方的 DLL 封装成 csharp 的模块，可是我没有源码，只有头文件，网上综合调查了方案，最后选择了 C++/CLI  具体可见微软的官方文档  第一步，创建 CLR 项目 这里默认你已经通过各种手段获得了 DLL 和头文件 这里使用 Visual Stdio 创建一个新的 C++ CLR 项目  基本编辑 这里的基本语法还是和 C++一样的 进入项目，自行创建一个类，就会生成一个 CPP 和 H 文件 这里需要在头文件中包含 DLL 内相关函数和类定义的头文件，直接使用绝对路径包含即可 #include &quot;path\to\your\header.h&quot;public ref class YourModule &#123;&#125; 然后像 C++创建一个类那样，设置构造函数和成员函数，并实现 这里你的实现可以直接调用 DLL 中的函数，实现封装。  设置编译选项 右键项目，打开属性，将 Release 的配置类型修改为“动态库(. dll)”，注意这里的目标平台需要和你的 DLL...</div></div></div></a><a class="pagination-related" href="/posts/63310/" title="FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-26</div><div class="info-item-2">FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</div></div><div class="info-2"><div class="info-item-1"> 问题  故障情景  业务背景：  技术栈：C++线程池 + FTP 协议长连接 分布式系统中的文件 FTP 同步服务   故障描述：  本地FTP目录同步服务存在非正常进程终止缺陷。当远程FTP服务器发生非计划性停机（服务崩溃/网络中断/强制kill进程）时，本地同步进程发生静默崩溃（无退出状态码、无异常抛出）     故障分析 首先通过打印的 LOG 信息，快速定位到了 tcpSocket 的 Send() 方法中，Send() 方法的实现如下： ssize_t TcpSocket::Send(const void *buf, int len) const &#123;  if (!connected_) &#123;    return 0;  &#125;  return ::write(skt_, buf, len);&#125;  添加 try-catch 语句 首先先对其添加了 try-catch 语句尝试捕获异常，发现程序仍然直接退出 事后查阅资料发现，POSIX 的系统调用的错误以返回值出现，因此这里 try-catch 完全无效，应该针对返回值进行...</div></div></div></a><a class="pagination-related" href="/posts/9832/" title="WSL2 配置 tensorflow 环境"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-24</div><div class="info-item-2">WSL2 配置 tensorflow 环境</div></div><div class="info-2"><div class="info-item-1"> Windows 系统中更新 NVIDA 驱动 这里可以直接通过 Geforce Experience 直接更新 更新完成后可以在命令行/wsl 中输入 nvidia-smi 可以看到输出  这里的 CUDA Version 指的是该驱动版本最高可支持的 CUDA 版本  安装 CUDA 到 NVIDIA官网下载符合条件的 CUDA  这里我一开始直接选择安装了最新版的 CUDA 12.4，随后发现 Tensorflow 目前 (2024.3.17) 并不支持 12.4，于是重新安装，选择了 CUDA 11.2   直接下载 EXE 版本安装即可 在安装时，会发现安装报错 cuda you already have a newer version of the nvidia frameview sdk installed 这里需要到系统设置里卸载NVIDIA frameview sdk 组件，我使用的是 Geek 进行卸载，很干净 注意：不要直接到 NVIDIA 文件夹删除对应文件  下载 ANACONDA 到最新下载地址找到对应的 ANACONDA...</div></div></div></a><a class="pagination-related" href="/posts/20647/" title="tcpdump指定dst端口抓包"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-07</div><div class="info-item-2">tcpdump指定dst端口抓包</div></div><div class="info-2"><div class="info-item-1">tcpdump 在抓包时使用 libpcap filter 作为过滤，这种过滤语法又叫 BPF 语法，其中可以使用 port num 作为语法过滤指定端口的报文，但是有时会发现，当启用过滤后，反而无法从指定端口抓到包，而没有过滤时却可以看到相关的包 遇到这种问题，可能是由于你监听的网卡是 VLAN，VLAN 网卡在发送报文时会加上一个 VLAN 头来标识，这时需要改变原来的语法，使用 vlan and port num 进行过滤，这样就可以识别出 vlan 报文，进而对报文的端口进行识别。  vlan [vlan_id] True if the packet is an IEEE 802.1Q VLAN packet. If the optional vlan_id is specified, only true if the packet has the specified vlan_id. Note that the first vlan keyword encountered in an expression changes the decoding offsets...</div></div></div></a><a class="pagination-related" href="/posts/28320/" title="zerotier自建planet容器迁移"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-29</div><div class="info-item-2">zerotier自建planet容器迁移</div></div><div class="info-2"><div class="info-item-1"> 最近续费域名发现阿里云服务器 99 一年 2c2g，感觉自己血亏用了一整年的 78/month 的腾讯云，遂决定迁移。 经过测试发现 Zerotier 在迁移后需要根据 IP 重新生成 planet 文件，仍然需要重新分发，目前似乎没有好的解决办法，不如重新安装，安装时服务器的防火墙端口记得开   Nginx 配置 这次有一个阿里云的域名，干脆顺便配个 nginx 首先安装 nginx yum install nginx 然后进入到 nginx 的目录，新建一个配置文件，写入以下内容 cd /etc/nginxvim conf.d/zerotier.conf upstream zerotier &#123;    server 127.0.0.1:3443;&#125;server &#123;    listen 80;    server_name &#123;your_site&#125;; # 替换为自己的域名    location /zerotier/ &#123;        proxy_pass http://zerotier/;       ...</div></div></div></a><a class="pagination-related" href="/posts/31746/" title="基于ARM架构交叉编译libpcap库的技术指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-26</div><div class="info-item-2">基于ARM架构交叉编译libpcap库的技术指南</div></div><div class="info-2"><div class="info-item-1"> 基于 ARM 架构交叉编译 libpcap 库的技术指南  一、交叉编译环境搭建  1. 获取交叉编译工具链 推荐使用 Linaro 官方提供的 6.2 版本工具链： wget https://releases.linaro.org/components/toolchain/binaries/6.2-2016.11/arm-linux-gnueabihf/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf.tar.xz 文件校验信息： SHA256: 5eb7ab2f8a0b4b960900321505cd6923a072cb3e2412102f5f72a6e74c2f0a55  2. 配置编译环境 # 解压工具链tar -xvf gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf.tar.xz# 添加至环境变量export...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Sentixxx</div><div class="author-info-description">记录点点滴滴</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Sentixxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a><a class="social-icon" href="https://github.com/Sentixxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/0/" title="无标题">无标题</a><time datetime="2025-02-18T14:58:25.435Z" title="更新于 2025-02-18 22:58:25">2025-02-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/10362/" title="阿里云OSS资源路径避坑">阿里云OSS资源路径避坑</a><time datetime="2025-02-18T14:57:28.000Z" title="更新于 2025-02-18 22:57:28">2025-02-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/27904/" title="C++CLI将第三方DLL链接到C#项目、">C++CLI将第三方DLL链接到C#项目、</a><time datetime="2025-02-14T09:53:15.000Z" title="更新于 2025-02-14 17:53:15">2025-02-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/20647/" title="tcpdump指定dst端口抓包">tcpdump指定dst端口抓包</a><time datetime="2025-02-07T13:44:48.000Z" title="更新于 2025-02-07 21:44:48">2025-02-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/9832/" title="WSL2 配置 tensorflow 环境">WSL2 配置 tensorflow 环境</a><time datetime="2025-01-29T15:10:59.000Z" title="更新于 2025-01-29 23:10:59">2025-01-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Sentixxx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn" target="_blank">沪ICP备2025112621号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
+        $('a').each(function() {
+          const $this = $(this);
+          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script></body></html>

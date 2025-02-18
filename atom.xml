@@ -6,7 +6,7 @@
   <link href="https://sentixxx.github.io/atom.xml" rel="self"/>
   
   <link href="https://sentixxx.github.io/"/>
-  <updated>2025-02-14T09:53:15.000Z</updated>
+  <updated>2025-02-18T14:58:25.435Z</updated>
   <id>https://sentixxx.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://sentixxx.github.io/posts/0/"/>
+    <id>https://sentixxx.github.io/posts/0/</id>
+    <published>2025-02-18T14:58:25.435Z</published>
+    <updated>2025-02-18T14:58:25.435Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云OSS资源路径避坑</title>
+    <link href="https://sentixxx.github.io/posts/10362/"/>
+    <id>https://sentixxx.github.io/posts/10362/</id>
+    <published>2025-02-18T14:56:00.000Z</published>
+    <updated>2025-02-18T14:57:28.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;阿里云 OSS 在解析请求时会把 &lt;code&gt;+&lt;/code&gt; 转义成 &lt;code&gt; &lt;/code&gt;（空格），这点与 S3</summary>
+        
+      
+    
+    
+    
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>C++CLI将第三方DLL链接到C#项目、</title>
