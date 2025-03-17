@@ -6,7 +6,7 @@
   <link href="https://sentixxx.github.io/atom.xml" rel="self"/>
   
   <link href="https://sentixxx.github.io/"/>
-  <updated>2025-02-18T14:57:28.000Z</updated>
+  <updated>2025-03-06T09:00:56.000Z</updated>
   <id>https://sentixxx.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>以一种访问权限不允许的方式做了一个访问套接字的尝试处理</title>
+    <link href="https://sentixxx.github.io/posts/39317/"/>
+    <id>https://sentixxx.github.io/posts/39317/</id>
+    <published>2025-03-06T08:57:00.000Z</published>
+    <updated>2025-03-06T09:00:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有一个项目需要运行在本地 http 服务器的 8080 端口上，之前还好的，今天突然就提示 &lt;code&gt;以一种访问权限不允许的方式做了一个访问套接字的尝试&lt;/code&gt;，&lt;br /&gt;
+在管理员模式下运行 &lt;code&gt;netstat -ano | findstr</summary>
+        
+      
+    
+    
+    
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+    <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="Windows" scheme="https://sentixxx.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>阿里云OSS资源路径避坑</title>
@@ -42,11 +72,11 @@
   </entry>
   
   <entry>
-    <title>CPPCLI将第三方DLL链接到C#项目</title>
-    <link href="https://sentixxx.github.io/posts/54964/"/>
-    <id>https://sentixxx.github.io/posts/54964/</id>
+    <title>CPPCLI将第三方DLL链接到CSharp项目</title>
+    <link href="https://sentixxx.github.io/posts/65504/"/>
+    <id>https://sentixxx.github.io/posts/65504/</id>
     <published>2025-02-14T09:48:00.000Z</published>
-    <updated>2025-02-21T08:50:09.000Z</updated>
+    <updated>2025-02-21T14:33:36.000Z</updated>
     
     
     <summary type="html">最近需要将第三方的 DLL 封装成 csharp 的模块，可是我没有源码，只有头文件，网上综合调查了方案，最后选择了 C++/CLI</summary>

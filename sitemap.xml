@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sentixxx.github.io/tags/index.html</loc>
+    <loc>https://sentixxx.github.io/categories/index.html</loc>
     
     <lastmod>2025-03-17</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/categories/index.html</loc>
+    <loc>https://sentixxx.github.io/tags/index.html</loc>
     
     <lastmod>2025-03-17</lastmod>
     
@@ -29,7 +29,16 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/posts/54964/</loc>
+    <loc>https://sentixxx.github.io/posts/39317/</loc>
+    
+    <lastmod>2025-03-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sentixxx.github.io/posts/65504/</loc>
     
     <lastmod>2025-02-21</lastmod>
     
@@ -187,6 +196,13 @@
   
   <url>
     <loc>https://sentixxx.github.io/tags/BPF/</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sentixxx.github.io/tags/Windows/</loc>
     <lastmod>2025-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

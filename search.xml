@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>以一种访问权限不允许的方式做了一个访问套接字的尝试处理</title>
+      <link href="/posts/39317/"/>
+      <url>/posts/39317/</url>
+      
+        <content type="html"><![CDATA[<p>有一个项目需要运行在本地 http 服务器的 8080 端口上，之前还好的，今天突然就提示 <code>以一种访问权限不允许的方式做了一个访问套接字的尝试</code>，<br />在管理员模式下运行 <code>netstat -ano | findstr 8080</code> 没有任何输出</p><p>上网搜索发现这可能是一个规则问题</p><blockquote><p><a href="https://stackoverflow.com/questions/54671199/kestrel-unable-to-start">https://stackoverflow.com/questions/54671199/kestrel-unable-to-start</a></p></blockquote><p>尝试执行 <code>netsh interface ipv4 show excludedportrange protocol=tcp</code>，发现 8080 端口不知道为什么被排除了，使用以下指令成功修复：</p><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">net stop winnat</span><br><span class="line">netsh interface ipv4 show excludedportrange protocol=tcp</span><br><span class="line">net <span class="built_in">start</span> winnat</span><br><span class="line">netsh interface ipv4 show excludedportrange protocol=tcp</span><br></pre></td></tr></table></figure><h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2><ul><li><a href="https://gsw945.com/index.php/archives/33/">(Windows)以一种访问权限不允许的方式做了一个访问套接字的尝试处理</a></li><li><a href="https://stackoverflow.com/questions/54671199/kestrel-unable-to-start/60168299#60168299">Kestrel unable to start</a></li><li><a href="https://superuser.com/questions/1486417/unable-to-start-kestrel-getting-an-attempt-was-made-to-access-a-socket-in-a-way/1504618#1504618">Unable to start Kestrel getting ‘An attempt was made to access a socket in a way forbidden by its access permissions’</a></li><li><a href="https://superuser.com/questions/1579346/many-excludedportranges-how-to-delete-hyper-v-is-disabled/1610009#1610009">Many excludedportranges how to delete - hyper-v is disabled</a></li><li><a href="https://github.com/docker/for-win/issues/3171#issuecomment-739740248">Unable to bind ports: Docker-for-Windows &amp; Hyper-V excluding but not using important port ranges #3171</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 网络 </tag>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>阿里云OSS资源路径避坑</title>
       <link href="/posts/10362/"/>
       <url>/posts/10362/</url>
@@ -29,11 +58,11 @@
     
     
     <entry>
-      <title>CPPCLI将第三方DLL链接到C#项目</title>
-      <link href="/posts/54964/"/>
-      <url>/posts/54964/</url>
+      <title>CPPCLI将第三方DLL链接到CSharp项目</title>
+      <link href="/posts/65504/"/>
+      <url>/posts/65504/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>最近需要将第三方的 DLL 封装成 csharp 的模块，可是我没有源码，只有头文件，网上综合调查了方案，最后选择了 C++/CLI</p></blockquote><p>具体可见微软的<a href="https://learn.microsoft.com/zh-cn/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp?view=msvc-170">官方文档</a></p><h1 id="第一步创建-clr-项目"><a class="markdownIt-Anchor" href="#第一步创建-clr-项目"></a> 第一步，创建 CLR 项目</h1><p>这里默认你已经通过各种手段获得了 DLL 和头文件<br />这里使用 Visual Stdio 创建一个新的 C++ CLR 项目</p><h1 id="基本编辑"><a class="markdownIt-Anchor" href="#基本编辑"></a> 基本编辑</h1><p>这里的基本语法还是和 C++一样的</p><p>进入项目，自行创建一个类，就会生成一个 CPP 和 H 文件<br />这里需要在头文件中包含 DLL 内相关函数和类定义的头文件，直接使用绝对路径包含即可</p><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;path\to\your\header.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> ref <span class="keyword">class</span> <span class="title class_">YourModule</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后像 C++创建一个类那样，设置构造函数和成员函数，并实现<br />这里你的实现可以直接调用 DLL 中的函数，实现封装。</p><h1 id="设置编译选项"><a class="markdownIt-Anchor" href="#设置编译选项"></a> 设置编译选项</h1><p>右键项目，打开属性，将 Release 的配置类型修改为“动态库(. dll)”，注意这里的目标平台需要和你的 DLL 的目标平台相兼容<br />选择&quot;高级&quot;，设置运行时框架，这里决定了你编译出 DLL 的运行时框架，需要与你的 CS 项目版本相同<br />选择&quot;链接器&quot; -&gt; “输入” -&gt; “附加依赖项” -&gt; 将你的 LIB 路径写进去<br />选择 “VC++目录” -&gt; “库目录”，将你的 DLL 文件路径写进去，然后生成项目即可</p><p>你会在项目的生成目录发现两个 DLL，这里要注意！有一个 DLL 是你生成的 DLL，还有一个 DLL 名为 <code>Ijwhost.dll</code>，这个 DLL 是 C++/CLI 运行时必须的依赖，需要一起打包进项目中，同时还需要打包你原来的第三方 DLL，也就是说，最后运行时需要 <strong>3 个 dll</strong></p><h1 id="导入"><a class="markdownIt-Anchor" href="#导入"></a> 导入</h1><p>进入项目，将生成的模块 DLL 导入即可</p><h1 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h1><p><a href="https://learn.microsoft.com/zh-cn/cpp/dotnet/cpp-cli-tasks?view=msvc-170">微软官方文档</a><br /><a href="https://www.zhihu.com/question/29429287/answer/2158425208">知乎相关问答</a><br /><a href="https://www.cnblogs.com/jshchg/p/12898853.html">jshchg 的博客</a></p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>最近需要将第三方的 DLL 封装成 csharp 的模块，可是我没有源码，只有头文件，网上综合调查了方案，最后选择了 C++/CLI</p></blockquote><p>具体可见微软的<a href="https://learn.microsoft.com/zh-cn/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp?view=msvc-170">官方文档</a></p><h1 id="第一步创建-clr-项目"><a class="markdownIt-Anchor" href="#第一步创建-clr-项目"></a> 第一步，创建 CLR 项目</h1><p>这里默认你已经通过各种手段获得了 DLL 和头文件<br />这里使用 Visual Stdio 创建一个新的 C++ CLR 项目</p><h1 id="基本编辑"><a class="markdownIt-Anchor" href="#基本编辑"></a> 基本编辑</h1><p>这里的基本语法还是和 C++一样的</p><p>进入项目，自行创建一个类，就会生成一个 CPP 和 H 文件<br />这里需要在头文件中包含 DLL 内相关函数和类定义的头文件，直接使用绝对路径包含即可</p><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;path\to\your\header.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> ref <span class="keyword">class</span> <span class="title class_">YourModule</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后像 C++创建一个类那样，设置构造函数和成员函数，并实现<br />这里你的实现可以直接调用 DLL 中的函数，实现封装。</p><h1 id="设置编译选项"><a class="markdownIt-Anchor" href="#设置编译选项"></a> 设置编译选项</h1><p>右键项目，打开属性，将 Release 的配置类型修改为“动态库(. dll)”，注意这里的目标平台需要和你的 DLL 的目标平台相兼容<br />选择&quot;高级&quot;，设置运行时框架，这里决定了你编译出 DLL 的运行时框架，需要与你的 CS 项目版本相同<br />选择 “VC++目录” -&gt; “库目录”，将你的 DLL 文件路径写进去<br />选择&quot;链接器&quot; -&gt; “常规” -&gt; “附加依赖项”，添加你的 LIB 路径，然后生成项目即可</p><p>你会在项目的生成目录发现两个 DLL，这里要注意！有一个 DLL 是你生成的 DLL，还有一个 DLL 名为 <code>Ijwhost.dll</code>，这个 DLL 是 C++/CLI 运行时必须的依赖，需要一起打包进项目中，同时还需要打包你原来的第三方 DLL，也就是说，最后运行时需要 <strong>3个dll</strong></p><h1 id="导入"><a class="markdownIt-Anchor" href="#导入"></a> 导入</h1><p>进入项目，将生成的模块 DLL 导入即可</p><h1 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h1><p><a href="https://learn.microsoft.com/zh-cn/cpp/dotnet/cpp-cli-tasks?view=msvc-170">微软官方文档</a><br /><a href="https://www.zhihu.com/question/29429287/answer/2158425208">知乎相关问答</a><br /><a href="https://www.cnblogs.com/jshchg/p/12898853.html">jshchg 的博客</a></p>]]></content>
       
       
       <categories>
