@@ -6,7 +6,7 @@
   <link href="https://sentixxx.github.io/atom.xml" rel="self"/>
   
   <link href="https://sentixxx.github.io/"/>
-  <updated>2025-03-06T09:00:56.000Z</updated>
+  <updated>2025-12-10T06:45:00.000Z</updated>
   <id>https://sentixxx.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MapReduce论文阅读</title>
+    <link href="https://sentixxx.github.io/posts/53195/"/>
+    <id>https://sentixxx.github.io/posts/53195/</id>
+    <published>2025-12-10T06:45:00.000Z</published>
+    <updated>2025-12-10T06:45:00.000Z</updated>
+    
+    
+    <summary type="html">阅读MapReduce的学习笔记</summary>
+    
+    
+    
+    <category term="学习" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://sentixxx.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="论文" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title>以一种访问权限不允许的方式做了一个访问套接字的尝试处理</title>

@@ -1,0 +1,362 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MapReduce论文阅读 | 墨池码窖 | Sentixxx's Blog</title><meta name="author" content="Sentixxx"><meta name="copyright" content="Sentixxx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="阅读MapReduce的学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MapReduce论文阅读">
+<meta property="og:url" content="https://sentixxx.github.io/posts/53195/index.html">
+<meta property="og:site_name" content="墨池码窖 | Sentixxx&#39;s Blog">
+<meta property="og:description" content="阅读MapReduce的学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg">
+<meta property="article:published_time" content="2025-12-10T06:45:00.000Z">
+<meta property="article:modified_time" content="2025-12-10T06:45:00.000Z">
+<meta property="article:author" content="Sentixxx">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="论文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MapReduce论文阅读",
+  "url": "https://sentixxx.github.io/posts/53195/",
+  "image": "https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg",
+  "datePublished": "2025-12-10T06:45:00.000Z",
+  "dateModified": "2025-12-10T06:45:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Sentixxx",
+      "url": "https://sentixxx.github.io/Sentixxx"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://sentixxx.github.io/posts/53195/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xPPGDBmsB6lrA0CjgdkkWl0aVW38-ffad9pLicXVq2k"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-5685560564188912',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MapReduce论文阅读',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/.css/callout_blocks.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="墨池码窖 | Sentixxx's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/IMG_0006.PNG);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">墨池码窖 | Sentixxx's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">MapReduce论文阅读</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">MapReduce论文阅读</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2025-12-10T06:45:00.000Z" title="更新于 2025-12-10 14:45:00">2025-12-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="mapreduce-是什么"><a class="markdownIt-Anchor" href="#mapreduce-是什么"></a> MapReduce 是什么</h1>
+<p>MapReduce 是谷歌提出的一种软件架构，旨在以分布式的方式去分解计算问题，常用于大规模数据集的并行运算。</p>
+<p>MapReduce 是一种编程范式，使用 <code>map</code> 将大规模问题转换为子问题，然后用 <code>reduce</code> 将子问题的解汇总。</p>
+<p><code>map</code> 和 <code>reduce</code> 操作可以用下式概括：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left right" columnspacing="0em 1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>map</mtext></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mspace width="1em"/><mo stretchy="false">(</mo><msub><mi>k</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>v</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>  </mtext><mo>→</mo><mtext>  </mtext><mtext>list</mtext><mo stretchy="false">(</mo><msub><mi>k</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>v</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>reduce</mtext></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mspace width="1em"/><mo stretchy="false">(</mo><msub><mi>k</mi><mn>2</mn></msub><mo separator="true">,</mo><mtext>list</mtext><mo stretchy="false">(</mo><msub><mi>v</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>  </mtext><mo>→</mo><mtext>  </mtext><mtext>list</mtext><mo stretchy="false">(</mo><msub><mi>v</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+\text{map}    &amp;\quad (k_1, v_1)            &amp;\;\rightarrow\; \text{list}(k_2, v_2) \\
+\text{reduce} &amp;\quad (k_2, \text{list}(v_2)) &amp;\;\rightarrow\; \text{list}(v_2)
+\end{aligned}
+
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.0000000000000004em;vertical-align:-1.2500000000000002em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7500000000000002em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">map</span></span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">reduce</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2500000000000002em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7500000000000002em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:1em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:1em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord">list</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2500000000000002em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7500000000000002em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord text"><span class="mord">list</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord text"><span class="mord">list</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2500000000000002em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<ul>
+<li><code>map</code> 是数据的拆分者，其负责接收原始输入数据，按照业务逻辑进行拆分，生成程序中间的键值对数据 <code>list(k2,v2)</code>
+<ul>
+<li>一般来说，<code>map</code> 是无状态、并行的，每个 <code>map</code> 任务独立处理一部分输入数据，互不干扰</li>
+</ul>
+</li>
+<li><code>reduce</code> 是数据的合并者，负责接收 <code>map</code> 生成的中间键值对，按照<strong>中间键</strong>进行分组，对同一键的所有值进行聚合计算，生成最终结果，即 <code>list(v2)</code>
+<ul>
+<li><code>reduce</code> 任务的实例数量由用户定义，<code>map</code> 生成的中间键值对会通过分区函数分配到不同的 <code>reduce</code> 实例，只有在期望<strong>全局唯一输出</strong>时，我们才会设置实例数量为一</li>
+</ul>
+</li>
+</ul>
+<h2 id="简单的例子"><a class="markdownIt-Anchor" href="#简单的例子"></a> 简单的例子</h2>
+<p>MapReduce 最经典的例子就是单词计数任务，单词计数任务的两个函数定义如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">map</span><span class="params">(filename <span class="type">string</span>, contents <span class="type">string</span>)</span></span> []mapreduce.KeyValue &#123;</span><br><span class="line">	words := strings.FieldsFunc(contents, <span class="function"><span class="keyword">func</span><span class="params">(r <span class="type">rune</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> !unicode.IsLetter(r)</span><br><span class="line">	&#125;)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">var</span> res []mapreduce.KeyValue</span><br><span class="line">	<span class="keyword">for</span> _,word := <span class="keyword">range</span> words &#123;</span><br><span class="line">		res = <span class="built_in">append</span>(res, mapreduce.KeyValue&#123; Key: word, Value: <span class="string">&quot;1&quot;</span>&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reduce</span><span class="params">(key <span class="type">string</span>, values []<span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">	result := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> _,value := <span class="keyword">range</span> values &#123;</span><br><span class="line">		count, _ := strconv.Atoi(value)</span><br><span class="line">		result += count</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> strconv.Itoa(result)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="更多应用"><a class="markdownIt-Anchor" href="#更多应用"></a> 更多应用</h2>
+<p>除了最简单的单词统计以外，还有很多的问题都可以套用MapReduce的模型解决。</p>
+<ul>
+<li><strong>分布式grep</strong>：Map函数在某一行匹配成功之后产生一个中间键值对，reduce函数将匹配结果简单合并。</li>
+<li><strong>URL访问统计</strong>：Map函数根据每一条访问日志产生一个中间键值对<code>&lt;URL,1&gt;</code>，reduce函数将URL的所有中间键值对的值相加，产生结果<code>&lt;URL,访问次数&gt;</code>。</li>
+<li><strong>反向网页链接图</strong>：当来源网页中出现一次目标链接，map函数产生一个中间键值对<code>&lt;目标,来源&gt;</code>。Reduce函数合并相同目标的中间值，产生<code>&lt;目标,list(来源)&gt;</code>。</li>
+<li><strong>反向索引</strong>：Map函数解析文档后，产生如<code>&lt;单词,文档编号&gt;</code>的中间键值对，然后reduce函数合并中间键值对，产生结果<code>&lt;单词,list(文档编号)&gt;</code>。最终结果组成一个反向索引，可以用于查询单词出现的文档。</li>
+<li><strong>分布式排序</strong>：Map函数根据每一条记录中参与排序的键取出，产生中间结果<code>&lt;键,记录&gt;</code>，reduce函数则原样输出中间键值对即可。</li>
+</ul>
+<h1 id="mapreduce-实现"><a class="markdownIt-Anchor" href="#mapreduce-实现"></a> MapReduce 实现</h1>
+<p>MapReduce 根据具体环境的不同有不同的实现方式，这里主要介绍谷歌使用的大型商用计算机集群中的实现方式，该集群有以下特点：</p>
+<ul>
+<li>每台机器的内存通常在 2 - 4 GB</li>
+<li>机器之间的带宽在 1 mb/s 到 1 gb/s 之间，但平均值远低于这个数</li>
+<li>集群有上千台机器组成，因此机器故障较普遍</li>
+<li>集群使用的磁盘很廉价，但使用了一个基于复制技术的分布式文件系统，保证了可用性和可靠性<br />
+<img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/20251210151110740.png" alt="" /></li>
+</ul>
+<p>当用户程序调用 MapReduce 时，会发生如下内容：</p>
+<ol>
+<li>用户输入数据被切分成 M 个片段（每个片段通常大小在 16 ~ 64 MB ），并在集群上启动了 MapReduce 的多个副本</li>
+<li>其中有一个副本是特殊的 Master 节点，Master 节点负责分配工作任务给其余 Worker 节点，有 M 个 Map 和 R 个 Reduce 任务待分配</li>
+<li>被分配 Map 任务的节点会读取相应输入分片的内容进行解析，通过 Map 函数计算出相应的中间键值对并将结果缓存在内存中。这些中间结果会定期被写入到本地磁盘中，并通过分区函数 (partitioning function) 划分为 R 个区域，并将位置信息发送给 Master 节点</li>
+<li>Master 节点会将这些位置转发给 Reduce 工作节点，当 Reduce 工作节点收到相关通知后，会通过远程调用读取来自 Map 工作节点本地磁盘的缓冲数据。当读取完全部的中间数据之后，将所有的键值对按照键顺序排序（如果数据量过大，中间结果过多，我们可能需要外部排序）
+<ol>
+<li>key 很多种类的情况下，排序是有必要的吗？实践表明，数据分片后，往往同一 key 的数据在同一片 M 中。这体现了数据在空间上的局部性。</li>
+</ol>
+</li>
+<li>Reduce 工作节点迭代访问所有独立的中间结果中的 K，将 K 和对应的一系列V中间结果传输给用户书写的 Reduce 函数，Reduce 函数输出的值会被写到该部分的结果文件中</li>
+<li>当所有 Map 和 Reduce 函数结束执行时，Master 节点唤醒用户程序，此时在用户程序中的 MapReduce 调用结果返回</li>
+<li>如果函数正确执行完毕，结果会被存储在 R 个输出文件中（每个 Reduce 任务一个输出文件）</li>
+</ol>
+<h2 id="容错机制"><a class="markdownIt-Anchor" href="#容错机制"></a> 容错机制</h2>
+<h3 id="worker-故障"><a class="markdownIt-Anchor" href="#worker-故障"></a> Worker 故障</h3>
+<ul>
+<li>Master 会定期 Ping Worker 节点，确认 Worker 在线，如果在一定时间段内收不到响应，则将该 Worker 标记为 Failed，该工作节点已完成的所有 Map 任务都会被重置为 Idle 状态以在其他节点上被调度，同理，该工作节点上正在进行的 Map 和 Reduce 任务也会被重置
+<ul>
+<li>这是因为如果该 Worker 故障，那么存储在该 Worker 本地磁盘的 Map 任务结果也会无法访问，因此已完成的 Map 任务也要重做</li>
+</ul>
+</li>
+</ul>
+<h3 id="大规模-worker-出错"><a class="markdownIt-Anchor" href="#大规模-worker-出错"></a> 大规模 Worker 出错</h3>
+<ul>
+<li>没有应对机制</li>
+</ul>
+<h3 id="master-故障"><a class="markdownIt-Anchor" href="#master-故障"></a> Master 故障</h3>
+<ul>
+<li>Master 会定期将状态保存到磁盘，崩溃后直接利用保存的状态恢复，此外，用户侧也可以自行决定是否要重试，也可以直接终止 MapReduce 任务</li>
+</ul>
+<h2 id="故障的后果"><a class="markdownIt-Anchor" href="#故障的后果"></a> 故障的后果</h2>
+<h3 id="用户的-map-和-reduce-函数的结果具有确定性"><a class="markdownIt-Anchor" href="#用户的-map-和-reduce-函数的结果具有确定性"></a> 用户的 Map 和 Reduce 函数的结果具有确定性</h3>
+<blockquote>
+<p>用户编写的 Map/Reduce 函数输入固定时，输出必然唯一且固定 —— 无论执行多少次、在哪个机器上执行，结果都完全一致</p>
+</blockquote>
+<p>即使出现错误，分布式执行的输出与 “无故障的串行执行” 结果完全一致。</p>
+<p>实现逻辑：依赖 Map 和 Reduce 任务输出的原子提交机制。</p>
+<ol>
+<li>任务执行时，输出先写入私有临时文件（Map 任务生成 R 个临时文件，Reduce 任务生成 1 个临时文件）。</li>
+<li>任务完成后，Map 任务向 Master 上报临时文件位置，Reduce 任务原子化重命名临时文件为最终输出文件。</li>
+<li>若同一任务因故障被重复执行，原子操作会保证最终仅保留一次有效执行的结果，避免数据冲突。</li>
+</ol>
+<ul>
+<li>如当一个 Map 任务结束时，会通知Master，并把文件的地址携带给Master
+<ul>
+<li>如果 Master 收到了已经结束的 Map 任务的通知，那么会忽略这个消息</li>
+<li>否则，会记录这些文件的地址到主存里。</li>
+</ul>
+</li>
+<li>如当一个 Reduce 任务结束时，Reduce Worker原子的重命名文件，所以即使并发最终也只会有一个最终的文件。</li>
+</ul>
+<h3 id="用户的map和reduce函数结果不具有确定性"><a class="markdownIt-Anchor" href="#用户的map和reduce函数结果不具有确定性"></a> 用户的Map和Reduce函数结果不具有确定性</h3>
+<p>输出仍具合理性，但不同 Reduce 任务的结果可能对应不同串行执行的快照</p>
+<p>比如 Reduce 任务 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 可能读取 Map 任务 M 的第一次执行输出，而 Reduce 任务 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 可能读取 M 故障后重新执行的输出，导致 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的结果分别对应两次不同的串行执行结果，但单个 Reduce 任务的输出仍符合其对应的串行执行逻辑</p>
+<h2 id="任务粒度"><a class="markdownIt-Anchor" href="#任务粒度"></a> 任务粒度</h2>
+<ul>
+<li>我们将 Map 阶段划分为 M 个片段，将 Reduce 阶段划分为 R 个片段。理想情况下 M 和 R 应该远远大于 Worker 机器的数量，这样能够动态负载均衡，并且加速了工作节点的恢复。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>M</mi><mo>+</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O (M+R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span> 的调度抉择，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>M</mi><mo>∗</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O (M*R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span> 的内存数据结构维护</li>
+<li>R 通常由用户限制，因为每一个 ReduceTask 往往输出一个分离的文件</li>
+<li>我们通常选择 M 使得每一个输入数据的分块大概在 16MB - 64MB 之间，并且让 R 是 Worker 机器数量的一小倍，比如 M=200000，R=5000，使用 2000 台机器</li>
+</ul>
+<h2 id="备份任务"><a class="markdownIt-Anchor" href="#备份任务"></a> 备份任务</h2>
+<ul>
+<li>
+<p>集群中的部分机器可能因为各种原因成为“掉队者”，这些机器在执行最后几个任务时的速度极慢，会严重拖慢整个 MapReduce 任务的执行时间</p>
+</li>
+<li>
+<p>我们有一个通用的机制来缓解慢工作者的问题。当一个 MapReduce 操作接近完成时，Master 节点会安排对剩余的正在进行中的任务执行一个备份任务（对已有任务的复制）。只有当主执行或备份任务执行完成时，任务才被标记为已完成。我们调整了这个机制，使得它通常只会增加操作使用的 CPU 资源的很少部分。</p>
+</li>
+</ul>
+<h2 id="改进"><a class="markdownIt-Anchor" href="#改进"></a> 改进</h2>
+<ul>
+<li>Partitioning 函数：对于中间结果特殊的分割</li>
+<li>Order 保证：保证在一个分区内，key/value 对是按照递增顺序的，能够支持高效的随机访问。</li>
+<li>Combiner 函数：在 Map 任务后，送到 Master 前，允许使用 Combiner 函数进行一些合并操作，来加速一些 MapReduce 操作。</li>
+<li>跳过坏的记录：有时因为用户代码的问题，导致 MapReduce 操作在中途固定的地方会 Crash，于是我们允许其略过这个 BUG，从而避免程序崩溃。</li>
+<li>本地执行调试：为了帮助调试，提供一个可选的 MapReduce 实现，是在本地去线性进行的，可以方便的进行调试执行。</li>
+<li>Status 信息：Master 内置一个 HTTP 服务器，并且导出了一系列页面，显示计算的进度，比如多少任务已经完成等等、</li>
+<li>Counter：提供一个计数器来记录特定事件的发生次数。</li>
+</ul>
+<h1 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h1>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903862562717703">经典分布式论文阅读：MapReduce</a></li>
+<li><a target="_blank" rel="noopener" href="https://superlova.github.io/2021/05/04/%E3%80%90%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E3%80%91MapReduce-Simplified-Data-Processing-on-Large-Clusters/">【论文阅读笔记】MapReduce: Simplified Data Processing on Large Clusters</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/640934945">MapReduce论文阅读</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jye159X/p/17341960.html">MapReduce论文阅读报告</a></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="Sentixxx">Sentixxx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://sentixxx.github.io/posts/53195/">https://sentixxx.github.io/posts/53195/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://sentixxx.github.io" target="_blank">墨池码窖 | Sentixxx's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a><a class="post-meta__tags" href="/tags/%E8%AE%BA%E6%96%87/">论文</a></div><div class="post-share"><div class="social-share" data-image="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/e1e7dc7584ee09b65a2857953da704aaae581603/pic/37214256.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Sentixxx</div><div class="author-info-description">记录点点滴滴</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Sentixxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a><a class="social-icon" href="https://github.com/Sentixxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mapreduce-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text"> MapReduce 是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.1.</span> <span class="toc-text"> 简单的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text"> 更多应用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mapreduce-%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.</span> <span class="toc-text"> MapReduce 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E9%94%99%E6%9C%BA%E5%88%B6"><span class="toc-number">2.1.</span> <span class="toc-text"> 容错机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#worker-%E6%95%85%E9%9A%9C"><span class="toc-number">2.1.1.</span> <span class="toc-text"> Worker 故障</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E8%A7%84%E6%A8%A1-worker-%E5%87%BA%E9%94%99"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 大规模 Worker 出错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#master-%E6%95%85%E9%9A%9C"><span class="toc-number">2.1.3.</span> <span class="toc-text"> Master 故障</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%85%E9%9A%9C%E7%9A%84%E5%90%8E%E6%9E%9C"><span class="toc-number">2.2.</span> <span class="toc-text"> 故障的后果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%9A%84-map-%E5%92%8C-reduce-%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%93%E6%9E%9C%E5%85%B7%E6%9C%89%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 用户的 Map 和 Reduce 函数的结果具有确定性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%9A%84map%E5%92%8Creduce%E5%87%BD%E6%95%B0%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%85%B7%E6%9C%89%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 用户的Map和Reduce函数结果不具有确定性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E7%B2%92%E5%BA%A6"><span class="toc-number">2.3.</span> <span class="toc-text"> 任务粒度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E4%BB%BD%E4%BB%BB%E5%8A%A1"><span class="toc-number">2.4.</span> <span class="toc-text"> 备份任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B"><span class="toc-number">2.5.</span> <span class="toc-text"> 改进</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">3.</span> <span class="toc-text"> 参考</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/53195/" title="MapReduce论文阅读">MapReduce论文阅读</a><time datetime="2025-12-10T06:45:00.000Z" title="更新于 2025-12-10 14:45:00">2025-12-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/39317/" title="以一种访问权限不允许的方式做了一个访问套接字的尝试处理">以一种访问权限不允许的方式做了一个访问套接字的尝试处理</a><time datetime="2025-03-06T09:00:56.000Z" title="更新于 2025-03-06 17:00:56">2025-03-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/65504/" title="CPPCLI将第三方DLL链接到CSharp项目">CPPCLI将第三方DLL链接到CSharp项目</a><time datetime="2025-02-21T14:33:36.000Z" title="更新于 2025-02-21 22:33:36">2025-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/10362/" title="阿里云OSS资源路径避坑">阿里云OSS资源路径避坑</a><time datetime="2025-02-18T14:57:28.000Z" title="更新于 2025-02-18 22:57:28">2025-02-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/20647/" title="tcpdump指定dst端口抓包">tcpdump指定dst端口抓包</a><time datetime="2025-02-07T13:44:48.000Z" title="更新于 2025-02-07 21:44:48">2025-02-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Sentixxx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn" target="_blank">沪ICP备2025112621号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
+        $('a').each(function() {
+          const $this = $(this);
+          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== '' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script></body></html>
