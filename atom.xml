@@ -1,343 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>墨池码窖 | Sentixxx&#39;s Blog</title>
-  <icon>https://sentixxx.github.io/images/favicon_200x200.png</icon>
-  <subtitle>无名小站</subtitle>
-  <link href="https://sentixxx.github.io/atom.xml" rel="self"/>
-  
-  <link href="https://sentixxx.github.io/"/>
-  <updated>2025-12-10T06:45:00.000Z</updated>
-  <id>https://sentixxx.github.io/</id>
-  
   <author>
     <name>Sentixxx</name>
-    
   </author>
-  
   <generator uri="https://hexo.io/">Hexo</generator>
-  
+  <icon>https://sentixxx.github.io/images/favicon_200x200.png</icon>
+  <id>https://sentixxx.github.io/</id>
+  <link href="https://sentixxx.github.io/" rel="alternate"/>
+  <link href="https://sentixxx.github.io/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, Sentixxx</rights>
+  <subtitle>无名小站</subtitle>
+  <title>墨池码窖 | Sentixxx's Blog</title>
+  <updated>2025-12-10T06:45:00.000Z</updated>
   <entry>
-    <title>MapReduce论文阅读</title>
-    <link href="https://sentixxx.github.io/posts/53195/"/>
-    <id>https://sentixxx.github.io/posts/53195/</id>
-    <published>2025-12-10T06:45:00.000Z</published>
-    <updated>2025-12-10T06:45:00.000Z</updated>
-    
-    
-    <summary type="html">阅读MapReduce的学习笔记</summary>
-    
-    
-    
+    <author>
+      <name>Sentixxx</name>
+    </author>
     <category term="学习" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
     <category term="学习" scheme="https://sentixxx.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="论文" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87/"/>
-    
+    <id>https://sentixxx.github.io/posts/53195/</id>
+    <link href="https://sentixxx.github.io/posts/53195/"/>
+    <published>2025-12-10T06:45:00.000Z</published>
+    <summary>阅读MapReduce的学习笔记</summary>
+    <title>MapReduce论文阅读</title>
+    <updated>2025-12-10T06:45:00.000Z</updated>
   </entry>
-  
   <entry>
-    <title>以一种访问权限不允许的方式做了一个访问套接字的尝试处理</title>
-    <link href="https://sentixxx.github.io/posts/39317/"/>
-    <id>https://sentixxx.github.io/posts/39317/</id>
-    <published>2025-03-06T08:57:00.000Z</published>
-    <updated>2025-03-06T09:00:56.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;有一个项目需要运行在本地 http 服务器的 8080 端口上，之前还好的，今天突然就提示 &lt;code&gt;以一种访问权限不允许的方式做了一个访问套接字的尝试&lt;/code&gt;，&lt;br /&gt;
-在管理员模式下运行 &lt;code&gt;netstat -ano | findstr</summary>
-        
-      
-    
-    
-    
+    <author>
+      <name>Sentixxx</name>
+    </author>
     <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
     <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
     <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
     <category term="Windows" scheme="https://sentixxx.github.io/tags/Windows/"/>
-    
+    <id>https://sentixxx.github.io/posts/39317/</id>
+    <link href="https://sentixxx.github.io/posts/39317/"/>
+    <published>2025-03-06T08:57:00.000Z</published>
+    <summary>
+      <![CDATA[<p>有一个项目需要运行在本地 http 服务器的 8080 端口上，之前还好的，今天突然就提示 <code>以一种访问权限不允许的方式做了一个访问套接字的尝试</code>，<br />
+在管理员模式下运行 <code>netstat -ano | findstr]]>
+    </summary>
+    <title>以一种访问权限不允许的方式做了一个访问套接字的尝试处理</title>
+    <updated>2025-03-06T09:00:56.000Z</updated>
   </entry>
-  
   <entry>
-    <title>阿里云OSS资源路径避坑</title>
-    <link href="https://sentixxx.github.io/posts/10362/"/>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <id>https://sentixxx.github.io/posts/10362/</id>
+    <link href="https://sentixxx.github.io/posts/10362/"/>
     <published>2025-02-18T14:56:00.000Z</published>
+    <summary>
+      <![CDATA[<p>阿里云 OSS 在解析请求时会把 <code>+</code> 转义成 <code></code>（空格），这点与 S3]]>
+    </summary>
+    <title>阿里云OSS资源路径避坑</title>
     <updated>2025-02-18T14:57:28.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;阿里云 OSS 在解析请求时会把 &lt;code&gt;+&lt;/code&gt; 转义成 &lt;code&gt;&lt;/code&gt;（空格），这点与 S3</summary>
-        
-      
-    
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
   </entry>
-  
   <entry>
-    <title>CPPCLI将第三方DLL链接到CSharp项目</title>
-    <link href="https://sentixxx.github.io/posts/65504/"/>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <id>https://sentixxx.github.io/posts/65504/</id>
+    <link href="https://sentixxx.github.io/posts/65504/"/>
     <published>2025-02-14T09:48:00.000Z</published>
+    <summary>最近需要将第三方的 DLL 封装成 csharp 的模块，可是我没有源码，只有头文件，网上综合调查了方案，最后选择了 C++/CLI</summary>
+    <title>CPPCLI将第三方DLL链接到CSharp项目</title>
     <updated>2025-02-21T14:33:36.000Z</updated>
-    
-    
-    <summary type="html">最近需要将第三方的 DLL 封装成 csharp 的模块，可是我没有源码，只有头文件，网上综合调查了方案，最后选择了 C++/CLI</summary>
-    
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
   </entry>
-  
   <entry>
-    <title>tcpdump指定dst端口抓包</title>
-    <link href="https://sentixxx.github.io/posts/20647/"/>
-    <id>https://sentixxx.github.io/posts/20647/</id>
-    <published>2025-02-07T13:41:00.000Z</published>
-    <updated>2025-02-07T13:44:48.000Z</updated>
-    
-    
-    <summary type="html">tcpdump抓包时从指定端口抓包不能抓到dst port相关的包解决方法</summary>
-    
-    
-    
+    <author>
+      <name>Sentixxx</name>
+    </author>
     <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
     <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
     <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
     <category term="BPF" scheme="https://sentixxx.github.io/tags/BPF/"/>
-    
+    <id>https://sentixxx.github.io/posts/20647/</id>
+    <link href="https://sentixxx.github.io/posts/20647/"/>
+    <published>2025-02-07T13:41:00.000Z</published>
+    <summary>tcpdump抓包时从指定端口抓包不能抓到dst port相关的包解决方法</summary>
+    <title>tcpdump指定dst端口抓包</title>
+    <updated>2025-02-07T13:44:48.000Z</updated>
   </entry>
-  
   <entry>
-    <title>zerotier自建planet容器迁移</title>
-    <link href="https://sentixxx.github.io/posts/28320/"/>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     <id>https://sentixxx.github.io/posts/28320/</id>
+    <link href="https://sentixxx.github.io/posts/28320/"/>
     <published>2025-01-29T13:35:00.000Z</published>
+    <summary>记录zerotier的迁移</summary>
+    <title>zerotier自建planet容器迁移</title>
     <updated>2025-01-29T15:10:41.000Z</updated>
-    
-    
-    <summary type="html">记录zerotier的迁移</summary>
-    
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
-    
   </entry>
-  
   <entry>
-    <title>20250127001036</title>
-    <link href="https://sentixxx.github.io/posts/51303/"/>
-    <id>https://sentixxx.github.io/posts/51303/</id>
-    <published>2025-01-26T16:10:00.000Z</published>
-    <updated>2025-01-29T15:10:52.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;本来以为 workflow 已经很完善了，没想到随便一测又报错了，尝试解决未果，无奈删除子模块引用，直接暴力</summary>
-        
-      
-    
-    
-    
+    <author>
+      <name>Sentixxx</name>
+    </author>
     <category term="日常" scheme="https://sentixxx.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
+    <id>https://sentixxx.github.io/posts/51303/</id>
+    <link href="https://sentixxx.github.io/posts/51303/"/>
+    <published>2025-01-26T16:10:00.000Z</published>
+    <summary>
+      <![CDATA[<p>本来以为 workflow 已经很完善了，没想到随便一测又报错了，尝试解决未果，无奈删除子模块引用，直接暴力]]>
+    </summary>
+    <title>20250127001036</title>
+    <updated>2025-01-29T15:10:52.000Z</updated>
   </entry>
-  
   <entry>
-    <title>基于ARM架构交叉编译libpcap库的技术指南</title>
-    <link href="https://sentixxx.github.io/posts/31746/"/>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
+    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     <id>https://sentixxx.github.io/posts/31746/</id>
+    <link href="https://sentixxx.github.io/posts/31746/"/>
     <published>2025-01-26T14:47:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="基于-arm-架构交叉编译-libpcap-库的技术指南"><a class="markdownIt-Anchor" href="#基于-arm-架构交叉编译-libpcap-库的技术指南"></a> 基于 ARM 架构交叉编译 libpcap]]>
+    </summary>
+    <title>基于ARM架构交叉编译libpcap库的技术指南</title>
     <updated>2025-01-29T15:10:49.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;基于-arm-架构交叉编译-libpcap-库的技术指南&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基于-arm-架构交叉编译-libpcap-库的技术指南&quot;&gt;&lt;/a&gt; 基于 ARM 架构交叉编译 libpcap</summary>
-        
-      
-    
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-    <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
-    
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
-    
   </entry>
-  
   <entry>
-    <title>FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</title>
-    <link href="https://sentixxx.github.io/posts/63310/"/>
-    <id>https://sentixxx.github.io/posts/63310/</id>
-    <published>2025-01-26T13:24:00.000Z</published>
-    <updated>2025-01-29T15:10:43.000Z</updated>
-    
-    
-    <summary type="html">记录FTP同步程序因未处理SIGPIPE信号导致的静默崩溃问题，分享使用VS Code调试器定位EPIPE错误的过程，总结网络编程中必须注意的信号处理实践与防御性编码经验</summary>
-    
-    
-    
+    <author>
+      <name>Sentixxx</name>
+    </author>
     <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
     <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
     <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
-    
     <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
     <category term="DEBUG" scheme="https://sentixxx.github.io/tags/DEBUG/"/>
-    
+    <id>https://sentixxx.github.io/posts/63310/</id>
+    <link href="https://sentixxx.github.io/posts/63310/"/>
+    <published>2025-01-26T13:24:00.000Z</published>
+    <summary>记录FTP同步程序因未处理SIGPIPE信号导致的静默崩溃问题，分享使用VS Code调试器定位EPIPE错误的过程，总结网络编程中必须注意的信号处理实践与防御性编码经验</summary>
+    <title>FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</title>
+    <updated>2025-01-29T15:10:43.000Z</updated>
   </entry>
-  
   <entry>
-    <title>WSL2 配置 tensorflow 环境</title>
-    <link href="https://sentixxx.github.io/posts/9832/"/>
-    <id>https://sentixxx.github.io/posts/9832/</id>
-    <published>2025-01-23T16:12:00.000Z</published>
-    <updated>2025-01-29T15:10:59.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;windows-系统中更新-nvida-驱动&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#windows-系统中更新-nvida-驱动&quot;&gt;&lt;/a&gt; Windows 系统中更新 NVIDA 驱动&lt;/h2&gt;
-&lt;p&gt;这里可以直接通过</summary>
-        
-      
-    
-    
-    
+    <author>
+      <name>Sentixxx</name>
+    </author>
     <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
     <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
     <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
-    
     <category term="机器学习" scheme="https://sentixxx.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
+    <id>https://sentixxx.github.io/posts/9832/</id>
+    <link href="https://sentixxx.github.io/posts/9832/"/>
+    <published>2025-01-23T16:12:00.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="windows-系统中更新-nvida-驱动"><a class="markdownIt-Anchor" href="#windows-系统中更新-nvida-驱动"></a> Windows 系统中更新 NVIDA 驱动</h2>
+<p>这里可以直接通过]]>
+    </summary>
+    <title>WSL2 配置 tensorflow 环境</title>
+    <updated>2025-01-29T15:10:59.000Z</updated>
   </entry>
-  
   <entry>
-    <title>基于Nexus的第三方Nuget源搭建</title>
-    <link href="https://sentixxx.github.io/posts/7519/"/>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="杂项" scheme="https://sentixxx.github.io/tags/%E6%9D%82%E9%A1%B9/"/>
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     <id>https://sentixxx.github.io/posts/7519/</id>
+    <link href="https://sentixxx.github.io/posts/7519/"/>
     <published>2025-01-23T15:30:00.000Z</published>
+    <summary>
+      <![CDATA[<blockquote>
+<p>Nexus 是支持 Nuget、Docker、Npm 等多种包的仓库管理器，可用做私有包的存储分发，缓存官方包。<br />
+<a]]>
+    </summary>
+    <title>基于Nexus的第三方Nuget源搭建</title>
     <updated>2025-01-29T15:10:47.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Nexus 是支持 Nuget、Docker、Npm 等多种包的仓库管理器，可用做私有包的存储分发，缓存官方包。&lt;br /&gt;
-&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
-    <category term="杂项" scheme="https://sentixxx.github.io/tags/%E6%9D%82%E9%A1%B9/"/>
-    
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
-    
   </entry>
-  
   <entry>
-    <title>记一次个人博客的安装配置(Obsidian + Hexo + Github Page)</title>
-    <link href="https://sentixxx.github.io/posts/44007/"/>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     <id>https://sentixxx.github.io/posts/44007/</id>
+    <link href="https://sentixxx.github.io/posts/44007/"/>
     <published>2025-01-23T11:49:00.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="hexo"><a class="markdownIt-Anchor" href="#hexo"></a> Hexo</h1>
+<p>首先进行工具的安装 <code>npm install -g]]>
+    </summary>
+    <title>记一次个人博客的安装配置(Obsidian + Hexo + Github Page)</title>
     <updated>2025-01-29T15:10:45.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;hexo&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#hexo&quot;&gt;&lt;/a&gt; Hexo&lt;/h1&gt;
-&lt;p&gt;首先进行工具的安装 &lt;code&gt;npm install -g</summary>
-        
-      
-    
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    
-    
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
-    
   </entry>
-  
   <entry>
-    <title>渲染测试</title>
-    <link href="https://sentixxx.github.io/posts/3c4a82e6/"/>
-    <id>https://sentixxx.github.io/posts/3c4a82e6/</id>
-    <published>2023-06-01T14:06:06.000Z</published>
-    <updated>2025-01-23T16:03:00.000Z</updated>
-    
-    
-    <summary type="html">以 CommonMark、GFM 标准为基础进行测试。</summary>
-    
-    
-    
+    <author>
+      <name>Sentixxx</name>
+    </author>
     <category term="测试" scheme="https://sentixxx.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
     <category term="杂项" scheme="https://sentixxx.github.io/tags/%E6%9D%82%E9%A1%B9/"/>
-    
+    <id>https://sentixxx.github.io/posts/3c4a82e6/</id>
+    <link href="https://sentixxx.github.io/posts/3c4a82e6/"/>
+    <published>2023-06-01T14:06:06.000Z</published>
+    <summary>以 CommonMark、GFM 标准为基础进行测试。</summary>
+    <title>渲染测试</title>
+    <updated>2025-01-23T16:03:00.000Z</updated>
   </entry>
-  
 </feed>
