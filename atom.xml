@@ -11,7 +11,7 @@
   <rights>All rights reserved 2026, Sentixxx</rights>
   <subtitle>无名小站</subtitle>
   <title>墨池码窖 | Sentixxx's Blog</title>
-  <updated>2026-02-15T14:29:04.000Z</updated>
+  <updated>2026-02-15T14:58:37.000Z</updated>
   <entry>
     <author>
       <name>Sentixxx</name>
@@ -25,7 +25,7 @@
     <published>2025-12-10T06:45:00.000Z</published>
     <summary>阅读MapReduce的学习笔记</summary>
     <title>论文阅读：MapReduce</title>
-    <updated>2026-02-15T14:29:04.000Z</updated>
+    <updated>2026-02-15T14:58:37.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -197,11 +197,11 @@
     <link href="https://sentixxx.github.io/posts/44007/"/>
     <published>2025-01-23T11:49:00.000Z</published>
     <summary>
-      <![CDATA[<h1 id="hexo"><a class="markdownIt-Anchor" href="#hexo"></a> Hexo</h1>
-<p>首先进行工具的安装 <code>npm install -g]]>
+      <![CDATA[<blockquote>
+<p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
-    <title>记一次个人博客的安装配置(Obsidian + Hexo + Github Page)</title>
-    <updated>2026-02-14T08:16:14.000Z</updated>
+    <title>告别“搬运式”更新，打造丝滑写作流(Obsidian + Hexo + Github Page)</title>
+    <updated>2026-02-15T15:21:38.000Z</updated>
   </entry>
   <entry>
     <author>
