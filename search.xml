@@ -292,9 +292,9 @@
       
         <tags>
             
-            <tag> 杂项 </tag>
-            
             <tag> 经验 </tag>
+            
+            <tag> 杂项 </tag>
             
             <tag> 安装 </tag>
             
@@ -305,7 +305,7 @@
     
     
     <entry>
-      <title>告别“搬运式”更新，打造丝滑写作流(Obsidian + Hexo + Github Page)</title>
+      <title>告别“搬运式”更新，打造丝滑写作流(Obsidian + Hexo + Github Page)（如告，暂时只告别了本地搬运版）</title>
       <link href="/posts/44007/"/>
       <url>/posts/44007/</url>
       
