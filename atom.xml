@@ -11,21 +11,36 @@
   <rights>All rights reserved 2026, Sentixxx</rights>
   <subtitle>无名小站</subtitle>
   <title>墨池码窖 | Sentixxx's Blog</title>
-  <updated>2026-02-17T06:52:17.000Z</updated>
+  <updated>2026-02-20T15:46:54.000Z</updated>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
     <category term="学习" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    <category term="学习" scheme="https://sentixxx.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
     <category term="论文" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     <category term="分布式系统" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
+    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <id>https://sentixxx.github.io/posts/tahkyp/</id>
+    <link href="https://sentixxx.github.io/posts/tahkyp/"/>
+    <published>2026-02-15T06:06:00.000Z</published>
+    <summary>GFS 深度笔记：一文读懂分布式系统如何平衡性能与一致性</summary>
+    <title>论文阅读：The Google File System</title>
+    <updated>2026-02-20T15:46:54.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="学习" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="论文" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    <category term="分布式系统" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
+    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     <id>https://sentixxx.github.io/posts/37682/</id>
     <link href="https://sentixxx.github.io/posts/37682/"/>
     <published>2025-12-10T06:45:00.000Z</published>
     <summary>阅读MapReduce的学习笔记</summary>
     <title>论文阅读：MapReduce</title>
-    <updated>2026-02-17T06:52:17.000Z</updated>
+    <updated>2026-02-20T15:47:19.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -58,7 +73,7 @@
       <![CDATA[<p>阿里云 OSS 在解析请求时会把 <code>+</code> 转义成 <code></code>（空格），这点与 S3]]>
     </summary>
     <title>阿里云OSS资源路径避坑</title>
-    <updated>2026-02-15T12:45:20.000Z</updated>
+    <updated>2026-02-20T15:54:23.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -85,8 +100,25 @@
     <link href="https://sentixxx.github.io/posts/20647/"/>
     <published>2025-02-07T13:41:00.000Z</published>
     <summary>tcpdump抓包时从指定端口抓包不能抓到dst port相关的包解决方法</summary>
-    <title>tcpdump指定dst端口抓包</title>
-    <updated>2026-02-15T12:44:53.000Z</updated>
+    <title>tcpdump指定dst端口抓包失败</title>
+    <updated>2026-02-20T15:53:45.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="思考" scheme="https://sentixxx.github.io/categories/%E6%80%9D%E8%80%83/"/>
+    <category term="博客" scheme="https://sentixxx.github.io/categories/%E6%80%9D%E8%80%83/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="杂项" scheme="https://sentixxx.github.io/tags/%E6%9D%82%E9%A1%B9/"/>
+    <id>https://sentixxx.github.io/posts/asgbxs/</id>
+    <link href="https://sentixxx.github.io/posts/asgbxs/"/>
+    <published>2025-01-29T13:58:00.000Z</published>
+    <summary>
+      <![CDATA[<blockquote>
+<p>最近在搭建个人博客自动化时，我发现 Hexo 在生成时总会修改 <code>markdown</code> 文件的 <code>front-matter</code>]]>
+    </summary>
+    <title>为什么hexo在生成时会修改md文件</title>
+    <updated>2026-02-20T15:49:32.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -100,7 +132,7 @@
     <published>2025-01-29T13:35:00.000Z</published>
     <summary>记录zerotier的迁移</summary>
     <title>zerotier自建planet容器迁移</title>
-    <updated>2026-02-15T12:45:05.000Z</updated>
+    <updated>2026-02-20T15:52:48.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -131,7 +163,7 @@
       <![CDATA[<h1 id="基于-arm-架构交叉编译-libpcap-库的技术指南"><a class="markdownIt-Anchor" href="#基于-arm-架构交叉编译-libpcap-库的技术指南"></a> 基于 ARM 架构交叉编译 libpcap]]>
     </summary>
     <title>基于ARM架构交叉编译libpcap库的技术指南</title>
-    <updated>2026-02-15T12:45:17.000Z</updated>
+    <updated>2026-02-20T15:51:41.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -147,7 +179,7 @@
     <published>2025-01-26T13:24:00.000Z</published>
     <summary>记录FTP同步程序因未处理SIGPIPE信号导致的静默崩溃问题，分享使用VS Code调试器定位EPIPE错误的过程，总结网络编程中必须注意的信号处理实践与防御性编码经验</summary>
     <title>FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</title>
-    <updated>2026-02-15T12:44:43.000Z</updated>
+    <updated>2026-02-20T15:52:02.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -165,7 +197,7 @@
 <p>这里可以直接通过]]>
     </summary>
     <title>WSL2 配置 tensorflow 环境</title>
-    <updated>2025-01-29T15:10:59.000Z</updated>
+    <updated>2026-02-20T15:52:34.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -184,7 +216,7 @@
 <a]]>
     </summary>
     <title>基于Nexus的第三方Nuget源搭建</title>
-    <updated>2025-01-29T15:10:47.000Z</updated>
+    <updated>2026-02-20T15:51:12.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -214,6 +246,6 @@
     <published>2023-06-01T14:06:06.000Z</published>
     <summary>以 CommonMark、GFM 标准为基础进行测试。</summary>
     <title>渲染测试</title>
-    <updated>2026-02-14T08:25:06.000Z</updated>
+    <updated>2026-02-20T15:48:30.000Z</updated>
   </entry>
 </feed>
