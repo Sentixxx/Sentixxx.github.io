@@ -29,6 +29,15 @@
   </url>
   
   <url>
+    <loc>https://sentixxx.github.io/posts/tahkyp/</loc>
+    
+    <lastmod>2026-02-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sentixxx.github.io/posts/10362/</loc>
     
     <lastmod>2026-02-20</lastmod>
@@ -111,15 +120,6 @@
   
   <url>
     <loc>https://sentixxx.github.io/posts/37682/</loc>
-    
-    <lastmod>2026-02-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sentixxx.github.io/posts/tahkyp/</loc>
     
     <lastmod>2026-02-20</lastmod>
     
@@ -243,14 +243,14 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/tags/BPF/</loc>
+    <loc>https://sentixxx.github.io/tags/Windows/</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/tags/Windows/</loc>
+    <loc>https://sentixxx.github.io/tags/BPF/</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
