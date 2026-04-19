@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>Vibe Coding 时代的隐性代价：谁来为 AI 的“局部正确”买单？</title>
+      <title>代码里没写下来的那条规矩：AI 时代被放大的老 bug</title>
       <link href="/posts/tdfbcc/"/>
       <url>/posts/tdfbcc/</url>
       
@@ -136,9 +136,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 网络 </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> Windows </tag>
             
@@ -215,9 +215,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> 网络 </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> BPF </tag>
             
@@ -317,9 +317,9 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> cpp </tag>
+            
+            <tag> 经验 </tag>
             
             <tag> 安装 </tag>
             
@@ -346,13 +346,13 @@
       
         <tags>
             
-            <tag> 经验 </tag>
-            
             <tag> cpp </tag>
             
             <tag> 网络 </tag>
             
             <tag> DEBUG </tag>
+            
+            <tag> 经验 </tag>
             
         </tags>
       
