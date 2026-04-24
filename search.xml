@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>20260424003810</title>
+      <link href="/posts/tdygvm/"/>
+      <url>/posts/tdygvm/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a href="https://blog.sentixx.top/posts/tdygvm">原文</a></p></blockquote><p>最近发现一个 agent 抽鞭子技巧，不停追问他有没有更好的方案，就把更好的端上来了</p><hr /><p>我去，还能自动追踪 PR，又是小惊喜</p><p><img src="https://raw.githubusercontent.com/Sentixxx/st-pic-base/main/pic/20260424022518812.png" alt="" /></p><hr /><p>又琢磨了一个小技巧：使用 <code>/btw</code> ，提示词 “评估一下现在的上下文质量”，就可以有一个稍微明确一点的质量感知。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>代码里没写下来的那条规矩：AI 时代被放大的老 bug</title>
       <link href="/posts/tdfbcc/"/>
       <url>/posts/tdfbcc/</url>
@@ -136,9 +155,9 @@
       
         <tags>
             
-            <tag> 网络 </tag>
-            
             <tag> 经验 </tag>
+            
+            <tag> 网络 </tag>
             
             <tag> Windows </tag>
             
@@ -215,9 +234,9 @@
       
         <tags>
             
-            <tag> 网络 </tag>
-            
             <tag> 经验 </tag>
+            
+            <tag> 网络 </tag>
             
             <tag> BPF </tag>
             
@@ -317,9 +336,9 @@
       
         <tags>
             
-            <tag> cpp </tag>
-            
             <tag> 经验 </tag>
+            
+            <tag> cpp </tag>
             
             <tag> 安装 </tag>
             
@@ -346,13 +365,13 @@
       
         <tags>
             
+            <tag> 经验 </tag>
+            
             <tag> cpp </tag>
             
             <tag> 网络 </tag>
             
             <tag> DEBUG </tag>
-            
-            <tag> 经验 </tag>
             
         </tags>
       
