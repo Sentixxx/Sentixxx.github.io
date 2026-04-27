@@ -11,7 +11,7 @@
   <rights>All rights reserved 2026, Sentixxx</rights>
   <subtitle>无名小站</subtitle>
   <title>墨池码窖 | Sentixxx's Blog</title>
-  <updated>2026-04-27T06:03:07.000Z</updated>
+  <updated>2026-04-27T06:47:10.000Z</updated>
   <entry>
     <author>
       <name>Sentixxx</name>
@@ -27,7 +27,7 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录</title>
-    <updated>2026-04-27T06:03:07.000Z</updated>
+    <updated>2026-04-27T06:47:10.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -223,8 +223,8 @@
     </author>
     <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
     <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
+    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     <id>https://sentixxx.github.io/posts/31746/</id>
     <link href="https://sentixxx.github.io/posts/31746/"/>
     <published>2025-01-26T14:47:00.000Z</published>
@@ -240,8 +240,8 @@
     </author>
     <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
     <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
     <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
+    <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
     <category term="DEBUG" scheme="https://sentixxx.github.io/tags/DEBUG/"/>
     <id>https://sentixxx.github.io/posts/63310/</id>
     <link href="https://sentixxx.github.io/posts/63310/"/>

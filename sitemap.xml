@@ -283,6 +283,27 @@
   </url>
   
   <url>
+    <loc>https://sentixxx.github.io/tags/cpp/</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sentixxx.github.io/tags/DEBUG/</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -297,28 +318,7 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sentixxx.github.io/tags/BPF/</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sentixxx.github.io/tags/cpp/</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sentixxx.github.io/tags/DEBUG/</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -355,14 +355,14 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
+    <loc>https://sentixxx.github.io/categories/%E6%80%9D%E8%80%83/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/categories/%E6%80%9D%E8%80%83/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://sentixxx.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
