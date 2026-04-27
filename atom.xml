@@ -11,7 +11,7 @@
   <rights>All rights reserved 2026, Sentixxx</rights>
   <subtitle>无名小站</subtitle>
   <title>墨池码窖 | Sentixxx's Blog</title>
-  <updated>2026-04-27T06:47:10.000Z</updated>
+  <updated>2026-04-27T07:03:59.000Z</updated>
   <entry>
     <author>
       <name>Sentixxx</name>
@@ -27,7 +27,7 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录</title>
-    <updated>2026-04-27T06:47:10.000Z</updated>
+    <updated>2026-04-27T07:03:59.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -86,9 +86,9 @@
       <name>Sentixxx</name>
     </author>
     <category term="学习" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     <category term="论文" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     <category term="分布式系统" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
-    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     <id>https://sentixxx.github.io/posts/tahkyp/</id>
     <link href="https://sentixxx.github.io/posts/tahkyp/"/>
     <published>2026-02-15T06:06:00.000Z</published>
@@ -101,9 +101,9 @@
       <name>Sentixxx</name>
     </author>
     <category term="学习" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     <category term="论文" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     <category term="分布式系统" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
-    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     <id>https://sentixxx.github.io/posts/37682/</id>
     <link href="https://sentixxx.github.io/posts/37682/"/>
     <published>2025-12-10T06:45:00.000Z</published>
