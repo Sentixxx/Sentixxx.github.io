@@ -11,7 +11,24 @@
   <rights>All rights reserved 2026, Sentixxx</rights>
   <subtitle>无名小站</subtitle>
   <title>墨池码窖 | Sentixxx's Blog</title>
-  <updated>2026-04-27T07:03:59.000Z</updated>
+  <updated>2026-04-28T16:40:56.000Z</updated>
+  <entry>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="AIGenerated" scheme="https://sentixxx.github.io/tags/AIGenerated/"/>
+    <category term="Troubleshooting" scheme="https://sentixxx.github.io/tags/Troubleshooting/"/>
+    <category term="Git" scheme="https://sentixxx.github.io/tags/Git/"/>
+    <category term="Docker" scheme="https://sentixxx.github.io/tags/Docker/"/>
+    <category term="Github" scheme="https://sentixxx.github.io/tags/Github/"/>
+    <id>https://sentixxx.github.io/posts/te7ppp/</id>
+    <link href="https://sentixxx.github.io/posts/te7ppp/"/>
+    <published>2026-04-28T16:27:00.000Z</published>
+    <summary>记录一次在 VS Code Attach 到运行中容器时，Git push 一直丢凭证的排障过程，以及为什么根因不在 PAT，而在 VS Code 自动注入的 Git credential helper。</summary>
+    <title>我的 Github 凭证怎么总失效？原来是 VSCode 搞的鬼</title>
+    <updated>2026-04-28T16:40:56.000Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
@@ -22,12 +39,9 @@
     <id>https://sentixxx.github.io/posts/te413j/</id>
     <link href="https://sentixxx.github.io/posts/te413j/"/>
     <published>2026-04-26T16:42:00.000Z</published>
-    <summary>
-      <![CDATA[<blockquote>
-<p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
-    </summary>
+    <summary>记录为了防止 AI Agent 滥用 GitHub API 导致封号，通过 VS Code 凭证注入与 MCP 网络沙盒结合，彻底剥离容器内 PAT 的折腾过程。</summary>
     <title>血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录</title>
-    <updated>2026-04-27T07:03:59.000Z</updated>
+    <updated>2026-04-28T16:50:00.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -86,9 +100,9 @@
       <name>Sentixxx</name>
     </author>
     <category term="学习" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     <category term="论文" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     <category term="分布式系统" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
+    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     <id>https://sentixxx.github.io/posts/tahkyp/</id>
     <link href="https://sentixxx.github.io/posts/tahkyp/"/>
     <published>2026-02-15T06:06:00.000Z</published>
@@ -101,9 +115,9 @@
       <name>Sentixxx</name>
     </author>
     <category term="学习" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     <category term="论文" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     <category term="分布式系统" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
+    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     <id>https://sentixxx.github.io/posts/37682/</id>
     <link href="https://sentixxx.github.io/posts/37682/"/>
     <published>2025-12-10T06:45:00.000Z</published>
@@ -116,8 +130,8 @@
       <name>Sentixxx</name>
     </author>
     <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <category term="Windows" scheme="https://sentixxx.github.io/tags/Windows/"/>
     <id>https://sentixxx.github.io/posts/39317/</id>
     <link href="https://sentixxx.github.io/posts/39317/"/>
@@ -162,8 +176,8 @@
       <name>Sentixxx</name>
     </author>
     <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <category term="BPF" scheme="https://sentixxx.github.io/tags/BPF/"/>
     <id>https://sentixxx.github.io/posts/20647/</id>
     <link href="https://sentixxx.github.io/posts/20647/"/>
@@ -222,8 +236,8 @@
       <name>Sentixxx</name>
     </author>
     <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     <id>https://sentixxx.github.io/posts/31746/</id>
     <link href="https://sentixxx.github.io/posts/31746/"/>
@@ -239,10 +253,10 @@
       <name>Sentixxx</name>
     </author>
     <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
     <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
     <category term="DEBUG" scheme="https://sentixxx.github.io/tags/DEBUG/"/>
+    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     <id>https://sentixxx.github.io/posts/63310/</id>
     <link href="https://sentixxx.github.io/posts/63310/"/>
     <published>2025-01-26T13:24:00.000Z</published>
