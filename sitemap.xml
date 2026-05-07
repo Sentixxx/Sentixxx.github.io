@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/CLAUDE.html</loc>
+    <loc>https://sentixxx.github.io/AGENTS.html</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/AGENTS.html</loc>
+    <loc>https://sentixxx.github.io/CLAUDE.html</loc>
     
     <lastmod>2026-05-07</lastmod>
     
@@ -408,13 +408,6 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sentixxx.github.io/categories/%E6%80%9D%E8%80%83/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -422,7 +415,7 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/</loc>
+    <loc>https://sentixxx.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -430,6 +423,13 @@
   
   <url>
     <loc>https://sentixxx.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
