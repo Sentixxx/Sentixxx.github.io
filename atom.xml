@@ -11,14 +11,16 @@
   <rights>All rights reserved 2026, Sentixxx</rights>
   <subtitle>无名小站</subtitle>
   <title>墨池码窖 | Sentixxx's Blog</title>
-  <updated>2026-05-26T13:31:07.000Z</updated>
+  <updated>2026-05-27T11:41:35.000Z</updated>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="日常" scheme="https://sentixxx.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
-    <category term="碎碎念" scheme="https://sentixxx.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    <category term="记录" scheme="https://sentixxx.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    <category term="个人日记" scheme="https://sentixxx.github.io/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/"/>
+    <category term="大学" scheme="https://sentixxx.github.io/tags/%E5%A4%A7%E5%AD%A6/"/>
+    <category term="阶段总结" scheme="https://sentixxx.github.io/tags/%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/"/>
+    <category term="生活记录" scheme="https://sentixxx.github.io/tags/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    <category term="成长复盘" scheme="https://sentixxx.github.io/tags/%E6%88%90%E9%95%BF%E5%A4%8D%E7%9B%98/"/>
     <id>https://sentixxx.github.io/posts/tfmxb7/</id>
     <link href="https://sentixxx.github.io/posts/tfmxb7/"/>
     <published>2026-05-26T08:08:00.000Z</published>
@@ -27,16 +29,17 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>小小回顾一下过去的大学四年</title>
-    <updated>2026-05-26T13:31:07.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="vibe_coding" scheme="https://sentixxx.github.io/tags/vibe-coding/"/>
-    <category term="HumanWritten" scheme="https://sentixxx.github.io/tags/HumanWritten/"/>
-    <category term="AIGenerated" scheme="https://sentixxx.github.io/tags/AIGenerated/"/>
+    <category term="工程方法" scheme="https://sentixxx.github.io/categories/%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95/"/>
+    <category term="Agent" scheme="https://sentixxx.github.io/tags/Agent/"/>
+    <category term="VibeCoding" scheme="https://sentixxx.github.io/tags/VibeCoding/"/>
+    <category term="开发环境" scheme="https://sentixxx.github.io/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <category term="工具链" scheme="https://sentixxx.github.io/tags/%E5%B7%A5%E5%85%B7%E9%93%BE/"/>
     <id>https://sentixxx.github.io/posts/teyg1w/</id>
     <link href="https://sentixxx.github.io/posts/teyg1w/"/>
     <published>2026-05-13T02:53:00.000Z</published>
@@ -45,14 +48,16 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>聊聊我的 VibeCoding 环境配置记录</title>
-    <updated>2026-05-21T16:00:36.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="日常" scheme="https://sentixxx.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="个人日记" scheme="https://sentixxx.github.io/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/"/>
     <category term="碎碎念" scheme="https://sentixxx.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="Typst" scheme="https://sentixxx.github.io/tags/Typst/"/>
+    <category term="学习记录" scheme="https://sentixxx.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     <id>https://sentixxx.github.io/posts/teb7x0/</id>
     <link href="https://sentixxx.github.io/posts/teb7x0/"/>
     <published>2026-04-30T13:53:00.000Z</published>
@@ -61,45 +66,49 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>20260430215324</title>
-    <updated>2026-04-30T14:09:16.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="AIGenerated" scheme="https://sentixxx.github.io/tags/AIGenerated/"/>
-    <category term="Troubleshooting" scheme="https://sentixxx.github.io/tags/Troubleshooting/"/>
-    <category term="Git" scheme="https://sentixxx.github.io/tags/Git/"/>
-    <category term="Docker" scheme="https://sentixxx.github.io/tags/Docker/"/>
-    <category term="Github" scheme="https://sentixxx.github.io/tags/Github/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="GitHub" scheme="https://sentixxx.github.io/tags/GitHub/"/>
+    <category term="VSCode" scheme="https://sentixxx.github.io/tags/VSCode/"/>
+    <category term="凭证管理" scheme="https://sentixxx.github.io/tags/%E5%87%AD%E8%AF%81%E7%AE%A1%E7%90%86/"/>
+    <category term="排障" scheme="https://sentixxx.github.io/tags/%E6%8E%92%E9%9A%9C/"/>
     <id>https://sentixxx.github.io/posts/te7ppp/</id>
     <link href="https://sentixxx.github.io/posts/te7ppp/"/>
     <published>2026-04-28T16:27:00.000Z</published>
     <summary>记录一次在 VS Code Attach 到运行中容器时，Git push 一直丢凭证的排障过程，以及为什么根因不在 PAT，而在 VS Code 自动注入的 Git credential helper。</summary>
     <title>我的 Github 凭证怎么总失效？原来是 VSCode 搞的鬼</title>
-    <updated>2026-04-28T16:59:38.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="vibe_coding" scheme="https://sentixxx.github.io/tags/vibe-coding/"/>
-    <category term="AIGenerated" scheme="https://sentixxx.github.io/tags/AIGenerated/"/>
+    <category term="工程方法" scheme="https://sentixxx.github.io/categories/%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95/"/>
+    <category term="Agent" scheme="https://sentixxx.github.io/tags/Agent/"/>
+    <category term="GitHub" scheme="https://sentixxx.github.io/tags/GitHub/"/>
+    <category term="MCP" scheme="https://sentixxx.github.io/tags/MCP/"/>
+    <category term="风控" scheme="https://sentixxx.github.io/tags/%E9%A3%8E%E6%8E%A7/"/>
     <id>https://sentixxx.github.io/posts/te413j/</id>
     <link href="https://sentixxx.github.io/posts/te413j/"/>
     <published>2026-04-26T16:42:00.000Z</published>
     <summary>记录为了防止 AI Agent 滥用 GitHub API 导致封号，通过 VS Code 凭证注入与 MCP 网络沙盒结合，彻底剥离容器内 PAT 的折腾过程。</summary>
     <title>血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录</title>
-    <updated>2026-04-28T17:41:38.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="日常" scheme="https://sentixxx.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="个人日记" scheme="https://sentixxx.github.io/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/"/>
     <category term="碎碎念" scheme="https://sentixxx.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="Agent" scheme="https://sentixxx.github.io/tags/Agent/"/>
+    <category term="GitHub" scheme="https://sentixxx.github.io/tags/GitHub/"/>
+    <category term="工具观察" scheme="https://sentixxx.github.io/tags/%E5%B7%A5%E5%85%B7%E8%A7%82%E5%AF%9F/"/>
     <id>https://sentixxx.github.io/posts/tdygvm/</id>
     <link href="https://sentixxx.github.io/posts/tdygvm/"/>
     <published>2026-04-23T16:38:00.000Z</published>
@@ -108,16 +117,17 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>20260424003810</title>
-    <updated>2026-04-30T13:54:25.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="思考" scheme="https://sentixxx.github.io/categories/%E6%80%9D%E8%80%83/"/>
-    <category term="vibe_coding" scheme="https://sentixxx.github.io/tags/vibe-coding/"/>
-    <category term="HumanWritten" scheme="https://sentixxx.github.io/tags/HumanWritten/"/>
-    <category term="AIGenerated" scheme="https://sentixxx.github.io/tags/AIGenerated/"/>
+    <category term="工程方法" scheme="https://sentixxx.github.io/categories/%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95/"/>
+    <category term="AI编程" scheme="https://sentixxx.github.io/tags/AI%E7%BC%96%E7%A8%8B/"/>
+    <category term="工程规范" scheme="https://sentixxx.github.io/tags/%E5%B7%A5%E7%A8%8B%E8%A7%84%E8%8C%83/"/>
+    <category term="技术债" scheme="https://sentixxx.github.io/tags/%E6%8A%80%E6%9C%AF%E5%80%BA/"/>
+    <category term="VibeCoding" scheme="https://sentixxx.github.io/tags/VibeCoding/"/>
     <id>https://sentixxx.github.io/posts/tdfbcc/</id>
     <link href="https://sentixxx.github.io/posts/tdfbcc/"/>
     <published>2026-04-13T08:24:00.000Z</published>
@@ -126,46 +136,47 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>代码里没写下来的那条规矩：AI 时代被放大的老 bug</title>
-    <updated>2026-04-19T16:33:38.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="学习" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    <category term="论文" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87/"/>
-    <category term="分布式系统" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
-    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="学习笔记" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="论文阅读" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    <category term="GFS" scheme="https://sentixxx.github.io/tags/GFS/"/>
+    <category term="分布式存储" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/"/>
     <id>https://sentixxx.github.io/posts/tahkyp/</id>
     <link href="https://sentixxx.github.io/posts/tahkyp/"/>
     <published>2026-02-15T06:06:00.000Z</published>
     <summary>GFS 深度笔记：一文读懂分布式系统如何平衡性能与一致性</summary>
     <title>论文阅读：The Google File System</title>
-    <updated>2026-02-20T15:57:57.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="学习" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    <category term="论文" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    <category term="学习笔记" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="MapReduce" scheme="https://sentixxx.github.io/tags/MapReduce/"/>
     <category term="分布式系统" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
-    <category term="笔记" scheme="https://sentixxx.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="论文阅读" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     <id>https://sentixxx.github.io/posts/37682/</id>
     <link href="https://sentixxx.github.io/posts/37682/"/>
     <published>2025-12-10T06:45:00.000Z</published>
     <summary>阅读MapReduce的学习笔记</summary>
     <title>论文阅读：MapReduce</title>
-    <updated>2026-02-20T15:47:19.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="排障" scheme="https://sentixxx.github.io/tags/%E6%8E%92%E9%9A%9C/"/>
     <category term="Windows" scheme="https://sentixxx.github.io/tags/Windows/"/>
+    <category term="Socket" scheme="https://sentixxx.github.io/tags/Socket/"/>
+    <category term="网络编程" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     <id>https://sentixxx.github.io/posts/39317/</id>
     <link href="https://sentixxx.github.io/posts/39317/"/>
     <published>2025-03-06T08:57:00.000Z</published>
@@ -174,14 +185,16 @@
 在管理员模式下运行 <code>netstat -ano | findstr]]>
     </summary>
     <title>以一种访问权限不允许的方式做了一个访问套接字的尝试处理</title>
-    <updated>2026-02-15T12:44:38.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="阿里云OSS" scheme="https://sentixxx.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91OSS/"/>
+    <category term="对象存储" scheme="https://sentixxx.github.io/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
+    <category term="URL编码" scheme="https://sentixxx.github.io/tags/URL%E7%BC%96%E7%A0%81/"/>
     <id>https://sentixxx.github.io/posts/10362/</id>
     <link href="https://sentixxx.github.io/posts/10362/"/>
     <published>2025-02-18T14:56:00.000Z</published>
@@ -189,43 +202,48 @@
       <![CDATA[<p>阿里云 OSS 在解析请求时会把 <code>+</code> 转义成 <code></code>（空格），这点与 S3]]>
     </summary>
     <title>阿里云OSS资源路径避坑</title>
-    <updated>2026-02-20T15:54:23.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="C++/CLI" scheme="https://sentixxx.github.io/tags/C-CLI/"/>
+    <category term="CSharp" scheme="https://sentixxx.github.io/tags/CSharp/"/>
+    <category term="DLL" scheme="https://sentixxx.github.io/tags/DLL/"/>
+    <category term="互操作" scheme="https://sentixxx.github.io/tags/%E4%BA%92%E6%93%8D%E4%BD%9C/"/>
     <id>https://sentixxx.github.io/posts/65504/</id>
     <link href="https://sentixxx.github.io/posts/65504/"/>
     <published>2025-02-14T09:48:00.000Z</published>
     <summary>最近需要将第三方的 DLL 封装成 csharp 的模块，可是我没有源码，只有头文件，网上综合调查了方案，最后选择了 C++/CLI</summary>
     <title>CPPCLI将第三方DLL链接到CSharp项目</title>
-    <updated>2026-02-15T12:44:40.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    <category term="BPF" scheme="https://sentixxx.github.io/tags/BPF/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="tcpdump" scheme="https://sentixxx.github.io/tags/tcpdump/"/>
+    <category term="抓包" scheme="https://sentixxx.github.io/tags/%E6%8A%93%E5%8C%85/"/>
+    <category term="网络排障" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C%E6%8E%92%E9%9A%9C/"/>
     <id>https://sentixxx.github.io/posts/20647/</id>
     <link href="https://sentixxx.github.io/posts/20647/"/>
     <published>2025-02-07T13:41:00.000Z</published>
     <summary>tcpdump抓包时从指定端口抓包不能抓到dst port相关的包解决方法</summary>
     <title>tcpdump指定dst端口抓包失败</title>
-    <updated>2026-02-20T15:53:45.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="思考" scheme="https://sentixxx.github.io/categories/%E6%80%9D%E8%80%83/"/>
-    <category term="博客" scheme="https://sentixxx.github.io/categories/%E6%80%9D%E8%80%83/%E5%8D%9A%E5%AE%A2/"/>
-    <category term="杂项" scheme="https://sentixxx.github.io/tags/%E6%9D%82%E9%A1%B9/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="Markdown" scheme="https://sentixxx.github.io/tags/Markdown/"/>
+    <category term="Hexo" scheme="https://sentixxx.github.io/tags/Hexo/"/>
+    <category term="Frontmatter" scheme="https://sentixxx.github.io/tags/Frontmatter/"/>
+    <category term="源码阅读" scheme="https://sentixxx.github.io/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
     <id>https://sentixxx.github.io/posts/asgbxs/</id>
     <link href="https://sentixxx.github.io/posts/asgbxs/"/>
     <published>2025-01-29T13:58:00.000Z</published>
@@ -234,27 +252,32 @@
 <p>最近在搭建个人博客自动化时，我发现 Hexo 在生成时总会修改 <code>markdown</code> 文件的 <code>front-matter</code>]]>
     </summary>
     <title>为什么hexo在生成时会修改md文件</title>
-    <updated>2026-02-20T16:10:59.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="ZeroTier" scheme="https://sentixxx.github.io/tags/ZeroTier/"/>
+    <category term="Docker" scheme="https://sentixxx.github.io/tags/Docker/"/>
+    <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    <category term="迁移" scheme="https://sentixxx.github.io/tags/%E8%BF%81%E7%A7%BB/"/>
     <id>https://sentixxx.github.io/posts/28320/</id>
     <link href="https://sentixxx.github.io/posts/28320/"/>
     <published>2025-01-29T13:35:00.000Z</published>
     <summary>记录zerotier的迁移</summary>
     <title>zerotier自建planet容器迁移</title>
-    <updated>2026-02-20T15:52:48.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="日常" scheme="https://sentixxx.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="个人日记" scheme="https://sentixxx.github.io/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/"/>
+    <category term="日记" scheme="https://sentixxx.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    <category term="自动化" scheme="https://sentixxx.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    <category term="Workflow" scheme="https://sentixxx.github.io/tags/Workflow/"/>
     <id>https://sentixxx.github.io/posts/51303/</id>
     <link href="https://sentixxx.github.io/posts/51303/"/>
     <published>2025-01-26T16:10:00.000Z</published>
@@ -262,16 +285,17 @@
       <![CDATA[<p>本来以为 workflow 已经很完善了，没想到随便一测又报错了，尝试解决未果，无奈删除子模块引用，直接暴力]]>
     </summary>
     <title>20250127001036</title>
-    <updated>2025-01-29T15:10:52.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="ARM" scheme="https://sentixxx.github.io/tags/ARM/"/>
+    <category term="交叉编译" scheme="https://sentixxx.github.io/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
+    <category term="libpcap" scheme="https://sentixxx.github.io/tags/libpcap/"/>
+    <category term="C" scheme="https://sentixxx.github.io/tags/C/"/>
     <id>https://sentixxx.github.io/posts/31746/</id>
     <link href="https://sentixxx.github.io/posts/31746/"/>
     <published>2025-01-26T14:47:00.000Z</published>
@@ -279,32 +303,33 @@
       <![CDATA[<h1 id="基于-arm-架构交叉编译-libpcap-库的技术指南"><a class="markdownIt-Anchor" href="#基于-arm-架构交叉编译-libpcap-库的技术指南"></a> 基于 ARM 架构交叉编译 libpcap]]>
     </summary>
     <title>基于ARM架构交叉编译libpcap库的技术指南</title>
-    <updated>2026-02-20T15:51:41.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="cpp" scheme="https://sentixxx.github.io/tags/cpp/"/>
-    <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    <category term="DEBUG" scheme="https://sentixxx.github.io/tags/DEBUG/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="FTP" scheme="https://sentixxx.github.io/tags/FTP/"/>
+    <category term="TCP" scheme="https://sentixxx.github.io/tags/TCP/"/>
+    <category term="SIGPIPE" scheme="https://sentixxx.github.io/tags/SIGPIPE/"/>
+    <category term="故障分析" scheme="https://sentixxx.github.io/tags/%E6%95%85%E9%9A%9C%E5%88%86%E6%9E%90/"/>
     <id>https://sentixxx.github.io/posts/63310/</id>
     <link href="https://sentixxx.github.io/posts/63310/"/>
     <published>2025-01-26T13:24:00.000Z</published>
     <summary>记录FTP同步程序因未处理SIGPIPE信号导致的静默崩溃问题，分享使用VS Code调试器定位EPIPE错误的过程，总结网络编程中必须注意的信号处理实践与防御性编码经验</summary>
     <title>FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</title>
-    <updated>2026-02-20T15:52:02.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
-    <category term="机器学习" scheme="https://sentixxx.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="WSL2" scheme="https://sentixxx.github.io/tags/WSL2/"/>
+    <category term="TensorFlow" scheme="https://sentixxx.github.io/tags/TensorFlow/"/>
+    <category term="深度学习" scheme="https://sentixxx.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="环境配置" scheme="https://sentixxx.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://sentixxx.github.io/posts/9832/</id>
     <link href="https://sentixxx.github.io/posts/9832/"/>
     <published>2025-01-23T16:12:00.000Z</published>
@@ -313,16 +338,17 @@
 <p>这里可以直接通过]]>
     </summary>
     <title>WSL2 配置 tensorflow 环境</title>
-    <updated>2026-02-20T15:52:34.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
-    <category term="经验" scheme="https://sentixxx.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="杂项" scheme="https://sentixxx.github.io/tags/%E6%9D%82%E9%A1%B9/"/>
-    <category term="经验" scheme="https://sentixxx.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    <category term="安装" scheme="https://sentixxx.github.io/tags/%E5%AE%89%E8%A3%85/"/>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="NuGet" scheme="https://sentixxx.github.io/tags/NuGet/"/>
+    <category term="Nexus" scheme="https://sentixxx.github.io/tags/Nexus/"/>
+    <category term="私有源" scheme="https://sentixxx.github.io/tags/%E7%A7%81%E6%9C%89%E6%BA%90/"/>
+    <category term=".NET" scheme="https://sentixxx.github.io/tags/NET/"/>
     <id>https://sentixxx.github.io/posts/7519/</id>
     <link href="https://sentixxx.github.io/posts/7519/"/>
     <published>2025-01-23T15:30:00.000Z</published>
@@ -332,6 +358,6 @@
 <a]]>
     </summary>
     <title>基于Nexus的第三方Nuget源搭建</title>
-    <updated>2026-02-20T15:51:12.000Z</updated>
+    <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
 </feed>

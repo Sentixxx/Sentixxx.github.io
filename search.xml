@@ -13,16 +13,20 @@
       
       <categories>
           
-          <category> 日常 </category>
+          <category> 个人日记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 碎碎念 </tag>
+            <tag> 大学 </tag>
             
-            <tag> 记录 </tag>
+            <tag> 阶段总结 </tag>
+            
+            <tag> 生活记录 </tag>
+            
+            <tag> 成长复盘 </tag>
             
         </tags>
       
@@ -40,18 +44,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 工程方法 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> vibe_coding </tag>
+            <tag> Agent </tag>
             
-            <tag> HumanWritten </tag>
+            <tag> VibeCoding </tag>
             
-            <tag> AIGenerated </tag>
+            <tag> 开发环境 </tag>
+            
+            <tag> 工具链 </tag>
             
         </tags>
       
@@ -69,7 +75,7 @@
       
       <categories>
           
-          <category> 日常 </category>
+          <category> 个人日记 </category>
           
       </categories>
       
@@ -77,6 +83,10 @@
         <tags>
             
             <tag> 碎碎念 </tag>
+            
+            <tag> Typst </tag>
+            
+            <tag> 学习记录 </tag>
             
         </tags>
       
@@ -94,22 +104,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> AIGenerated </tag>
+            <tag> GitHub </tag>
             
-            <tag> Troubleshooting </tag>
+            <tag> VSCode </tag>
             
-            <tag> Git </tag>
+            <tag> 凭证管理 </tag>
             
-            <tag> Docker </tag>
-            
-            <tag> Github </tag>
+            <tag> 排障 </tag>
             
         </tags>
       
@@ -127,16 +135,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 工程方法 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> vibe_coding </tag>
+            <tag> Agent </tag>
             
-            <tag> AIGenerated </tag>
+            <tag> GitHub </tag>
+            
+            <tag> MCP </tag>
+            
+            <tag> 风控 </tag>
             
         </tags>
       
@@ -154,7 +166,7 @@
       
       <categories>
           
-          <category> 日常 </category>
+          <category> 个人日记 </category>
           
       </categories>
       
@@ -162,6 +174,12 @@
         <tags>
             
             <tag> 碎碎念 </tag>
+            
+            <tag> Agent </tag>
+            
+            <tag> GitHub </tag>
+            
+            <tag> 工具观察 </tag>
             
         </tags>
       
@@ -179,18 +197,20 @@
       
       <categories>
           
-          <category> 思考 </category>
+          <category> 工程方法 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> vibe_coding </tag>
+            <tag> AI编程 </tag>
             
-            <tag> HumanWritten </tag>
+            <tag> 工程规范 </tag>
             
-            <tag> AIGenerated </tag>
+            <tag> 技术债 </tag>
+            
+            <tag> VibeCoding </tag>
             
         </tags>
       
@@ -208,18 +228,18 @@
       
       <categories>
           
-          <category> 学习 </category>
+          <category> 学习笔记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 论文 </tag>
+            <tag> 论文阅读 </tag>
             
-            <tag> 分布式系统 </tag>
+            <tag> GFS </tag>
             
-            <tag> 笔记 </tag>
+            <tag> 分布式存储 </tag>
             
         </tags>
       
@@ -237,18 +257,18 @@
       
       <categories>
           
-          <category> 学习 </category>
+          <category> 学习笔记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 论文 </tag>
+            <tag> MapReduce </tag>
             
             <tag> 分布式系统 </tag>
             
-            <tag> 笔记 </tag>
+            <tag> 论文阅读 </tag>
             
         </tags>
       
@@ -266,18 +286,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 经验 </tag>
-            
-            <tag> 网络 </tag>
+            <tag> 排障 </tag>
             
             <tag> Windows </tag>
+            
+            <tag> Socket </tag>
+            
+            <tag> 网络编程 </tag>
             
         </tags>
       
@@ -295,14 +317,18 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 经验 </tag>
+            <tag> 阿里云OSS </tag>
+            
+            <tag> 对象存储 </tag>
+            
+            <tag> URL编码 </tag>
             
         </tags>
       
@@ -320,14 +346,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 经验 </tag>
+            <tag> C++/CLI </tag>
+            
+            <tag> CSharp </tag>
+            
+            <tag> DLL </tag>
+            
+            <tag> 互操作 </tag>
             
         </tags>
       
@@ -345,18 +377,18 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 经验 </tag>
+            <tag> tcpdump </tag>
             
-            <tag> 网络 </tag>
+            <tag> 抓包 </tag>
             
-            <tag> BPF </tag>
+            <tag> 网络排障 </tag>
             
         </tags>
       
@@ -374,16 +406,20 @@
       
       <categories>
           
-          <category> 思考 </category>
-          
-          <category> 博客 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 杂项 </tag>
+            <tag> Markdown </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Frontmatter </tag>
+            
+            <tag> 源码阅读 </tag>
             
         </tags>
       
@@ -401,16 +437,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 经验 </tag>
+            <tag> ZeroTier </tag>
             
-            <tag> 安装 </tag>
+            <tag> Docker </tag>
+            
+            <tag> 网络 </tag>
+            
+            <tag> 迁移 </tag>
             
         </tags>
       
@@ -428,10 +468,20 @@
       
       <categories>
           
-          <category> 日常 </category>
+          <category> 个人日记 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 日记 </tag>
+            
+            <tag> 自动化 </tag>
+            
+            <tag> Workflow </tag>
+            
+        </tags>
       
     </entry>
     
@@ -447,18 +497,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 经验 </tag>
+            <tag> ARM </tag>
             
-            <tag> cpp </tag>
+            <tag> 交叉编译 </tag>
             
-            <tag> 安装 </tag>
+            <tag> libpcap </tag>
+            
+            <tag> C </tag>
             
         </tags>
       
@@ -476,20 +528,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 经验 </tag>
+            <tag> FTP </tag>
             
-            <tag> cpp </tag>
+            <tag> TCP </tag>
             
-            <tag> 网络 </tag>
+            <tag> SIGPIPE </tag>
             
-            <tag> DEBUG </tag>
+            <tag> 故障分析 </tag>
             
         </tags>
       
@@ -507,18 +559,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 经验 </tag>
+            <tag> WSL2 </tag>
             
-            <tag> 安装 </tag>
+            <tag> TensorFlow </tag>
             
-            <tag> 机器学习 </tag>
+            <tag> 深度学习 </tag>
+            
+            <tag> 环境配置 </tag>
             
         </tags>
       
@@ -536,18 +590,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 技术实践 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 杂项 </tag>
+            <tag> NuGet </tag>
             
-            <tag> 经验 </tag>
+            <tag> Nexus </tag>
             
-            <tag> 安装 </tag>
+            <tag> 私有源 </tag>
+            
+            <tag> .NET </tag>
             
         </tags>
       
@@ -565,16 +621,20 @@
       
       <categories>
           
-          <category> 经验 </category>
+          <category> 工程方法 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 经验 </tag>
+            <tag> Obsidian </tag>
             
-            <tag> 安装 </tag>
+            <tag> Hexo </tag>
+            
+            <tag> GitHubPages </tag>
+            
+            <tag> 写作流 </tag>
             
         </tags>
       
@@ -592,14 +652,20 @@
       
       <categories>
           
-          <category> 测试 </category>
+          <category> 归档测试 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 杂项 </tag>
+            <tag> Markdown </tag>
+            
+            <tag> 渲染测试 </tag>
+            
+            <tag> CommonMark </tag>
+            
+            <tag> GFM </tag>
             
         </tags>
       
