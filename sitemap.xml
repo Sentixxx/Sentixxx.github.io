@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sentixxx.github.io/tags/index.html</loc>
+    <loc>https://sentixxx.github.io/categories/index.html</loc>
     
     <lastmod>2026-06-04</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/categories/index.html</loc>
+    <loc>https://sentixxx.github.io/tags/index.html</loc>
     
     <lastmod>2026-06-04</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/posts/tfmxb7/</loc>
+    <loc>https://sentixxx.github.io/posts/tdygvm/</loc>
     
     <lastmod>2026-05-29</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://sentixxx.github.io/posts/tdygvm/</loc>
+    <loc>https://sentixxx.github.io/posts/tfmxb7/</loc>
     
     <lastmod>2026-05-29</lastmod>
     
@@ -300,6 +300,27 @@
   </url>
   
   <url>
+    <loc>https://sentixxx.github.io/tags/Agent/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sentixxx.github.io/tags/GitHub/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sentixxx.github.io/tags/%E5%B7%A5%E5%85%B7%E8%A7%82%E5%AF%9F/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sentixxx.github.io/tags/Typst/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -336,27 +357,6 @@
   
   <url>
     <loc>https://sentixxx.github.io/tags/%E6%88%90%E9%95%BF%E5%A4%8D%E7%9B%98/</loc>
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sentixxx.github.io/tags/Agent/</loc>
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sentixxx.github.io/tags/GitHub/</loc>
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sentixxx.github.io/tags/%E5%B7%A5%E5%85%B7%E8%A7%82%E5%AF%9F/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
