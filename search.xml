@@ -723,8 +723,6 @@
       
         <tags>
             
-            <tag> hide </tag>
-            
             <tag> Markdown </tag>
             
             <tag> 渲染测试 </tag>
@@ -732,6 +730,8 @@
             <tag> CommonMark </tag>
             
             <tag> GFM </tag>
+            
+            <tag> hide </tag>
             
         </tags>
       
