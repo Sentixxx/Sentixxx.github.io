@@ -11,7 +11,25 @@
   <rights>All rights reserved 2026, Sentixxx</rights>
   <subtitle>无名小站</subtitle>
   <title>墨池码窖 | Sentixxx's Blog</title>
-  <updated>2026-05-29T19:34:07.000Z</updated>
+  <updated>2026-06-05T22:32:35.000Z</updated>
+  <entry>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="Codex" scheme="https://sentixxx.github.io/tags/Codex/"/>
+    <category term="OpenAI" scheme="https://sentixxx.github.io/tags/OpenAI/"/>
+    <category term="AIAgent" scheme="https://sentixxx.github.io/tags/AIAgent/"/>
+    <category term="GitHubPlugin" scheme="https://sentixxx.github.io/tags/GitHubPlugin/"/>
+    <category term="Skill" scheme="https://sentixxx.github.io/tags/Skill/"/>
+    <category term="项目规则" scheme="https://sentixxx.github.io/tags/%E9%A1%B9%E7%9B%AE%E8%A7%84%E5%88%99/"/>
+    <id>https://sentixxx.github.io/posts/tg7p64/</id>
+    <link href="https://sentixxx.github.io/posts/tg7p64/"/>
+    <published>2026-06-05T22:22:00.000Z</published>
+    <summary>记录高强度使用 Codex 桌面端和 GitHub 插件时，插件 skill 覆盖项目规则导致输出偏离约定的一次踩坑经历。</summary>
+    <title>谈谈Codex的一些坑</title>
+    <updated>2026-06-05T22:32:35.000Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
@@ -179,9 +197,9 @@
       <name>Sentixxx</name>
     </author>
     <category term="学习笔记" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <category term="论文阅读" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     <category term="GFS" scheme="https://sentixxx.github.io/tags/GFS/"/>
     <category term="分布式存储" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8/"/>
+    <category term="论文阅读" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     <id>https://sentixxx.github.io/posts/tahkyp/</id>
     <link href="https://sentixxx.github.io/posts/tahkyp/"/>
     <published>2026-02-15T06:06:00.000Z</published>
@@ -194,9 +212,9 @@
       <name>Sentixxx</name>
     </author>
     <category term="学习笔记" scheme="https://sentixxx.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="论文阅读" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     <category term="MapReduce" scheme="https://sentixxx.github.io/tags/MapReduce/"/>
     <category term="分布式系统" scheme="https://sentixxx.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
-    <category term="论文阅读" scheme="https://sentixxx.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     <id>https://sentixxx.github.io/posts/37682/</id>
     <link href="https://sentixxx.github.io/posts/37682/"/>
     <published>2025-12-10T06:45:00.000Z</published>
@@ -277,8 +295,8 @@
     </author>
     <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
     <category term="Hexo" scheme="https://sentixxx.github.io/tags/Hexo/"/>
-    <category term="Markdown" scheme="https://sentixxx.github.io/tags/Markdown/"/>
     <category term="Frontmatter" scheme="https://sentixxx.github.io/tags/Frontmatter/"/>
+    <category term="Markdown" scheme="https://sentixxx.github.io/tags/Markdown/"/>
     <category term="源码阅读" scheme="https://sentixxx.github.io/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
     <id>https://sentixxx.github.io/posts/asgbxs/</id>
     <link href="https://sentixxx.github.io/posts/asgbxs/"/>
@@ -339,22 +357,6 @@
       <![CDATA[<h1 id="基于-arm-架构交叉编译-libpcap-库的技术指南"><a class="markdownIt-Anchor" href="#基于-arm-架构交叉编译-libpcap-库的技术指南"></a> 基于 ARM 架构交叉编译 libpcap]]>
     </summary>
     <title>基于ARM架构交叉编译libpcap库的技术指南</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Sentixxx</name>
-    </author>
-    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
-    <category term="FTP" scheme="https://sentixxx.github.io/tags/FTP/"/>
-    <category term="TCP" scheme="https://sentixxx.github.io/tags/TCP/"/>
-    <category term="SIGPIPE" scheme="https://sentixxx.github.io/tags/SIGPIPE/"/>
-    <category term="故障分析" scheme="https://sentixxx.github.io/tags/%E6%95%85%E9%9A%9C%E5%88%86%E6%9E%90/"/>
-    <id>https://sentixxx.github.io/posts/63310/</id>
-    <link href="https://sentixxx.github.io/posts/63310/"/>
-    <published>2025-01-26T13:24:00.000Z</published>
-    <summary>记录FTP同步程序因未处理SIGPIPE信号导致的静默崩溃问题，分享使用VS Code调试器定位EPIPE错误的过程，总结网络编程中必须注意的信号处理实践与防御性编码经验</summary>
-    <title>FTP同步服务静默崩溃故障分析：SIGPIPE信号与TCP半关闭状态的致命陷阱</title>
     <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
 </feed>

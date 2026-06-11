@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>谈谈Codex的一些坑</title>
+      <link href="/posts/tg7p64/"/>
+      <url>/posts/tg7p64/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a href="https://blog.sentixx.top/posts/tg7p64">原文</a></p></blockquote><p>最近高强度使用 Codex 桌面 app 进行开发（因为这真的很方便），你可以在一台电脑/手机上同时和多台电脑上的 agent 进行沟通，当然了，我也安装了一些插件，比如 github 插件，这就遇到了第一个坑：openai 提供的插件中会覆盖我们的一些项目配置，这在 agent 看来似乎优先级较高，比如我们要求在 PR 中按照我们给定的格式，并且按照中文，但是如果你开启了 github plugin 中的 yeet skill，agent 就会去读取其中定义的一些模式，从而违背项目的规则，这就很蛋疼。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术实践 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Codex </tag>
+            
+            <tag> OpenAI </tag>
+            
+            <tag> AIAgent </tag>
+            
+            <tag> GitHubPlugin </tag>
+            
+            <tag> Skill </tag>
+            
+            <tag> 项目规则 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>测试</title>
       <link href="/posts/tftd0vam/"/>
       <url>/posts/tftd0vam/</url>
@@ -299,11 +334,11 @@
       
         <tags>
             
-            <tag> 论文阅读 </tag>
-            
             <tag> GFS </tag>
             
             <tag> 分布式存储 </tag>
+            
+            <tag> 论文阅读 </tag>
             
         </tags>
       
@@ -328,11 +363,11 @@
       
         <tags>
             
+            <tag> 论文阅读 </tag>
+            
             <tag> MapReduce </tag>
             
             <tag> 分布式系统 </tag>
-            
-            <tag> 论文阅读 </tag>
             
         </tags>
       
@@ -479,9 +514,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> Markdown </tag>
-            
             <tag> Frontmatter </tag>
+            
+            <tag> Markdown </tag>
             
             <tag> 源码阅读 </tag>
             
