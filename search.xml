@@ -78,7 +78,7 @@
       <link href="/posts/tftd0vam/"/>
       <url>/posts/tftd0vam/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a href="https://blog.sentixx.top/posts/tftd0vam">原文</a></p></blockquote><div class="callout" data-callout="diary"><div class="callout-title"><div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg></div><div class="callout-title-inner">2026-05-30 星期六</div></div><div class="callout-content"><p><code>W22</code> · <code>D150/365</code> · <code>年度 41.1%</code> · <code>今日 14.9%</code> · <code>○ 满月，月龄 13.1 天</code></p></div></div>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a href="https://blog.sentixx.top/posts/tftd0vam">原文</a></p></blockquote><div class="callout" data-callout="diary"><div class="callout-title"><div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg></div><div class="callout-title-inner">2026-05-30 星期六</div></div><div class="callout-content"><p><code>W22</code> · <code>D150/365</code> · <code>年度 41.1%</code> · <code>今日 14.9%</code> · <code>○ 满月，月龄 13.1 天</code></p></div></div><details class="callout" data-callout="tip" data-callout-fold="-"><summary class="callout-title"><div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div><div class="callout-title-inner">折叠的提示</div><div class="callout-fold"></div></summary><div class="callout-content"><p>默认收起，点开可见</p></div></details><div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg></div><div class="callout-title-inner">Note</div></div><div class="callout-content"><p>没有标题，应显示默认标题 Note</p></div></div><div class="callout" data-callout="warning"><div class="callout-title"><div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div><div class="callout-title-inner">嵌套测试</div></div><div class="callout-content"><p>外层正文</p><div class="callout" data-callout="info"><div class="callout-title"><div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div><div class="callout-title-inner">内层</div></div><div class="callout-content"><p>内层正文</p></div></div></div></div><blockquote><p>普通引用，不应被转换</p></blockquote><p>链接三连：[[Obsidian 语法测试|有 abbrlink 的]]、[[某篇没有 abbrlink 的文章标题]]、[[不存在的文章]]</p><p>代码块免疫测试（以下都不应被转换）：<br /><code>行内 [[链接]]</code> 和 <code>&gt; [!note]</code></p>  <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[[围栏代码里的链接]]</span><br><span class="line"><span class="quote">&gt; [!note] 围栏代码里的 callout</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -369,11 +369,11 @@
       
         <tags>
             
-            <tag> 论文阅读 </tag>
-            
             <tag> GFS </tag>
             
             <tag> 分布式存储 </tag>
+            
+            <tag> 论文阅读 </tag>
             
         </tags>
       
@@ -398,11 +398,11 @@
       
         <tags>
             
+            <tag> 论文阅读 </tag>
+            
             <tag> MapReduce </tag>
             
             <tag> 分布式系统 </tag>
-            
-            <tag> 论文阅读 </tag>
             
         </tags>
       
