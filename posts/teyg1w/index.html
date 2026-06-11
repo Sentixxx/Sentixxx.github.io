@@ -172,7 +172,156 @@ btf.addGlobalFn('pjaxComplete', () => {
   isHighlightShrink: false,
   isToc: true,
   pageType: 'post'
-}</script><link rel="stylesheet" href="/css/callout_blocks.css"><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="墨池码窖 | Sentixxx's Blog" type="application/atom+xml">
+}</script><link rel="stylesheet" href="/css/callout_blocks.css"><!-- hexo injector head_end start --><style>.callout[data-callout="diary"] {
+  --callout-color: 46, 127, 104;
+  --callout-border-width: 1px;
+  --callout-border-opacity: 0.18;
+  position: relative;
+  margin: 1.25rem 0 1.5rem;
+  padding: 14px 16px 12px;
+  overflow: hidden;
+  border-color: rgba(var(--callout-color), 0.26);
+  border-left: 4px solid rgba(var(--callout-color), 0.7);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(var(--callout-color), 0.13), transparent 32%),
+    radial-gradient(circle at 88% 18%, rgba(126, 164, 255, 0.11), transparent 30%),
+    linear-gradient(135deg, rgba(var(--callout-color), 0.06), rgba(var(--callout-color), 0.018)),
+    var(--background-primary);
+  background-size: 180% 180%, 170% 170%, 100% 100%, 100% 100%;
+  box-shadow: 0 10px 28px rgba(var(--callout-color), 0.08);
+  mix-blend-mode: normal;
+  animation: diary-callout-ambient 9s ease-in-out infinite alternate;
+}
+
+.callout[data-callout="diary"]::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(var(--callout-color), 0.76), rgba(126, 164, 255, 0.58), transparent);
+  background-size: 240% 100%;
+  animation: diary-callout-line 4.8s ease-in-out infinite;
+}
+
+.callout[data-callout="diary"]::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, rgba(var(--callout-color), 0.18), rgba(var(--callout-color), 0.9), rgba(var(--callout-color), 0.18));
+  filter: blur(0.2px);
+  animation: diary-callout-pulse 3.4s ease-in-out infinite;
+}
+
+.callout[data-callout="diary"] .callout-icon,
+.callout[data-callout="diary"] .callout-title-icon {
+  display: none;
+}
+
+.callout[data-callout="diary"] .callout-title {
+  position: relative;
+  z-index: 1;
+  align-items: baseline;
+  gap: 0;
+  color: var(--text-normal);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.callout[data-callout="diary"] .callout-title-inner {
+  font-weight: 700;
+}
+
+.callout[data-callout="diary"] .callout-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 6px;
+}
+
+.callout[data-callout="diary"] .callout-content p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.9;
+}
+
+.callout[data-callout="diary"] code {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.08rem;
+  padding: 0.1em 0.48em;
+  overflow: hidden;
+  border: 1px solid rgba(var(--callout-color), 0.18);
+  border-radius: 999px;
+  background:
+    linear-gradient(120deg, rgba(var(--callout-color), 0.06), rgba(var(--callout-color), 0.13), rgba(var(--callout-color), 0.06)),
+    rgba(var(--callout-color), 0.045);
+  background-size: 210% 100%;
+  color: var(--text-normal);
+  font-size: 0.84em;
+  font-variant-numeric: tabular-nums;
+  transition: border-color 160ms ease, transform 160ms ease, background-color 160ms ease;
+  animation: diary-chip-flow 6s ease-in-out infinite;
+}
+
+.callout[data-callout="diary"] code:hover {
+  border-color: rgba(var(--callout-color), 0.42);
+  background-color: rgba(var(--callout-color), 0.1);
+  transform: translateY(-1px);
+}
+
+@keyframes diary-callout-ambient {
+  from {
+    background-position: 0% 0%, 100% 0%, 0 0, 0 0;
+  }
+  to {
+    background-position: 100% 80%, 0% 100%, 0 0, 0 0;
+  }
+}
+
+@keyframes diary-callout-line {
+  0% {
+    background-position: 240% 0;
+    opacity: 0.28;
+  }
+  45% {
+    opacity: 0.9;
+  }
+  100% {
+    background-position: -240% 0;
+    opacity: 0.28;
+  }
+}
+
+@keyframes diary-callout-pulse {
+  0%, 100% {
+    opacity: 0.38;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes diary-chip-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .callout[data-callout="diary"],
+  .callout[data-callout="diary"]::before,
+  .callout[data-callout="diary"]::after,
+  .callout[data-callout="diary"] code {
+    animation: none;
+  }
+}
+</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="墨池码窖 | Sentixxx's Blog" type="application/atom+xml">
 </head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://img.sentixx.top/2026/06/77d31ea0d9499bea27998a3dad6e6061.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.yuki.sh/img-original/img/2023/08/07/00/01/22/110595990_p0.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">墨池码窖 | Sentixxx's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">聊聊我的 VibeCoding 环境配置记录</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">聊聊我的 VibeCoding 环境配置记录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2026-05-29T18:59:15.000Z" title="更新于 2026-05-30 02:59:15">2026-05-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95/">工程方法</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;距离本文上次更新已经&quot;,&quot;messageNext&quot;:&quot;天了, 文章内容可能已经过时，请注意甄别.&quot;,&quot;postUpdate&quot;:&quot;2026-05-30 02:59:15&quot;}" hidden></div><blockquote>
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a target="_blank" rel="noopener" href="https://blog.sentixx.top/posts/teyg1w">原文</a></p>
 </blockquote>
@@ -241,7 +390,7 @@ btf.addGlobalFn('pjaxComplete', () => {
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ~/mnt/agent-sandbox/runtime/home/.claude/hooks/wezterm-watchdog.sh</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$elapsed</span>&quot;</span> -ge 600 ] &amp;&amp; [ ! -f <span class="string">&quot;<span class="variable">$toasted_file</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">	osc_progress 2 0</span><br><span class="line">	osc_toast <span class="string">&quot;Claude 还在跑 10m+&quot;</span></span><br><span class="line">	osc_bell</span><br><span class="line">	<span class="built_in">touch</span> <span class="string">&quot;<span class="variable">$toasted_file</span>&quot;</span> <span class="string">&quot;<span class="variable">$escalated_file</span>&quot;</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="string">&quot;<span class="variable">$elapsed</span>&quot;</span> -ge 180 ] &amp;&amp; [ ! -f <span class="string">&quot;<span class="variable">$escalated_file</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">	osc_progress 4 0</span><br><span class="line">	<span class="built_in">touch</span> <span class="string">&quot;<span class="variable">$escalated_file</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 <h2 id="附录"><a class="markdownIt-Anchor" href="#附录"></a> 附录</h2>
 <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/moesin-lab/agent-sandbox">https://github.com/moesin-lab/agent-sandbox</a></p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="Sentixxx">Sentixxx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://sentixxx.github.io/posts/teyg1w/">https://sentixxx.github.io/posts/teyg1w/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://sentixxx.github.io" target="_blank">墨池码窖 | Sentixxx's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Agent/">Agent</a><a class="post-meta__tags" href="/tags/VibeCoding/">VibeCoding</a><a class="post-meta__tags" href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">开发环境</a><a class="post-meta__tags" href="/tags/%E5%B7%A5%E5%85%B7%E9%93%BE/">工具链</a></div><div class="post-share"><div class="social-share" data-image="https://i.yuki.sh/img-original/img/2023/08/07/00/01/22/110595990_p0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/tdygvm/" title="20260424003810"><img class="cover" src="https://i.yuki.sh/img-original/img/2017/04/28/00/14/33/62608184_p0.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-24</div><div class="info-item-2">20260424003810</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文  最近发现一个 agent 抽鞭子技巧，不停追问他有没有更好的方案，就把更好的端上来了  我去，还能自动追踪 PR，又是小惊喜   又琢磨了一个小技巧：使用 /btw ，提示词 “评估一下现在的上下文质量”，就可以有一个稍微明确一点的质量感知。  AskUserQuestion 这个东西做的确实好，规划相关的 skill 复用这个工具很舒服，怪不得 A/ 要用这个  文档的量级到达某个级别，人类 review 起来也一样困难，和代码差不多了  github 账号被封了，似乎是 gh 写评论调用被风控了，这也体现出 mcp 的优势， 封装了一套固有的客户端逻辑 claude mcp add-json github &#x27;&#123;&quot;type&quot;: &quot;http&quot;,&quot;url&quot;:...</div></div></div></a><a class="pagination-related" href="/posts/te413j/" title="血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录"><img class="cover" src="https://i.yuki.sh/img-original/img/2020/10/22/00/30/01/85158661_p0.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-27</div><div class="info-item-2">血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文。   写在前面 作为一个折腾爱好者，最近在弄让 AI Agent 自动跑项目、提 PR 的工作流。结果一开始没做频率限制，专门给 Agent 用的 GitHub 小号用裸的 gh CLI 短时间内狂刷 PR 和评论，直接被 GitHub 的防滥用风控当场封禁（Suspended）。 痛定思痛后，我决定引入 MCP（Model Context Protocol）来接管 GitHub 操作，因为官方 MCP 自带了完备的限流和退避机制。但同时，为了让 Agent 还能正常执行 git push，我依然在容器的环境变量里留了一个 PAT（Personal Access Token）。 结果在观察日志时，我发现了一个更危险的现象：大模型一旦发现 MCP 工具调用失败或者图省事，它就会直接去翻环境变量里的 PAT，然后自己手搓 curl 脚本去直连 GitHub API！而且它的脚本一旦报错，它为了修 Bug...</div></div></div></a><a class="pagination-related" href="/posts/tdfbcc/" title="代码里没写下来的那条规矩：AI 时代被放大的老 bug"><img class="cover" src="https://i.yuki.sh/img-original/img/2016/10/16/21/06/58/59502083_p0.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-13</div><div class="info-item-2">代码里没写下来的那条规矩：AI 时代被放大的老 bug</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文 本文部分内容采用 AI 辅助生成，核心素材与推演逻辑均提炼自排查该 Bug 时的真实 Session 对话文本。 越读越烂，返工一下 —— 2026.4.20   一个矛盾的回复 事情的起因源于 cc-connect 的一个 bug：同一分钟内，Telegram 群收到两条互相矛盾的回复  一条说&quot;会话已结束&quot; 另一条说“前一条请求仍在处理”。  显然这是矛盾的。 我很快梳理出了问题的链路，并提交了响应的 PR。  问题排查 第一层，agent 进程没死透。 agent/claudecode/session.go 的 readLoop 用 bufio.Scanner 读 stdout。Claude CLI 退出时，若有子孙进程继承了 stdout fd，管道不会 EOF，scanner 就一直阻塞。cs.ctx.Done() 触发时，defer 里虽然会关 channel，但那一路逻辑分支没有关 stdout，于是 readLoop...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://img.sentixx.top/2026/06/77d31ea0d9499bea27998a3dad6e6061.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Sentixxx</div><div class="author-info-description">记录点点滴滴</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Sentixxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" style="color: #ff6600;"></i></a><a class="social-icon" href="https://github.com/Sentixxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:senticx@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/12992364" target="_blank" title="bilibili"><i class="fab fa-bilibili" style="color: #74c0fC;"></i></a><a class="social-icon" href="https://www.zhihu.com/people/sentix" target="_blank" title="zhihu"><i class="fab fa-zhihu" style="color: #008EFF;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%BF%E4%B8%BB%E6%9C%BA"><span class="toc-number">1.</span> <span class="toc-text"> 宿主机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%E5%88%86%E6%B5%81"><span class="toc-number">1.1.</span> <span class="toc-text"> 代理网络分流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%8C%82%E8%BD%BD"><span class="toc-number">1.2.</span> <span class="toc-text"> 目录挂载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B2%99%E7%9B%92"><span class="toc-number">1.3.</span> <span class="toc-text"> 沙盒</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%9C%BA%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text"> 本地机器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E9%80%9A%E8%B7%A8%E7%AB%AF%E5%9B%BE%E7%89%87%E5%89%AA%E8%B4%B4%E6%9D%BF"><span class="toc-number">2.1.</span> <span class="toc-text"> 打通跨端图片剪贴板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D-shiftenter-%E4%BA%A4%E4%BA%92%E5%90%9E%E9%94%AE%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text"> 修复 Shift+Enter 交互吞键问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BF%E9%80%8F-ssh-%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%BC%B9%E7%AA%97%E9%80%9A%E7%9F%A5"><span class="toc-number">2.3.</span> <span class="toc-text"> 穿透 SSH 的系统弹窗通知</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">2.4.</span> <span class="toc-text"> 附录</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/tftd0vam/" title="测试"><img src="https://i.yuki.sh/img-master/img/2023/08/04/00/00/35/110502620_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="测试"/></a><div class="content"><a class="title" href="/posts/tftd0vam/" title="测试">测试</a><time datetime="2026-06-11T07:56:37.000Z" title="更新于 2026-06-11 15:56:37">2026-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/tggeip/" title="从一个状态栏到一套框架：AI 如何改变了软件的写法"><img src="https://i.yuki.sh/img-master/img/2021/07/28/12/36/14/91553661_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从一个状态栏到一套框架：AI 如何改变了软件的写法"/></a><div class="content"><a class="title" href="/posts/tggeip/" title="从一个状态栏到一套框架：AI 如何改变了软件的写法">从一个状态栏到一套框架：AI 如何改变了软件的写法</a><time datetime="2026-06-11T07:07:50.000Z" title="更新于 2026-06-11 15:07:50">2026-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/tg7p64/" title="谈谈Codex的一些坑"><img src="https://i.yuki.sh/img-master/img/2019/11/19/00/08/56/77884053_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="谈谈Codex的一些坑"/></a><div class="content"><a class="title" href="/posts/tg7p64/" title="谈谈Codex的一些坑">谈谈Codex的一些坑</a><time datetime="2026-06-05T22:32:35.000Z" title="更新于 2026-06-06 06:32:35">2026-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3c4a82e6/" title="渲染测试"><img src="https://cdn.gallery.uuanqin.top/img/mdcover65465.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="渲染测试"/></a><div class="content"><a class="title" href="/posts/3c4a82e6/" title="渲染测试">渲染测试</a><time datetime="2026-05-29T19:25:58.000Z" title="更新于 2026-05-30 03:25:58">2026-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/tdfbcc/" title="代码里没写下来的那条规矩：AI 时代被放大的老 bug"><img src="https://i.yuki.sh/img-original/img/2016/10/16/21/06/58/59502083_p0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="代码里没写下来的那条规矩：AI 时代被放大的老 bug"/></a><div class="content"><a class="title" href="/posts/tdfbcc/" title="代码里没写下来的那条规矩：AI 时代被放大的老 bug">代码里没写下来的那条规矩：AI 时代被放大的老 bug</a><time datetime="2026-05-29T19:10:59.000Z" title="更新于 2026-05-30 03:10:59">2026-05-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2025 - 2026 By Sentixxx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn" target="_blank">沪ICP备2025112621号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="Sentixxx">Sentixxx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://sentixxx.github.io/posts/teyg1w/">https://sentixxx.github.io/posts/teyg1w/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://sentixxx.github.io" target="_blank">墨池码窖 | Sentixxx's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Agent/">Agent</a><a class="post-meta__tags" href="/tags/VibeCoding/">VibeCoding</a><a class="post-meta__tags" href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">开发环境</a><a class="post-meta__tags" href="/tags/%E5%B7%A5%E5%85%B7%E9%93%BE/">工具链</a></div><div class="post-share"><div class="social-share" data-image="https://i.yuki.sh/img-original/img/2023/08/07/00/01/22/110595990_p0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/tdygvm/" title="20260424003810"><img class="cover" src="https://i.yuki.sh/img-original/img/2017/04/28/00/14/33/62608184_p0.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-24</div><div class="info-item-2">20260424003810</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文  最近发现一个 agent 抽鞭子技巧，不停追问他有没有更好的方案，就把更好的端上来了  我去，还能自动追踪 PR，又是小惊喜   又琢磨了一个小技巧：使用 /btw ，提示词 “评估一下现在的上下文质量”，就可以有一个稍微明确一点的质量感知。  AskUserQuestion 这个东西做的确实好，规划相关的 skill 复用这个工具很舒服，怪不得 A/ 要用这个  文档的量级到达某个级别，人类 review 起来也一样困难，和代码差不多了  github 账号被封了，似乎是 gh 写评论调用被风控了，这也体现出 mcp 的优势， 封装了一套固有的客户端逻辑 claude mcp add-json github &#x27;&#123;&quot;type&quot;: &quot;http&quot;,&quot;url&quot;:...</div></div></div></a><a class="pagination-related" href="/posts/te413j/" title="血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录"><img class="cover" src="https://i.yuki.sh/img-original/img/2020/10/22/00/30/01/85158661_p0.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-27</div><div class="info-item-2">血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文。   写在前面 作为一个折腾爱好者，最近在弄让 AI Agent 自动跑项目、提 PR 的工作流。结果一开始没做频率限制，专门给 Agent 用的 GitHub 小号用裸的 gh CLI 短时间内狂刷 PR 和评论，直接被 GitHub 的防滥用风控当场封禁（Suspended）。 痛定思痛后，我决定引入 MCP（Model Context Protocol）来接管 GitHub 操作，因为官方 MCP 自带了完备的限流和退避机制。但同时，为了让 Agent 还能正常执行 git push，我依然在容器的环境变量里留了一个 PAT（Personal Access Token）。 结果在观察日志时，我发现了一个更危险的现象：大模型一旦发现 MCP 工具调用失败或者图省事，它就会直接去翻环境变量里的 PAT，然后自己手搓 curl 脚本去直连 GitHub API！而且它的脚本一旦报错，它为了修 Bug...</div></div></div></a><a class="pagination-related" href="/posts/tdfbcc/" title="代码里没写下来的那条规矩：AI 时代被放大的老 bug"><img class="cover" src="https://i.yuki.sh/img-original/img/2016/10/16/21/06/58/59502083_p0.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-13</div><div class="info-item-2">代码里没写下来的那条规矩：AI 时代被放大的老 bug</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文 本文部分内容采用 AI 辅助生成，核心素材与推演逻辑均提炼自排查该 Bug 时的真实 Session 对话文本。 越读越烂，返工一下 —— 2026.4.20   一个矛盾的回复 事情的起因源于 cc-connect 的一个 bug：同一分钟内，Telegram 群收到两条互相矛盾的回复  一条说&quot;会话已结束&quot; 另一条说“前一条请求仍在处理”。  显然这是矛盾的。 我很快梳理出了问题的链路，并提交了响应的 PR。  问题排查 第一层，agent 进程没死透。 agent/claudecode/session.go 的 readLoop 用 bufio.Scanner 读 stdout。Claude CLI 退出时，若有子孙进程继承了 stdout fd，管道不会 EOF，scanner 就一直阻塞。cs.ctx.Done() 触发时，defer 里虽然会关 channel，但那一路逻辑分支没有关 stdout，于是 readLoop...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://img.sentixx.top/2026/06/77d31ea0d9499bea27998a3dad6e6061.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Sentixxx</div><div class="author-info-description">记录点点滴滴</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">89</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Sentixxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" style="color: #ff6600;"></i></a><a class="social-icon" href="https://github.com/Sentixxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:senticx@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/12992364" target="_blank" title="bilibili"><i class="fab fa-bilibili" style="color: #74c0fC;"></i></a><a class="social-icon" href="https://www.zhihu.com/people/sentix" target="_blank" title="zhihu"><i class="fab fa-zhihu" style="color: #008EFF;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%BF%E4%B8%BB%E6%9C%BA"><span class="toc-number">1.</span> <span class="toc-text"> 宿主机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%90%86%E7%BD%91%E7%BB%9C%E5%88%86%E6%B5%81"><span class="toc-number">1.1.</span> <span class="toc-text"> 代理网络分流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%8C%82%E8%BD%BD"><span class="toc-number">1.2.</span> <span class="toc-text"> 目录挂载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B2%99%E7%9B%92"><span class="toc-number">1.3.</span> <span class="toc-text"> 沙盒</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%9C%BA%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text"> 本地机器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E9%80%9A%E8%B7%A8%E7%AB%AF%E5%9B%BE%E7%89%87%E5%89%AA%E8%B4%B4%E6%9D%BF"><span class="toc-number">2.1.</span> <span class="toc-text"> 打通跨端图片剪贴板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D-shiftenter-%E4%BA%A4%E4%BA%92%E5%90%9E%E9%94%AE%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.</span> <span class="toc-text"> 修复 Shift+Enter 交互吞键问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BF%E9%80%8F-ssh-%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%BC%B9%E7%AA%97%E9%80%9A%E7%9F%A5"><span class="toc-number">2.3.</span> <span class="toc-text"> 穿透 SSH 的系统弹窗通知</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">2.4.</span> <span class="toc-text"> 附录</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/3c4a82e6/" title="渲染测试"><img src="https://cdn.gallery.uuanqin.top/img/mdcover65465.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="渲染测试"/></a><div class="content"><a class="title" href="/posts/3c4a82e6/" title="渲染测试">渲染测试</a><time datetime="2026-06-11T09:16:03.000Z" title="更新于 2026-06-11 17:16:03">2026-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/tftd0vam/" title="测试"><img src="https://i.yuki.sh/img-master/img/2023/08/04/00/00/35/110502620_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="测试"/></a><div class="content"><a class="title" href="/posts/tftd0vam/" title="测试">测试</a><time datetime="2026-06-11T07:56:37.000Z" title="更新于 2026-06-11 15:56:37">2026-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/tggeip/" title="从一个状态栏到一套框架：AI 如何改变了软件的写法"><img src="https://i.yuki.sh/img-master/img/2021/07/28/12/36/14/91553661_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从一个状态栏到一套框架：AI 如何改变了软件的写法"/></a><div class="content"><a class="title" href="/posts/tggeip/" title="从一个状态栏到一套框架：AI 如何改变了软件的写法">从一个状态栏到一套框架：AI 如何改变了软件的写法</a><time datetime="2026-06-11T07:07:50.000Z" title="更新于 2026-06-11 15:07:50">2026-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/tg7p64/" title="谈谈Codex的一些坑"><img src="https://i.yuki.sh/img-master/img/2019/11/19/00/08/56/77884053_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="谈谈Codex的一些坑"/></a><div class="content"><a class="title" href="/posts/tg7p64/" title="谈谈Codex的一些坑">谈谈Codex的一些坑</a><time datetime="2026-06-05T22:32:35.000Z" title="更新于 2026-06-06 06:32:35">2026-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/tdfbcc/" title="代码里没写下来的那条规矩：AI 时代被放大的老 bug"><img src="https://i.yuki.sh/img-original/img/2016/10/16/21/06/58/59502083_p0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="代码里没写下来的那条规矩：AI 时代被放大的老 bug"/></a><div class="content"><a class="title" href="/posts/tdfbcc/" title="代码里没写下来的那条规矩：AI 时代被放大的老 bug">代码里没写下来的那条规矩：AI 时代被放大的老 bug</a><time datetime="2026-05-29T19:10:59.000Z" title="更新于 2026-05-30 03:10:59">2026-05-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2025 - 2026 By Sentixxx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn" target="_blank">沪ICP备2025112621号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
   const showKatex = () => {
     document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
   }
@@ -255,25 +404,4 @@ btf.addGlobalFn('pjaxComplete', () => {
   }
 
   showKatex()
-})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
-        $('a').each(function() {
-          const $this = $(this);
-          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== '' || window.location.host) {
-                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script></body></html>
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script>(function(){if(!document.querySelector("pre.mermaid"))return;var s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js";s.onload=function(){window.mermaid.initialize({startOnLoad:false,theme:"dark"});window.mermaid.run({querySelector:"pre.mermaid"});};document.head.appendChild(s);})();</script><!-- hexo injector body_end end --></body></html>
