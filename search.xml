@@ -4,11 +4,46 @@
   
     
     <entry>
-      <title>从一个状态栏到一套框架：AI 如何改变了软件的写法</title>
-      <link href="/posts/tggeip/"/>
-      <url>/posts/tggeip/</url>
+      <title>WOB rainy75键盘踩坑</title>
+      <link href="/posts/tgqosx/"/>
+      <url>/posts/tgqosx/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a href="https://blog.sentixx.top/posts/tggeip">原文</a></p></blockquote><p>随着 LLM 编码能力的飞速提升，结合我近期的观察，技术圈似乎正在向同一个方向演进：<strong>利用 AI 构建高度客制化的个人软件</strong>。</p><p>这一趋势的背后有两个主要推手。首先，不少开源项目在大量接收 AI 生成的 PR 后，代码质量出现了肉眼可见的下滑——与其在泥沙俱下的代码海里做 Code Review，不如自己来。其次，大家逐渐意识到，与其苦等上游更新，自己 Fork 甚至从零重写来得更快，而且更贴合自己的实际需求。多年前<strong>人人皆可写软件</strong>的设想，似乎正以一种始料未及的方式悄然成真。</p><p>这也引发了我的深思：在 AI 时代，什么样的软件形态才是真正的未来？</p><h2 id="从一个状态栏插件说起"><a class="markdownIt-Anchor" href="#从一个状态栏插件说起"></a> 从一个状态栏插件说起</h2><p>最近因为订阅额度紧俏，我开始尝试在 <a href="https://pi.dev/">pi</a> 中使用 deepseek 作为一些简单的任务的替代品来节约 token 的使用，之所以使用 <code>pi</code> 而不是直接在 codex 或是 claudecode 里接入 deepseek 的原因有两点：</p><ol><li>codex 和 claudecode 我用的是订阅计划，切换模型很麻烦，需要另外下载一个新的软件来实现切换的功能</li><li>正如前文所说，codex 和 claudecode 的 harness 我有很多不满意的地方，使用中也堆积了很多槽点<br />经过一番物色之后，我选择了 <code>pi</code>，因为它的实现最简单，也暴露了足够的接口可以自己定义实现细节（尽管其中一些接口的定义很奇怪，感觉会堆成屎山）。</li></ol><p>开始使用之后，我就需要对其做一些改造，最先让人想动手的自然是外观——感知层面最直观，<code>pi</code> 的 statusline 相当简陋，所有信息都缩成一团。</p><p><img src="https://img.sentixx.top/2026/06/5d2497647f27acd6118d3aa93bd16c30.png" alt="pi 默认状态栏：信息简略、布局拥挤" /></p><div align="center" style="font-size: 12px; color: #888888; margin-top: 5px;">pi 默认状态栏：信息简略、布局拥挤</div><p>官网提供的示例虽然看起来有模有样，但在我看来，里面的部分信息显得冗余，而我真正想添加的自定义信息又无从下手。我在官方的插件列表里搜刮了一圈，也没找到一个称心如意的（也可能是我漏掉了）。最后勉强找到了一个 <a href="https://github.com/tianrendong/pi-bar">pi-bar</a>，但是这个插件的作者不知道为啥省略了大量关键信息，仅提供的几个基础选项也全是被写死的，毫无修改弹性；更离谱的是，里面居然还塞进了一个 AI 总结功能，导致整个插件变得异常臃肿。于是我决定在其基础上进行改写，这就有了 <a href="https://github.com/moesin-lab/pi-info">pi-info</a>。</p><blockquote><p>FUN FACT: 其实我最初打算将它命名为 <code>pi-statusline</code>。这个名字更直观，毕竟用过 claudecode 的人都对 Statusline 这个称呼很熟悉。但在发布时我才发现，这个名字已被占用。转念一想，<code>statusline</code> 打字确实有些费劲，最终决定将其改名为 <code>pi-info</code>。不过说实话，我至今对这个名字都不算特别满意……</p></blockquote><p><code>pi-info</code> 最大的灵感其实来自于 claudecode 的 statusline 的设计，cc 的 statusline 实际上就是一个会被自动加载的脚本文件，用户可以使用 agent 对其进行自由编辑以决定展示的信息，但是这样也太简陋了！你只能通过编辑难以阅读的 sh 脚本来决定展示信息，这一点也不用户友好，于是我进行了一点改造，将所有展示的信息划分为元素以及连接符，又从 <a href="https://starship.rs/">starship</a> 中寻找了一些灵感，以一套模板语法对元素进行风格化，这样用户就能通过简单的配置文件对 statusline 进行自由改造了，如下所示。</p><p><img src="https://img.sentixx.top/2026/06/54fd98947e85f7592a051768e90a04e2.png" alt="" /></p><div align="center" style="font-size: 12px; color: #888888; margin-top: 5px;">pi-info 自定义配置后的状态栏效果</div><h2 id="跨越高定制性的门槛"><a class="markdownIt-Anchor" href="#跨越高定制性的门槛"></a> 跨越&quot;高定制性&quot;的门槛</h2><p>写完之后我不禁开始思考：当定制一个状态栏从&quot;读文档、写脚本&quot;变成了&quot;说一句话&quot;，这件事意味着什么？未来我们需要的，究竟是怎样的软件形态？</p><p>我觉得 <code>pi</code> 以及我写的这个插件提供了一个很好的范例。每个人都有高度个性化的工作流，因此，<strong>最好的软件应该是一个完善的底层框架</strong>——它只需提供一套够用的默认预设，并暴露出足够丰富的接口设施，允许用户将自己的逻辑代码&quot;注入&quot;其中。</p><p>在过去，这种&quot;高可定制性&quot;往往意味着极高的学习成本——看看 Vim 和 Emacs 就知道了，哪怕只是简单地修改一个状态栏，也需要你去翻阅晦涩的文档、学习专属的脚本语言。这让大部分普通用户望而却步，只能被迫接受开发者教你做事的默认逻辑。</p><p><strong>但 LLM 的出现彻底改变了这一现状，它填平了这道鸿沟。</strong></p><p>如今，我们不再需要亲自去啃那些 API 文档。只要软件提供了清晰、结构化、易于机器阅读的接口（比如我刚才提到的那套模板语法），LLM 就能完美充当那个&quot;懂代码的私人管家&quot;。我只需要用自然语言对 DeepSeek 或 Claude 说：“把这里的时间格式改成 24 小时制，前面加上一个时钟的 emoji，并且根据 CPU 的占用率改变颜色”，它就能瞬间生成对应的配置文件。</p><h2 id="ai-时代的软件架构核心ai-native"><a class="markdownIt-Anchor" href="#ai-时代的软件架构核心ai-native"></a> AI 时代的软件架构核心：AI-Native</h2><p>我在这里说的 “AI-Native”，指的是软件在架构层面就被设计为可以被 AI 理解、操作和集成，而不仅仅是在表面上接了一个 AI 聊天框。这就引出了我对未来 AI 时代软件形态的进一步猜想：<strong>AI 友好的底层架构将比大而全的 UI 交互更重要。</strong></p><p>未来的优秀软件，其核心竞争力可能不再是堆砌了多少个开箱即用的功能按钮，而是：</p><ul><li><strong>高度的模块化与解耦</strong>：核心逻辑与前端展示彻底分离。LLM 在理解小上下文时远比处理一个大单体代码库精准——模块化意味着每一次 AI 介入只需要处理它关心的那个局部，出错的概率和影响范围都更可控。</li><li><strong>声明式且易于生成的配置</strong>：清晰的语法或 Schema 设计，让 AI 能够精准输出而不产生幻觉，最好携带一套语法 checker 让 AI 能及时验证。一套严格的 Schema 相当于给 AI 配了一根护栏——它知道边界在哪，生成的内容就不会跑偏。</li><li><strong>友好的容错机制</strong>：既然代码是 AI 生成的，出错在所难免，软件需要提供一个安全且足够强大的兜底机制。比如加载失败时静默回退到默认配置、界面渲染异常时自动隔离出错模块——这些安全措施让用户可以无心理负担地频繁试错，而这正是 AI 驱动迭代的节奏所需要的。</li></ul><p>当然，强调底层架构并不意味着交互体验不再重要，而是说<strong>交互本身也应当是高度可塑的</strong>。开发者大可以去精心打磨一套足够优秀的默认交互作为基底，但在此之外，务必要把最终决定权交还给用户，为他们留下充分的自行调整与魔改空间。</p><p>当软件的定制门槛从“学一门 DSL、读半本文档”降低到“说一句话”，个性化就不再是少数极客的特权，而是每个普通用户的日常操作。回到文章开头提到的开源软件被低质量 AI PR 淹没的现象，这实际上就是旧有的“大一统”协作模式在 AI 时代的阵痛——既然用 AI 手搓一个完美契合自己工作流的工具（或是对上游项目进行魔改）的时间，比你去给上游提 Issue、写 PR、等 Code Review、等合并发版的时间还要短得多，那我们为什么还要去凑合使用别人定义的公共版本呢？</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a href="https://blog.sentixx.top/posts/tgqosx">原文</a></p></blockquote><p>最近终于是要毕业了，于是准备换掉我原来陪伴了我三年的 niz 静电容，换一把新键盘，经过一番物色，我在视频博主的推荐下选择了<br /><a class="link-card" href="https://post.smzdm.com/p/a96okq97" title="__desc__">WOB rainy75</a><br />这把键盘，然后马上给它物色了一套心仪的键帽：</p><p><img src="https://img.sentixx.top/2026/06/fcb9e9bc18973f7b1e2a772f9c48650d.JPG" alt="IMG_2633..JPG" /></p><div align="center" style="font-size: 12px; color: #888888; margin-top: 5px;">加装了键帽的 rainy75</div>看上去还挺不错！<p>但是随着我开始在 Mac 下使用，问题出现了……</p><p>第一个问题是我发现这个键盘的 2.4G 开关居然是放在了 CapsLock 键下面。</p><p>是的，在键帽的下面，这就导致如果你想要打开 2.4G 就需要把键帽拆掉，然后用手把开关打开，再把键帽给安排上去。</p><p>好在这样的设计你只需要拆装一次，后面就可以通过键盘的 Fn 组合键进行切换——不过这样一来，我们就没法主动控制键盘的节电了，很麻烦。</p><p>第二个问题更加离谱，如果你在 Mac 下使用这把键盘，那你有福了。</p><p>我们知道 Mac 的键位由 Control、Option 以及 Command 键组成，而 Command 键位在这三个键中处于第三列，但是在很多键盘上的却映射到了 Win 键上，这就需要键盘去对 Win 和 Alt 键进行对调以保证正常的使用。</p><p>这把键盘自然是提供了类似的功能，你只需要按住 Fn+M 三秒，就可以切换到 Mac 模式，将两个键的功能进行对调。但是这还没完，也不知道厂商的脑子怎么想的，在 Win 模式下，Fn+F 区提供了一组功能键，如音量调整等，但是在 Mac 模式下，厂商居然将这些功能默认放到了 F 区，并且将 Fn 的组合直接删了。恭喜你，在 Mac 模式下，你可以和你的的 F 区说再见了。</p><p><img src="https://img.sentixx.top/2026/06/4bebee36fc34aafc992b4aa9eb08a9ba.png" alt="" /></p><div align="center" style="font-size: 12px; color: #888888; margin-top: 5px;">是的，就是这么搞笑</div><h1 id="解决方法"><a class="markdownIt-Anchor" href="#解决方法"></a> 解决方法</h1><p>在和客服售后 battle 了半小时无果后，我决定自己寻找办法。</p><p>研究了一会，我发现这款键盘是支持 VIA 改键的，那我们如果想实现我们需要的效果，不就是调转一下 Alt 和 Win 键么，别的什么都不需要改。</p><p>于是我去<a href="https://woblab.cn/col.jsp?id=124">官网</a>下载了 VIA 驱动所需的配置文件，然后将 Fn+M 的功能调整为了切换到层2，最后在层 2 中将 Alt 和 Win 调转，一切就大功告成了！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术实践 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WOB </tag>
+            
+            <tag> Rainy75 </tag>
+            
+            <tag> 机械键盘 </tag>
+            
+            <tag> VIA </tag>
+            
+            <tag> macOS </tag>
+            
+            <tag> 键盘改键 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>AI 时代，什么样的软件还能留下用户？</title>
+      <link href="/posts/tgqkz7/"/>
+      <url>/posts/tgqkz7/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a href="https://blog.sentixx.top/posts/tgqkz7">原文</a></p></blockquote><h1 id="开源壁纸软件"><a class="markdownIt-Anchor" href="#开源壁纸软件"></a> 开源壁纸软件</h1><p>今晚，我像往常一样刷了会视频，突然看到了一个比较吸引我的视频：<br /><a class="link-card" href="https://www.bilibili.com/video/BV1WMjN6cEKC" title="B 站链接">可能是Mac上最好用的开源壁纸软件，wallpaper engine近乎完美渲染</a><br />，我点进去一看，我去！居然可以从 wallpaper engine 的创意工坊直接下载壁纸！我去！居然还能从 wallheaven 爬壁纸！这一下子解决了我之前在 macOS 上遇到的好几个关于壁纸的痛点，于是乎我马上找到了这个项目的地址，准备下载下来体验一下，然后我就发现了几个大问题：</p><ol><li>UI 设计非常 AI，项目整体风格和 MacOS 的设计语言并不搭配</li><li>我发现下载实际上是通过 <code>steamCMD</code> 来实现的，这就要求我们去输入自己的 steam 密码与令牌<br />第二个问题让我有点担心，于是我就把源码也拉下来快速 vibereading 了一遍，很快我就发现了代码里关于密码的处理有相当多的 AI 幻觉，似乎开发者完全是处于一种盲目的 wishcoding 的状态，在项目中我也看不到任何对于项目本身的控制上的尝试，文档的维护非常不及时，文档中声明的 URL 仓库实际处于404的状态，并且相关的代码其实也没有用到这些。</li></ol><p><img src="https://img.sentixx.top/2026/06/65278b91365ae2d07ba765b8428e88dd.png" alt="WaifuX 项目界面截图" /></p><div align="center" style="font-size: 12px; color: #888888; margin-top: 5px;">WaifuX 项目界面截图</div><h1 id="类似的问题"><a class="markdownIt-Anchor" href="#类似的问题"></a> 类似的问题</h1><p>其实类似的问题我早就在其他的项目里遇到过了，这就不得不提 <code>cc-connect</code> 这个项目， 刚开始接触的时候我还兴高采烈地去修了几个 bug，随之而来我发现 owner 对于所有的 PR 似乎都是 AI 审核，对于提出的 issue 也会直接交给 AI 写，利用 AI 本无可厚非，但前提是必须保证代码质量。随着新版本更新，软件冒出了成吨的 Bug。当时，群友的一番操作启发了我：与其在烂泥潭里打滚，不如自己动手。于是我果断抛弃它，开始开发属于自己的 IM 桥接软件。</p><blockquote><p>这里插播一条广告：<a href="https://github.com/moesin-lab/agent-nexus">https://github.com/moesin-lab/agent-nexus</a><br />吸取了 <code>cc-connect</code> 的教训，我在开发 <code>agent-nexus</code> 时把文档和基础设施的建设放在了极高的优先级。不过这也让我走了一点弯路：或许“小步快跑、先迭代出可用原型，再周期性修复文档”才是更务实的路径。</p></blockquote><h1 id="当-ai-赋予我们随手复刻的能力"><a class="markdownIt-Anchor" href="#当-ai-赋予我们随手复刻的能力"></a> 当 AI 赋予我们随手复刻的能力</h1><p>看完 WaifuX 之后，我又顺手搜了几个同类项目。功能都差不多：壁纸下载、Wallpaper Engine 兼容、壁纸管理。问题也差不多：目录随意、文件乱放、UI 模板味很重，文档和实际代码也经常对不上。</p><p>这不一定是死罪。很多个人项目一开始都这样，先能跑，再慢慢修。但这类软件要接 Steam、要碰账号，还可能长期在本机跑，我就很难只看功能。底下如果太毛躁，我会本能地不放心。</p><p><img src="https://img.sentixx.top/2026/06/6c912e902702494f300176729f9f5797.png" alt="一组功能相近的壁纸软件项目" /></p><div align="center" style="font-size: 12px; color: #888888; margin-top: 5px;">一组功能相近的壁纸软件项目</div><p>然后脑子里冒出一个念头：要不自己搓一个？</p><p>以前这想法挺离谱。现在没那么离谱了。需求边界清楚的话，AI 真能很快搭出一个替代品。未必精致，但能跑，能按我的习惯改。</p><p>于是“不喜欢就换一个”，慢慢变成了“不喜欢就重做一个”。</p><p>这一开始很爽，爽完之后又有点吓人。因为我能这么想，别人当然也能这么想。</p><blockquote><p>但自己搓也不是免费的。最近我自己的小工具越写越多，维护成本也开始反过来咬人。每个项目都有依赖要升、bug 要修、文档要补，一开始爽，后面全变成待办。精力不够的时候，我也会重新回到现成方案，只要它足够稳、足够有人管。说到底，现在的 AI 还没到能把质量完全托管出去的程度，很多时候还是得我自己盯着。</p></blockquote><p>一个软件如果只是“有这些功能”，那它其实挺危险的。功能最容易被复刻。真正让人留下来的，反而是更琐碎的东西：默认取舍刚好顺手，配置能改，历史数据已经攒在里面，某些小毛病你也知道怎么绕开。</p><p>很多软件我不是不能换，只是懒得换。快捷键调好了，插件配好了，历史都在里面，工作流也已经顺了。换一个新软件，就算功能一样或者说稍微好一点，也要重新磨一遍。对工具来说，这种懒得换其实很重要。</p><p>所以我现在看工具，会比以前更在意它有没有自己的方向。功能可以少一点，UI 可以粗一点，甚至代码也可以先乱一点，但至少得看得出作者知道自己想要什么。最怕的是热门功能堆一堆，底下没有判断。那种项目看着热闹，但也最容易被另一个差不多的项目替掉。</p><p>这也是我之前那篇<br /><a class="link-card" href="/posts/tggeip" title="__desc__">AI 如何改变软件写法</a><br />里想说的问题。AI 让“改软件”变得便宜之后，软件最好不要把自己做成一个封死的成品。默认能用，想折腾的时候也有地方下手，这可能比单纯堆功能更重要。</p><h1 id="面向-ai-的新软件"><a class="markdownIt-Anchor" href="#面向-ai-的新软件"></a> 面向 AI 的新软件</h1><p>写到这里我又会跳到另一个问题：上面这些判断，其实默认了人还在亲自打开软件、点击按钮、感受界面。</p><p>如果以后不是这样了呢？</p><p>前阵子我看了一个关于<br /><a class="link-card" href="https://www.bilibili.com/video/BV1kgEM6VEvL" title="__desc__">VibeOS</a><br />的视频，印象很深。它展示的不是传统意义上的 App，而是由 AI 根据意图临时组织界面和流程。你不需要先想我要打开哪个软件，而是直接说要做什么，中间那层 Agent 再去调工具。</p><p>如果真变成这样，软件的评价标准会变得很奇怪。人觉得顺不顺手可能没那么重要了，Agent 更在乎接口稳不稳定、状态能不能读、操作能不能被自动化。一个软件可能 UI 很一般，但特别适合被 Agent 调用；另一个软件可能人用着很舒服，但对 Agent 来说就是一团黑盒。</p><p>这又把问题变了一下：不是“什么软件能留下用户”，而是“什么软件会被 Agent 选中”。</p><p>不过我也不太相信人会完全消失在交互之外。创作工具、专业工具、游戏，或者那些本来就靠手感和情绪价值撑起来的软件，应该还是会有人想亲自用。就像手机已经吞掉了很多轻量任务，但真正需要精细控制的时候，我还是会坐回电脑前。</p><h1 id="最后的稀缺品"><a class="markdownIt-Anchor" href="#最后的稀缺品"></a> 最后的稀缺品</h1><p>有趣的是，最近我又看到一篇<a href="https://mp.weixin.qq.com/s/6ZT1yidL2NMXrGgLAytT2g">文章</a>，里面的一些言论很有意思：</p><blockquote><p>不是因为人类做得比AI更好，而是因为“人类做的”这件事本身，拥有了需要主动认证的稀缺属性。</p></blockquote><p>以前看到这种说法，我大概会觉得有点矫情。软件不就是拿来用的吗，谁写的有那么重要？</p><p>但现在我没那么确定了。</p><p>当 AI 把“做出一个能用的东西”变得越来越便宜之后，真正稀缺的可能反而是那些不那么标准化的部分：作者的取舍、奇怪的坚持、对细节的洁癖，还有软件在长期使用中和用户慢慢磨出来的习惯。</p><p>功能可以复制，界面可以重画，代码可以重写。但一个软件到底有没有自己的脾气，这件事没那么好补。</p>]]></content>
       
       
       <categories>
@@ -20,17 +55,58 @@
       
         <tags>
             
+            <tag> Agent </tag>
+            
+            <tag> VibeCoding </tag>
+            
             <tag> AI </tag>
             
             <tag> LLM </tag>
             
             <tag> 软件开发 </tag>
             
+            <tag> 产品思考 </tag>
+            
+            <tag> 开源软件 </tag>
+            
+            <tag> 独立软件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>从一个状态栏到一套框架：AI 如何改变了软件的写法</title>
+      <link href="/posts/tggeip/"/>
+      <url>/posts/tggeip/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a href="https://blog.sentixx.top/posts/tggeip">原文</a></p></blockquote><p>随着 LLM 编码能力的飞速提升，结合我近期的观察，技术圈似乎正在向同一个方向演进：<strong>利用 AI 构建高度客制化的个人软件</strong>。</p><p>这一趋势的背后有两个主要推手。首先，不少开源项目在大量接收 AI 生成的 PR 后，代码质量出现了肉眼可见的下滑——与其在泥沙俱下的代码海里做 Code Review，不如自己来。其次，大家逐渐意识到，与其苦等上游更新，自己 Fork 甚至从零重写来得更快，而且更贴合自己的实际需求。多年前<strong>人人皆可写软件</strong>的设想，似乎正以一种始料未及的方式悄然成真。</p><p>这也引发了我的深思：在 AI 时代，什么样的软件形态才是真正的未来？</p><h2 id="从一个状态栏插件说起"><a class="markdownIt-Anchor" href="#从一个状态栏插件说起"></a> 从一个状态栏插件说起</h2><p>最近因为订阅额度紧俏，我开始尝试在 <a href="https://pi.dev/">pi</a> 中使用 deepseek 作为一些简单的任务的替代品来节约 token 的使用，之所以使用 <code>pi</code> 而不是直接在 codex 或是 claudecode 里接入 deepseek 的原因有两点：</p><ol><li>codex 和 claudecode 我用的是订阅计划，切换模型很麻烦，需要另外下载一个新的软件来实现切换的功能</li><li>正如前文所说，codex 和 claudecode 的 harness 我有很多不满意的地方，使用中也堆积了很多槽点<br />经过一番物色之后，我选择了 <code>pi</code>，因为它的实现最简单，也暴露了足够的接口可以自己定义实现细节（尽管其中一些接口的定义很奇怪，感觉会堆成屎山）。</li></ol><p>开始使用之后，我就需要对其做一些改造，最先让人想动手的自然是外观——感知层面最直观，<code>pi</code> 的 statusline 相当简陋，所有信息都缩成一团。</p><p><img src="https://img.sentixx.top/2026/06/5d2497647f27acd6118d3aa93bd16c30.png" alt="pi 默认状态栏：信息简略、布局拥挤" /></p><div align="center" style="font-size: 12px; color: #888888; margin-top: 5px;">pi 默认状态栏：信息简略、布局拥挤</div><p>官网提供的示例虽然看起来有模有样，但在我看来，里面的部分信息显得冗余，而我真正想添加的自定义信息又无从下手。我在官方的插件列表里搜刮了一圈，也没找到一个称心如意的（也可能是我漏掉了）。最后勉强找到了一个 <a href="https://github.com/tianrendong/pi-bar">pi-bar</a>，但是这个插件的作者不知道为啥省略了大量关键信息，仅提供的几个基础选项也全是被写死的，毫无修改弹性；更离谱的是，里面居然还塞进了一个 AI 总结功能，导致整个插件变得异常臃肿。于是我决定在其基础上进行改写，这就有了 <a href="https://github.com/moesin-lab/pi-info">pi-info</a>。</p><blockquote><p>FUN FACT: 其实我最初打算将它命名为 <code>pi-statusline</code>。这个名字更直观，毕竟用过 claudecode 的人都对 Statusline 这个称呼很熟悉。但在发布时我才发现，这个名字已被占用。转念一想，<code>statusline</code> 打字确实有些费劲，最终决定将其改名为 <code>pi-info</code>。不过说实话，我至今对这个名字都不算特别满意……</p></blockquote><p><code>pi-info</code> 最大的灵感其实来自于 claudecode 的 statusline 的设计，cc 的 statusline 实际上就是一个会被自动加载的脚本文件，用户可以使用 agent 对其进行自由编辑以决定展示的信息，但是这样也太简陋了！你只能通过编辑难以阅读的 sh 脚本来决定展示信息，这一点也不用户友好，于是我进行了一点改造，将所有展示的信息划分为元素以及连接符，又从 <a href="https://starship.rs/">starship</a> 中寻找了一些灵感，以一套模板语法对元素进行风格化，这样用户就能通过简单的配置文件对 statusline 进行自由改造了，如下所示。</p><p><img src="https://img.sentixx.top/2026/06/54fd98947e85f7592a051768e90a04e2.png" alt="" /></p><div align="center" style="font-size: 12px; color: #888888; margin-top: 5px;">pi-info 自定义配置后的状态栏效果</div><h2 id="跨越高定制性的门槛"><a class="markdownIt-Anchor" href="#跨越高定制性的门槛"></a> 跨越&quot;高定制性&quot;的门槛</h2><p>写完之后我不禁开始思考：当定制一个状态栏从&quot;读文档、写脚本&quot;变成了&quot;说一句话&quot;，这件事意味着什么？</p><h1 id="未来我们需要的究竟是怎样的软件形态"><a class="markdownIt-Anchor" href="#未来我们需要的究竟是怎样的软件形态"></a> 未来我们需要的，究竟是怎样的软件形态？</h1><p>我觉得 <code>pi</code> 以及我写的这个插件提供了一个很好的范例。每个人都有高度个性化的工作流，因此，<strong>最好的软件应该是一个完善的底层框架</strong>——它只需提供一套够用的默认预设，并暴露出足够丰富的接口设施，允许用户将自己的逻辑代码&quot;注入&quot;其中。</p><p>在过去，这种&quot;高可定制性&quot;往往意味着极高的学习成本——看看 Vim 和 Emacs 就知道了，哪怕只是简单地修改一个状态栏，也需要你去翻阅晦涩的文档、学习专属的脚本语言。这让大部分普通用户望而却步，只能被迫接受开发者教你做事的默认逻辑。</p><p><strong>但 LLM 的出现彻底改变了这一现状，它填平了这道鸿沟。</strong></p><p>如今，我们不再需要亲自去啃那些 API 文档。只要软件提供了清晰、结构化、易于机器阅读的接口（比如我刚才提到的那套模板语法），LLM 就能完美充当那个&quot;懂代码的私人管家&quot;。我只需要用自然语言对 DeepSeek 或 Claude 说：“把这里的时间格式改成 24 小时制，前面加上一个时钟的 emoji，并且根据 CPU 的占用率改变颜色”，它就能瞬间生成对应的配置文件。</p><h2 id="ai-时代的软件架构核心ai-native"><a class="markdownIt-Anchor" href="#ai-时代的软件架构核心ai-native"></a> AI 时代的软件架构核心：AI-Native</h2><p>我在这里说的 “AI-Native”，指的是软件在架构层面就被设计为可以被 AI 理解、操作和集成，而不仅仅是在表面上接了一个 AI 聊天框。这就引出了我对未来 AI 时代软件形态的进一步猜想：<strong>AI 友好的底层架构将比大而全的 UI 交互更重要。</strong></p><p>未来的优秀软件，其核心竞争力可能不再是堆砌了多少个开箱即用的功能按钮，而是：</p><ul><li><strong>高度的模块化与解耦</strong>：核心逻辑与前端展示彻底分离。LLM 在理解小上下文时远比处理一个大单体代码库精准——模块化意味着每一次 AI 介入只需要处理它关心的那个局部，出错的概率和影响范围都更可控。</li><li><strong>声明式且易于生成的配置</strong>：清晰的语法或 Schema 设计，让 AI 能够精准输出而不产生幻觉，最好携带一套语法 checker 让 AI 能及时验证。一套严格的 Schema 相当于给 AI 配了一根护栏——它知道边界在哪，生成的内容就不会跑偏。</li><li><strong>友好的容错机制</strong>：既然代码是 AI 生成的，出错在所难免，软件需要提供一个安全且足够强大的兜底机制。比如加载失败时静默回退到默认配置、界面渲染异常时自动隔离出错模块——这些安全措施让用户可以无心理负担地频繁试错，而这正是 AI 驱动迭代的节奏所需要的。</li></ul><p>当然，强调底层架构并不意味着交互体验不再重要，而是说<strong>交互本身也应当是高度可塑的</strong>。开发者大可以去精心打磨一套足够优秀的默认交互作为基底，但在此之外，务必要把最终决定权交还给用户，为他们留下充分的自行调整与魔改空间。</p><p>当软件的定制门槛从“学一门 DSL、读半本文档”降低到“说一句话”，个性化就不再是少数极客的特权，而是每个普通用户的日常操作。回到文章开头提到的开源软件被低质量 AI PR 淹没的现象，这实际上就是旧有的“大一统”协作模式在 AI 时代的阵痛——既然用 AI 手搓一个完美契合自己工作流的工具（或是对上游项目进行魔改）的时间，比你去给上游提 Issue、写 PR、等 Code Review、等合并发版的时间还要短得多，那我们为什么还要去凑合使用别人定义的公共版本呢？</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔评论 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AI-GENERATED </tag>
+            
+            <tag> AI </tag>
+            
+            <tag> LLM </tag>
+            
+            <tag> 软件开发 </tag>
+            
+            <tag> 产品思考 </tag>
+            
             <tag> 软件架构 </tag>
             
             <tag> 开源 </tag>
-            
-            <tag> 产品思考 </tag>
             
         </tags>
       
@@ -107,7 +183,7 @@
       <link href="/posts/tft9gu/"/>
       <url>/posts/tft9gu/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a href="https://blog.sentixx.top/posts/tft9gu">原文</a></p></blockquote><p>最近写博客的时候大量上传了很多图片到我的 github 图床里，这种打擦边球的行为实际上是违反了 github 用户条例的，再加上今年 github 的基础设施状态疑似不是很好，以及前阵子我的小号有被封号的惨痛经历，这让我开始下定决心要转移我的图床。</p><p><img src="https://img.sentixx.top/pic/8dc8caf1b137b1db4055283c5b0c8be6_720.png" alt="8dc8caf1b137b1db4055283c5b0c8be6_720.png" /></p><p>既然决定要换，那就先来调研一下目前市面上有哪些可选方案。</p><h1 id="方案调研"><a class="markdownIt-Anchor" href="#方案调研"></a> 方案调研</h1><h2 id="付费方案"><a class="markdownIt-Anchor" href="#付费方案"></a> 付费方案</h2><h3 id="对象存储"><a class="markdownIt-Anchor" href="#对象存储"></a> 对象存储</h3><p>各家云厂商的付费方案大同小异，核心都是将资源托管在对象存储（如 OSS / S3）中，再通过 URL 进行外链访问。好处是你可以再接一个 CDN 资源给国内访问做加速，这样国内也能正常加载。坏处也比较明显：</p><ul><li>要钱</li><li>不续费也不备份的话，图片就会消失，而且存储下线后，图片的映射关系就丢了</li><li>如果需要自定义访问域名则需要备案<ul><li>这个问题倒还行，因为我之前因为折腾 <code>cardconjurer</code> 这个项目，已经完整地走过一遍阿里云 OSS 的方案流程了</li></ul></li></ul><h3 id="主机跑文件服务器"><a class="markdownIt-Anchor" href="#主机跑文件服务器"></a> 主机跑文件服务器</h3><p>这种方案就更小众了，你需要一台独立的服务器来搭建文件服务，并需要公网 IP 来提供访问入口。两相比较，它的维护成本和技术门槛甚至高于对象存储，实在不够省心。</p><h2 id="免费方案"><a class="markdownIt-Anchor" href="#免费方案"></a> 免费方案</h2><h2 id="github-仓库"><a class="markdownIt-Anchor" href="#github-仓库"></a> Github 仓库</h2><p>也就是我们现在在用的这种方案</p><ul><li>优势：部署简单，没啥复杂度</li><li>缺陷：有违规风险，国内访问没 CDN 加速，不挂梯子图片基本上加载不出来</li></ul><h2 id="cloudflare"><a class="markdownIt-Anchor" href="#cloudflare"></a> Cloudflare</h2><p>Cloudflare 是知名大善人了，经常提供各种免费资源供大家白嫖，这里也是经过一番调研，发现 cloudflare 提供了 10GB 的免费存储空间，并且每个月支持 100万次的写入操作，1000万次的下载操作，这诱人的免费额度还要什么自行车？于是我也是毫不犹豫地选择了这个方案。</p><h1 id="实施"><a class="markdownIt-Anchor" href="#实施"></a> 实施</h1><p><img src="https://img.sentixx.top/2026/05/62255c0c622c7266f5d6f5338e66a9d7.png" alt="" /></p><p>这里去 cloudflare 里激活一下 R2，然后配置一下秘钥以及域名相关配置</p><p><img src="https://img.sentixx.top/2026/05/29040213c654dd0ebd11c6cf5d87ae59.png" alt="" /></p><p>然后去配一下相关的秘钥，就大功告成了</p><p><img src="https://img.sentixx.top/2026/05/8f64f28307a9f4737523234ef76e63c2.png" alt="" /></p><p>接下来要做的就是迁移了</p><h1 id="迁移"><a class="markdownIt-Anchor" href="#迁移"></a> 迁移</h1><p>我这里迁移其实很简单，本地开任意的 agent，让其读一下 github 图床仓的结构，然后写个脚本调用 picgo 工具照搬到 R2，一切就解决了。</p><h1 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h1><ul><li><a href="https://sspai.com/post/90170">从零开始搭建你的免费图床系统 （Cloudflare R2 + WebP Cloud + PicGo）</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a href="https://blog.sentixx.top/posts/tft9gu">原文</a></p></blockquote><p>最近写博客的时候大量上传了很多图片到我的 github 图床里，这种打擦边球的行为实际上是违反了 github 用户条例的，再加上今年 github 的基础设施状态疑似不是很好，以及前阵子我的小号有被封号的惨痛经历，这让我开始下定决心要转移我的图床。</p><p><img src="https://img.sentixx.top/pic/8dc8caf1b137b1db4055283c5b0c8be6_720.png" alt="8dc8caf1b137b1db4055283c5b0c8be6_720.png" /></p><p>既然决定要换，那就先来调研一下目前市面上有哪些可选方案。</p><h1 id="方案调研"><a class="markdownIt-Anchor" href="#方案调研"></a> 方案调研</h1><h2 id="付费方案"><a class="markdownIt-Anchor" href="#付费方案"></a> 付费方案</h2><h3 id="对象存储"><a class="markdownIt-Anchor" href="#对象存储"></a> 对象存储</h3><p>各家云厂商的付费方案大同小异，核心都是将资源托管在对象存储（如 OSS / S3）中，再通过 URL 进行外链访问。好处是你可以再接一个 CDN 资源给国内访问做加速，这样国内也能正常加载。坏处也比较明显：</p><ul><li>要钱</li><li>不续费也不备份的话，图片就会消失，而且存储下线后，图片的映射关系就丢了</li><li>如果需要自定义访问域名则需要备案<ul><li>这个问题倒还行，因为我之前因为折腾 <code>cardconjurer</code> 这个项目，已经完整地走过一遍阿里云 OSS 的方案流程了</li></ul></li></ul><h3 id="主机跑文件服务器"><a class="markdownIt-Anchor" href="#主机跑文件服务器"></a> 主机跑文件服务器</h3><p>这种方案就更小众了，你需要一台独立的服务器来搭建文件服务，并需要公网 IP 来提供访问入口。两相比较，它的维护成本和技术门槛甚至高于对象存储，实在不够省心。</p><h2 id="免费方案"><a class="markdownIt-Anchor" href="#免费方案"></a> 免费方案</h2><h2 id="github-仓库"><a class="markdownIt-Anchor" href="#github-仓库"></a> Github 仓库</h2><p>也就是我们现在在用的这种方案</p><ul><li>优势：部署简单，没啥复杂度</li><li>缺陷：有违规风险，国内访问没 CDN 加速，不挂梯子图片基本上加载不出来</li></ul><h2 id="cloudflare"><a class="markdownIt-Anchor" href="#cloudflare"></a> Cloudflare</h2><p>Cloudflare 是知名大善人了，经常提供各种免费资源供大家白嫖，这里也是经过一番调研，发现 cloudflare 提供了 10GB 的免费存储空间，并且每个月支持 100万次的写入操作，1000万次的下载操作，这诱人的免费额度还要什么自行车？于是我也是毫不犹豫地选择了这个方案。</p><h1 id="实施"><a class="markdownIt-Anchor" href="#实施"></a> 实施</h1><p><img src="https://img.sentixx.top/2026/05/62255c0c622c7266f5d6f5338e66a9d7.png" alt="" /></p><p>这里去 cloudflare 里激活一下 R2，然后配置一下秘钥以及域名相关配置</p><p><img src="https://img.sentixx.top/2026/05/29040213c654dd0ebd11c6cf5d87ae59.png" alt="" /></p><p>然后去配一下相关的秘钥，就大功告成了</p><p><img src="https://img.sentixx.top/2026/05/8f64f28307a9f4737523234ef76e63c2.png" alt="" /></p><p>接下来要做的就是迁移了</p><h1 id="迁移"><a class="markdownIt-Anchor" href="#迁移"></a> 迁移</h1><p>我这里迁移其实很简单，本地开任意的 agent，让其读一下 github 图床仓的结构，然后写个脚本调用 picgo 工具照搬到 R2，一切就解决了。</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">配置本地的picgo，使用cloudflare R2，并且编写脚本将仓库内之前的所有图片附件都改写重新上传到 R2，我的 R2 地址是 xxx</span><br></pre></td></tr></table></figure><h1 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h1><ul><li><a href="https://sspai.com/post/90170">从零开始搭建你的免费图床系统 （Cloudflare R2 + WebP Cloud + PicGo）</a></li></ul>]]></content>
       
       
       <categories>
@@ -247,6 +323,8 @@
             
             <tag> GitHub </tag>
             
+            <tag> AI-GENERATED </tag>
+            
             <tag> 排障 </tag>
             
             <tag> VSCode </tag>
@@ -279,6 +357,8 @@
             <tag> Agent </tag>
             
             <tag> GitHub </tag>
+            
+            <tag> AI-GENERATED </tag>
             
             <tag> MCP </tag>
             
@@ -345,6 +425,8 @@
             <tag> 技术债 </tag>
             
             <tag> VibeCoding </tag>
+            
+            <tag> AI-GENERATED </tag>
             
         </tags>
       

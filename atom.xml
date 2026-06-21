@@ -11,24 +11,63 @@
   <rights>All rights reserved 2026, Sentixxx</rights>
   <subtitle>无名小站</subtitle>
   <title>墨池码窖 | Sentixxx's Blog</title>
-  <updated>2026-06-11T07:07:50.000Z</updated>
+  <updated>2026-06-20T09:30:14.000Z</updated>
+  <entry>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
+    <category term="WOB" scheme="https://sentixxx.github.io/tags/WOB/"/>
+    <category term="Rainy75" scheme="https://sentixxx.github.io/tags/Rainy75/"/>
+    <category term="机械键盘" scheme="https://sentixxx.github.io/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
+    <category term="VIA" scheme="https://sentixxx.github.io/tags/VIA/"/>
+    <category term="macOS" scheme="https://sentixxx.github.io/tags/macOS/"/>
+    <category term="键盘改键" scheme="https://sentixxx.github.io/tags/%E9%94%AE%E7%9B%98%E6%94%B9%E9%94%AE/"/>
+    <id>https://sentixxx.github.io/posts/tgqosx/</id>
+    <link href="https://sentixxx.github.io/posts/tgqosx/"/>
+    <published>2026-06-16T04:29:00.000Z</published>
+    <summary>记录 WOB Rainy75 在 macOS 下的 2.4G 开关和 Mac 模式键位问题，以及通过 VIA 调整键位映射的解决过程。</summary>
+    <title>WOB rainy75键盘踩坑</title>
+    <updated>2026-06-20T09:30:14.000Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Sentixxx</name>
     </author>
     <category term="随笔评论" scheme="https://sentixxx.github.io/categories/%E9%9A%8F%E7%AC%94%E8%AF%84%E8%AE%BA/"/>
+    <category term="Agent" scheme="https://sentixxx.github.io/tags/Agent/"/>
+    <category term="VibeCoding" scheme="https://sentixxx.github.io/tags/VibeCoding/"/>
     <category term="AI" scheme="https://sentixxx.github.io/tags/AI/"/>
     <category term="LLM" scheme="https://sentixxx.github.io/tags/LLM/"/>
     <category term="软件开发" scheme="https://sentixxx.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    <category term="产品思考" scheme="https://sentixxx.github.io/tags/%E4%BA%A7%E5%93%81%E6%80%9D%E8%80%83/"/>
+    <category term="开源软件" scheme="https://sentixxx.github.io/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"/>
+    <category term="独立软件" scheme="https://sentixxx.github.io/tags/%E7%8B%AC%E7%AB%8B%E8%BD%AF%E4%BB%B6/"/>
+    <id>https://sentixxx.github.io/posts/tgqkz7/</id>
+    <link href="https://sentixxx.github.io/posts/tgqkz7/"/>
+    <published>2026-06-16T03:06:00.000Z</published>
+    <summary>从开源壁纸软件和 AI 辅助项目的观察出发，讨论当软件越来越容易被复刻时，独立软件还能靠什么让用户继续留下来。</summary>
+    <title>AI 时代，什么样的软件还能留下用户？</title>
+    <updated>2026-06-20T10:22:37.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Sentixxx</name>
+    </author>
+    <category term="随笔评论" scheme="https://sentixxx.github.io/categories/%E9%9A%8F%E7%AC%94%E8%AF%84%E8%AE%BA/"/>
+    <category term="AI-GENERATED" scheme="https://sentixxx.github.io/tags/AI-GENERATED/"/>
+    <category term="AI" scheme="https://sentixxx.github.io/tags/AI/"/>
+    <category term="LLM" scheme="https://sentixxx.github.io/tags/LLM/"/>
+    <category term="软件开发" scheme="https://sentixxx.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    <category term="产品思考" scheme="https://sentixxx.github.io/tags/%E4%BA%A7%E5%93%81%E6%80%9D%E8%80%83/"/>
     <category term="软件架构" scheme="https://sentixxx.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
     <category term="开源" scheme="https://sentixxx.github.io/tags/%E5%BC%80%E6%BA%90/"/>
-    <category term="产品思考" scheme="https://sentixxx.github.io/tags/%E4%BA%A7%E5%93%81%E6%80%9D%E8%80%83/"/>
     <id>https://sentixxx.github.io/posts/tggeip/</id>
     <link href="https://sentixxx.github.io/posts/tggeip/"/>
     <published>2026-06-11T06:11:00.000Z</published>
     <summary>从自定义 pi 状态栏插件的经历出发，探讨 LLM 如何填平软件高定制性的门槛，并提出 AI 原生时代软件架构的核心方向——模块化、声明式配置与框架化，而非大一统的功能堆砌。</summary>
     <title>从一个状态栏到一套框架：AI 如何改变了软件的写法</title>
-    <updated>2026-06-11T07:07:50.000Z</updated>
+    <updated>2026-06-20T10:16:24.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -46,7 +85,7 @@
     <published>2026-06-05T22:22:00.000Z</published>
     <summary>记录高强度使用 Codex 桌面端和 GitHub 插件时，插件 skill 覆盖项目规则导致输出偏离约定的一次踩坑经历。</summary>
     <title>谈谈Codex的一些坑</title>
-    <updated>2026-06-05T22:32:35.000Z</updated>
+    <updated>2026-06-20T07:30:58.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -64,7 +103,7 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>测试</title>
-    <updated>2026-06-11T07:56:37.000Z</updated>
+    <updated>2026-06-20T07:18:46.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -82,7 +121,7 @@
     <published>2026-05-29T18:17:00.000Z</published>
     <summary>记录从 GitHub 图床迁移到 Cloudflare R2 的原因、方案调研，以及通过 PicGo 将图片资源搬迁到 R2 的过程。</summary>
     <title>github 图床迁移记录</title>
-    <updated>2026-05-29T19:06:29.000Z</updated>
+    <updated>2026-06-20T10:16:32.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -146,6 +185,7 @@
     </author>
     <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
     <category term="GitHub" scheme="https://sentixxx.github.io/tags/GitHub/"/>
+    <category term="AI-GENERATED" scheme="https://sentixxx.github.io/tags/AI-GENERATED/"/>
     <category term="排障" scheme="https://sentixxx.github.io/tags/%E6%8E%92%E9%9A%9C/"/>
     <category term="VSCode" scheme="https://sentixxx.github.io/tags/VSCode/"/>
     <category term="凭证管理" scheme="https://sentixxx.github.io/tags/%E5%87%AD%E8%AF%81%E7%AE%A1%E7%90%86/"/>
@@ -154,7 +194,7 @@
     <published>2026-04-28T16:27:00.000Z</published>
     <summary>记录一次在 VS Code Attach 到运行中容器时，Git push 一直丢凭证的排障过程，以及为什么根因不在 PAT，而在 VS Code 自动注入的 Git credential helper。</summary>
     <title>我的 Github 凭证怎么总失效？原来是 VSCode 搞的鬼</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
+    <updated>2026-06-20T10:17:09.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -163,6 +203,7 @@
     <category term="工程方法" scheme="https://sentixxx.github.io/categories/%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95/"/>
     <category term="Agent" scheme="https://sentixxx.github.io/tags/Agent/"/>
     <category term="GitHub" scheme="https://sentixxx.github.io/tags/GitHub/"/>
+    <category term="AI-GENERATED" scheme="https://sentixxx.github.io/tags/AI-GENERATED/"/>
     <category term="MCP" scheme="https://sentixxx.github.io/tags/MCP/"/>
     <category term="风控" scheme="https://sentixxx.github.io/tags/%E9%A3%8E%E6%8E%A7/"/>
     <id>https://sentixxx.github.io/posts/te413j/</id>
@@ -170,7 +211,7 @@
     <published>2026-04-26T16:42:00.000Z</published>
     <summary>记录为了防止 AI Agent 滥用 GitHub API 导致封号，通过 VS Code 凭证注入与 MCP 网络沙盒结合，彻底剥离容器内 PAT 的折腾过程。</summary>
     <title>血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
+    <updated>2026-06-20T10:17:00.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -200,6 +241,7 @@
     <category term="工程规范" scheme="https://sentixxx.github.io/tags/%E5%B7%A5%E7%A8%8B%E8%A7%84%E8%8C%83/"/>
     <category term="技术债" scheme="https://sentixxx.github.io/tags/%E6%8A%80%E6%9C%AF%E5%80%BA/"/>
     <category term="VibeCoding" scheme="https://sentixxx.github.io/tags/VibeCoding/"/>
+    <category term="AI-GENERATED" scheme="https://sentixxx.github.io/tags/AI-GENERATED/"/>
     <id>https://sentixxx.github.io/posts/tdfbcc/</id>
     <link href="https://sentixxx.github.io/posts/tdfbcc/"/>
     <published>2026-04-13T08:24:00.000Z</published>
@@ -208,7 +250,7 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>代码里没写下来的那条规矩：AI 时代被放大的老 bug</title>
-    <updated>2026-05-29T19:10:59.000Z</updated>
+    <updated>2026-06-20T10:16:47.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -324,39 +366,6 @@
 <p>最近在搭建个人博客自动化时，我发现 Hexo 在生成时总会修改 <code>markdown</code> 文件的 <code>front-matter</code>]]>
     </summary>
     <title>为什么hexo在生成时会修改md文件</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Sentixxx</name>
-    </author>
-    <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
-    <category term="ZeroTier" scheme="https://sentixxx.github.io/tags/ZeroTier/"/>
-    <category term="Docker" scheme="https://sentixxx.github.io/tags/Docker/"/>
-    <category term="网络" scheme="https://sentixxx.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    <category term="迁移" scheme="https://sentixxx.github.io/tags/%E8%BF%81%E7%A7%BB/"/>
-    <id>https://sentixxx.github.io/posts/28320/</id>
-    <link href="https://sentixxx.github.io/posts/28320/"/>
-    <published>2025-01-29T13:35:00.000Z</published>
-    <summary>记录zerotier的迁移</summary>
-    <title>zerotier自建planet容器迁移</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Sentixxx</name>
-    </author>
-    <category term="个人日记" scheme="https://sentixxx.github.io/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/"/>
-    <category term="日记" scheme="https://sentixxx.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    <category term="自动化" scheme="https://sentixxx.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
-    <category term="Workflow" scheme="https://sentixxx.github.io/tags/Workflow/"/>
-    <id>https://sentixxx.github.io/posts/51303/</id>
-    <link href="https://sentixxx.github.io/posts/51303/"/>
-    <published>2025-01-26T16:10:00.000Z</published>
-    <summary>
-      <![CDATA[<p>本来以为 workflow 已经很完善了，没想到随便一测又报错了，尝试解决未果，无奈删除子模块引用，直接暴力]]>
-    </summary>
-    <title>20250127001036</title>
     <updated>2026-05-27T11:41:35.000Z</updated>
   </entry>
 </feed>

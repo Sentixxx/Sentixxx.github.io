@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>AI 时代，什么样的软件还能留下用户？ | 墨池码窖 | Sentixxx's Blog</title><meta name="author" content="Sentixxx"><meta name="copyright" content="Sentixxx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="从开源壁纸软件和 AI 辅助项目的观察出发，讨论当软件越来越容易被复刻时，独立软件还能靠什么让用户继续留下来。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 时代，什么样的软件还能留下用户？">
+<meta property="og:url" content="https://sentixxx.github.io/posts/tgqkz7/index.html">
+<meta property="og:site_name" content="墨池码窖 | Sentixxx&#39;s Blog">
+<meta property="og:description" content="从开源壁纸软件和 AI 辅助项目的观察出发，讨论当软件越来越容易被复刻时，独立软件还能靠什么让用户继续留下来。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.yuki.sh/img-master/img/2019/12/28/00/40/52/78533060_p0_master1200.jpg">
+<meta property="article:published_time" content="2026-06-16T03:06:00.000Z">
+<meta property="article:modified_time" content="2026-06-20T10:22:37.000Z">
+<meta property="article:author" content="Sentixxx">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="VibeCoding">
+<meta property="article:tag" content="产品思考">
+<meta property="article:tag" content="开源软件">
+<meta property="article:tag" content="独立软件">
+<meta property="article:tag" content="软件开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.yuki.sh/img-master/img/2019/12/28/00/40/52/78533060_p0_master1200.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI 时代，什么样的软件还能留下用户？",
+  "url": "https://sentixxx.github.io/posts/tgqkz7/",
+  "image": "https://i.yuki.sh/img-master/img/2019/12/28/00/40/52/78533060_p0_master1200.jpg",
+  "datePublished": "2026-06-16T03:06:00.000Z",
+  "dateModified": "2026-06-20T10:22:37.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Sentixxx",
+      "url": "https://sentixxx.github.io/Sentixxx"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://sentixxx.github.io/posts/tgqkz7/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xPPGDBmsB6lrA0CjgdkkWl0aVW38-ffad9pLicXVq2k"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-5685560564188912',
+  enable_page_level_ads: 'true'
+});</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-NECWQZCES3"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-NECWQZCES3')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-NECWQZCES3', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":500,"languages":{"author":"作者: Sentixxx","link":"链接: ","source":"来源: 墨池码窖 | Sentixxx's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'AI 时代，什么样的软件还能留下用户？',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/callout_blocks.css"><!-- hexo injector head_end start --><style>.callout[data-callout="diary"] {
+  --callout-color: 46, 127, 104;
+  --callout-border-width: 1px;
+  --callout-border-opacity: 0.18;
+  position: relative;
+  margin: 1.25rem 0 1.5rem;
+  padding: 14px 16px 12px;
+  overflow: hidden;
+  border-color: rgba(var(--callout-color), 0.26);
+  border-left: 4px solid rgba(var(--callout-color), 0.7);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(var(--callout-color), 0.13), transparent 32%),
+    radial-gradient(circle at 88% 18%, rgba(126, 164, 255, 0.11), transparent 30%),
+    linear-gradient(135deg, rgba(var(--callout-color), 0.06), rgba(var(--callout-color), 0.018)),
+    var(--background-primary, #fff);
+  background-size: 180% 180%, 170% 170%, 100% 100%, 100% 100%;
+  box-shadow: 0 10px 28px rgba(var(--callout-color), 0.08);
+  mix-blend-mode: normal;
+  animation: diary-callout-ambient 9s ease-in-out infinite alternate;
+}
+
+.callout[data-callout="diary"]::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(var(--callout-color), 0.76), rgba(126, 164, 255, 0.58), transparent);
+  background-size: 240% 100%;
+  animation: diary-callout-line 4.8s ease-in-out infinite;
+}
+
+.callout[data-callout="diary"]::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, rgba(var(--callout-color), 0.18), rgba(var(--callout-color), 0.9), rgba(var(--callout-color), 0.18));
+  filter: blur(0.2px);
+  animation: diary-callout-pulse 3.4s ease-in-out infinite;
+}
+
+.callout[data-callout="diary"] .callout-icon,
+.callout[data-callout="diary"] .callout-title-icon {
+  display: none;
+}
+
+.callout[data-callout="diary"] .callout-title {
+  position: relative;
+  z-index: 1;
+  align-items: baseline;
+  gap: 0;
+  color: var(--text-normal, #242424);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.callout[data-callout="diary"] .callout-title-inner {
+  font-weight: 700;
+}
+
+.callout[data-callout="diary"] .callout-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 6px;
+}
+
+.callout[data-callout="diary"] .callout-content p {
+  margin: 0;
+  color: var(--text-muted, #666);
+  font-size: 0.86rem;
+  line-height: 1.9;
+}
+
+.callout[data-callout="diary"] code {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.08rem;
+  padding: 0.1em 0.48em;
+  overflow: hidden;
+  border: 1px solid rgba(var(--callout-color), 0.18);
+  border-radius: 999px;
+  background:
+    linear-gradient(120deg, rgba(var(--callout-color), 0.06), rgba(var(--callout-color), 0.13), rgba(var(--callout-color), 0.06)),
+    rgba(var(--callout-color), 0.045);
+  background-size: 210% 100%;
+  color: var(--text-normal, #242424);
+  font-size: 0.84em;
+  font-variant-numeric: tabular-nums;
+  transition: border-color 160ms ease, transform 160ms ease, background-color 160ms ease;
+  animation: diary-chip-flow 6s ease-in-out infinite;
+}
+
+.callout[data-callout="diary"] code:hover {
+  border-color: rgba(var(--callout-color), 0.42);
+  background-color: rgba(var(--callout-color), 0.1);
+  transform: translateY(-1px);
+}
+
+@keyframes diary-callout-ambient {
+  from {
+    background-position: 0% 0%, 100% 0%, 0 0, 0 0;
+  }
+  to {
+    background-position: 100% 80%, 0% 100%, 0 0, 0 0;
+  }
+}
+
+@keyframes diary-callout-line {
+  0% {
+    background-position: 240% 0;
+    opacity: 0.28;
+  }
+  45% {
+    opacity: 0.9;
+  }
+  100% {
+    background-position: -240% 0;
+    opacity: 0.28;
+  }
+}
+
+@keyframes diary-callout-pulse {
+  0%, 100% {
+    opacity: 0.38;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes diary-chip-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .callout[data-callout="diary"],
+  .callout[data-callout="diary"]::before,
+  .callout[data-callout="diary"]::after,
+  .callout[data-callout="diary"] code {
+    animation: none;
+  }
+}
+</style><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="墨池码窖 | Sentixxx's Blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://img.sentixx.top/2026/06/77d31ea0d9499bea27998a3dad6e6061.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">98</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.yuki.sh/img-master/img/2019/12/28/00/40/52/78533060_p0_master1200.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">墨池码窖 | Sentixxx's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">AI 时代，什么样的软件还能留下用户？</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">AI 时代，什么样的软件还能留下用户？</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2026-06-20T10:22:37.000Z" title="更新于 2026-06-20 18:22:37">2026-06-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9A%8F%E7%AC%94%E8%AF%84%E8%AE%BA/">随笔评论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;距离本文上次更新已经&quot;,&quot;messageNext&quot;:&quot;天了, 文章内容可能已经过时，请注意甄别.&quot;,&quot;postUpdate&quot;:&quot;2026-06-20 18:22:37&quot;}" hidden></div><blockquote>
+<p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a target="_blank" rel="noopener" href="https://blog.sentixx.top/posts/tgqkz7">原文</a></p>
+</blockquote>
+<h1 id="开源壁纸软件"><a class="markdownIt-Anchor" href="#开源壁纸软件"></a> 开源壁纸软件</h1>
+<p>今晚，我像往常一样刷了会视频，突然看到了一个比较吸引我的视频：<br />
+<a class="link-card" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1WMjN6cEKC" title="B 站链接">可能是Mac上最好用的开源壁纸软件，wallpaper engine近乎完美渲染</a><br />
+，我点进去一看，我去！居然可以从 wallpaper engine 的创意工坊直接下载壁纸！我去！居然还能从 wallheaven 爬壁纸！这一下子解决了我之前在 macOS 上遇到的好几个关于壁纸的痛点，于是乎我马上找到了这个项目的地址，准备下载下来体验一下，然后我就发现了几个大问题：</p>
+<ol>
+<li>UI 设计非常 AI，项目整体风格和 MacOS 的设计语言并不搭配</li>
+<li>我发现下载实际上是通过 <code>steamCMD</code> 来实现的，这就要求我们去输入自己的 steam 密码与令牌<br />
+第二个问题让我有点担心，于是我就把源码也拉下来快速 vibereading 了一遍，很快我就发现了代码里关于密码的处理有相当多的 AI 幻觉，似乎开发者完全是处于一种盲目的 wishcoding 的状态，在项目中我也看不到任何对于项目本身的控制上的尝试，文档的维护非常不及时，文档中声明的 URL 仓库实际处于404的状态，并且相关的代码其实也没有用到这些。</li>
+</ol>
+<p><img src="https://img.sentixx.top/2026/06/65278b91365ae2d07ba765b8428e88dd.png" alt="WaifuX 项目界面截图" /></p>
+<div align="center" style="font-size: 12px; color: #888888; margin-top: 5px;">WaifuX 项目界面截图</div>
+<h1 id="类似的问题"><a class="markdownIt-Anchor" href="#类似的问题"></a> 类似的问题</h1>
+<p>其实类似的问题我早就在其他的项目里遇到过了，这就不得不提 <code>cc-connect</code> 这个项目， 刚开始接触的时候我还兴高采烈地去修了几个 bug，随之而来我发现 owner 对于所有的 PR 似乎都是 AI 审核，对于提出的 issue 也会直接交给 AI 写，利用 AI 本无可厚非，但前提是必须保证代码质量。随着新版本更新，软件冒出了成吨的 Bug。当时，群友的一番操作启发了我：与其在烂泥潭里打滚，不如自己动手。于是我果断抛弃它，开始开发属于自己的 IM 桥接软件。</p>
+<blockquote>
+<p>这里插播一条广告：<a target="_blank" rel="noopener" href="https://github.com/moesin-lab/agent-nexus">https://github.com/moesin-lab/agent-nexus</a><br />
+吸取了 <code>cc-connect</code> 的教训，我在开发 <code>agent-nexus</code> 时把文档和基础设施的建设放在了极高的优先级。不过这也让我走了一点弯路：或许“小步快跑、先迭代出可用原型，再周期性修复文档”才是更务实的路径。</p>
+</blockquote>
+<h1 id="当-ai-赋予我们随手复刻的能力"><a class="markdownIt-Anchor" href="#当-ai-赋予我们随手复刻的能力"></a> 当 AI 赋予我们随手复刻的能力</h1>
+<p>看完 WaifuX 之后，我又顺手搜了几个同类项目。功能都差不多：壁纸下载、Wallpaper Engine 兼容、壁纸管理。问题也差不多：目录随意、文件乱放、UI 模板味很重，文档和实际代码也经常对不上。</p>
+<p>这不一定是死罪。很多个人项目一开始都这样，先能跑，再慢慢修。但这类软件要接 Steam、要碰账号，还可能长期在本机跑，我就很难只看功能。底下如果太毛躁，我会本能地不放心。</p>
+<p><img src="https://img.sentixx.top/2026/06/6c912e902702494f300176729f9f5797.png" alt="一组功能相近的壁纸软件项目" /></p>
+<div align="center" style="font-size: 12px; color: #888888; margin-top: 5px;">一组功能相近的壁纸软件项目</div>
+<p>然后脑子里冒出一个念头：要不自己搓一个？</p>
+<p>以前这想法挺离谱。现在没那么离谱了。需求边界清楚的话，AI 真能很快搭出一个替代品。未必精致，但能跑，能按我的习惯改。</p>
+<p>于是“不喜欢就换一个”，慢慢变成了“不喜欢就重做一个”。</p>
+<p>这一开始很爽，爽完之后又有点吓人。因为我能这么想，别人当然也能这么想。</p>
+<blockquote>
+<p>但自己搓也不是免费的。最近我自己的小工具越写越多，维护成本也开始反过来咬人。每个项目都有依赖要升、bug 要修、文档要补，一开始爽，后面全变成待办。精力不够的时候，我也会重新回到现成方案，只要它足够稳、足够有人管。说到底，现在的 AI 还没到能把质量完全托管出去的程度，很多时候还是得我自己盯着。</p>
+</blockquote>
+<p>一个软件如果只是“有这些功能”，那它其实挺危险的。功能最容易被复刻。真正让人留下来的，反而是更琐碎的东西：默认取舍刚好顺手，配置能改，历史数据已经攒在里面，某些小毛病你也知道怎么绕开。</p>
+<p>很多软件我不是不能换，只是懒得换。快捷键调好了，插件配好了，历史都在里面，工作流也已经顺了。换一个新软件，就算功能一样或者说稍微好一点，也要重新磨一遍。对工具来说，这种懒得换其实很重要。</p>
+<p>所以我现在看工具，会比以前更在意它有没有自己的方向。功能可以少一点，UI 可以粗一点，甚至代码也可以先乱一点，但至少得看得出作者知道自己想要什么。最怕的是热门功能堆一堆，底下没有判断。那种项目看着热闹，但也最容易被另一个差不多的项目替掉。</p>
+<p>这也是我之前那篇<br />
+<a class="link-card" href="/posts/tggeip" title="__desc__">AI 如何改变软件写法</a><br />
+里想说的问题。AI 让“改软件”变得便宜之后，软件最好不要把自己做成一个封死的成品。默认能用，想折腾的时候也有地方下手，这可能比单纯堆功能更重要。</p>
+<h1 id="面向-ai-的新软件"><a class="markdownIt-Anchor" href="#面向-ai-的新软件"></a> 面向 AI 的新软件</h1>
+<p>写到这里我又会跳到另一个问题：上面这些判断，其实默认了人还在亲自打开软件、点击按钮、感受界面。</p>
+<p>如果以后不是这样了呢？</p>
+<p>前阵子我看了一个关于<br />
+<a class="link-card" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kgEM6VEvL" title="__desc__">VibeOS</a><br />
+的视频，印象很深。它展示的不是传统意义上的 App，而是由 AI 根据意图临时组织界面和流程。你不需要先想我要打开哪个软件，而是直接说要做什么，中间那层 Agent 再去调工具。</p>
+<p>如果真变成这样，软件的评价标准会变得很奇怪。人觉得顺不顺手可能没那么重要了，Agent 更在乎接口稳不稳定、状态能不能读、操作能不能被自动化。一个软件可能 UI 很一般，但特别适合被 Agent 调用；另一个软件可能人用着很舒服，但对 Agent 来说就是一团黑盒。</p>
+<p>这又把问题变了一下：不是“什么软件能留下用户”，而是“什么软件会被 Agent 选中”。</p>
+<p>不过我也不太相信人会完全消失在交互之外。创作工具、专业工具、游戏，或者那些本来就靠手感和情绪价值撑起来的软件，应该还是会有人想亲自用。就像手机已经吞掉了很多轻量任务，但真正需要精细控制的时候，我还是会坐回电脑前。</p>
+<h1 id="最后的稀缺品"><a class="markdownIt-Anchor" href="#最后的稀缺品"></a> 最后的稀缺品</h1>
+<p>有趣的是，最近我又看到一篇<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/6ZT1yidL2NMXrGgLAytT2g">文章</a>，里面的一些言论很有意思：</p>
+<blockquote>
+<p>不是因为人类做得比AI更好，而是因为“人类做的”这件事本身，拥有了需要主动认证的稀缺属性。</p>
+</blockquote>
+<p>以前看到这种说法，我大概会觉得有点矫情。软件不就是拿来用的吗，谁写的有那么重要？</p>
+<p>但现在我没那么确定了。</p>
+<p>当 AI 把“做出一个能用的东西”变得越来越便宜之后，真正稀缺的可能反而是那些不那么标准化的部分：作者的取舍、奇怪的坚持、对细节的洁癖，还有软件在长期使用中和用户慢慢磨出来的习惯。</p>
+<p>功能可以复制，界面可以重画，代码可以重写。但一个软件到底有没有自己的脾气，这件事没那么好补。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="Sentixxx">Sentixxx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://sentixxx.github.io/posts/tgqkz7/">https://sentixxx.github.io/posts/tgqkz7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://sentixxx.github.io" target="_blank">墨池码窖 | Sentixxx's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Agent/">Agent</a><a class="post-meta__tags" href="/tags/VibeCoding/">VibeCoding</a><a class="post-meta__tags" href="/tags/AI/">AI</a><a class="post-meta__tags" href="/tags/LLM/">LLM</a><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">软件开发</a><a class="post-meta__tags" href="/tags/%E4%BA%A7%E5%93%81%E6%80%9D%E8%80%83/">产品思考</a><a class="post-meta__tags" href="/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/">开源软件</a><a class="post-meta__tags" href="/tags/%E7%8B%AC%E7%AB%8B%E8%BD%AF%E4%BB%B6/">独立软件</a></div><div class="post-share"><div class="social-share" data-image="https://i.yuki.sh/img-master/img/2019/12/28/00/40/52/78533060_p0_master1200.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/tggeip/" title="从一个状态栏到一套框架：AI 如何改变了软件的写法"><img class="cover" src="https://i.yuki.sh/img-master/img/2021/07/28/12/36/14/91553661_p0_master1200.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-06-11</div><div class="info-item-2">从一个状态栏到一套框架：AI 如何改变了软件的写法</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文  随着 LLM 编码能力的飞速提升，结合我近期的观察，技术圈似乎正在向同一个方向演进：利用 AI 构建高度客制化的个人软件。 这一趋势的背后有两个主要推手。首先，不少开源项目在大量接收 AI 生成的 PR 后，代码质量出现了肉眼可见的下滑——与其在泥沙俱下的代码海里做 Code Review，不如自己来。其次，大家逐渐意识到，与其苦等上游更新，自己 Fork 甚至从零重写来得更快，而且更贴合自己的实际需求。多年前人人皆可写软件的设想，似乎正以一种始料未及的方式悄然成真。 这也引发了我的深思：在 AI 时代，什么样的软件形态才是真正的未来？  从一个状态栏插件说起 最近因为订阅额度紧俏，我开始尝试在 pi 中使用 deepseek 作为一些简单的任务的替代品来节约 token 的使用，之所以使用 pi 而不是直接在 codex 或是 claudecode 里接入 deepseek 的原因有两点：  codex 和 claudecode...</div></div></div></a><a class="pagination-related" href="/posts/teyg1w/" title="聊聊我的 VibeCoding 环境配置记录"><img class="cover" src="https://i.yuki.sh/img-original/img/2023/08/07/00/01/22/110595990_p0.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-13</div><div class="info-item-2">聊聊我的 VibeCoding 环境配置记录</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文  正如之前所提，我为适配 ClaudeCode 专门配置了一套沙盒体系。最近，我打算借此机会系统地梳理一下这套环境目前的搭建现状与进展。 如果从一个完整的视角来看，这套体系其实应该分为沙盒、宿主机以及本地机器。  宿主机 我的宿主机是一台 MacOS 设备。也正是如此，其实不太需要过分担心最近 Linux 内核连发的那些 CVE 漏洞，因此直接选用 Docker 作为沙盒方案。 在宿主机层面，主要做了两项核心配置：网络代理与目录挂载。  代理网络分流 为了更好地适配 Claude Code 的请求，我对网络进行了针对性的分流处理，具体策略如下：  常规分流：根据预设规则，对常见域名进行基础分流。 定向代理：将 Anthropic 相关域名精准路由至固定节点，保证 API 连通性。 沙盒兜底：针对沙盒所在的 IP 网段设置特殊规则作为兜底，将其流量同样指向特定的节点。   目录挂载 起初，为了让沙盒重启后状态不丢失，我直接把整个 Home...</div></div></div></a><a class="pagination-related" href="/posts/tdygvm/" title="20260424003810"><img class="cover" src="https://i.yuki.sh/img-original/img/2017/04/28/00/14/33/62608184_p0.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-24</div><div class="info-item-2">20260424003810</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文  最近发现一个 agent 抽鞭子技巧，不停追问他有没有更好的方案，就把更好的端上来了  我去，还能自动追踪 PR，又是小惊喜   又琢磨了一个小技巧：使用 /btw ，提示词 “评估一下现在的上下文质量”，就可以有一个稍微明确一点的质量感知。  AskUserQuestion 这个东西做的确实好，规划相关的 skill 复用这个工具很舒服，怪不得 A/ 要用这个  文档的量级到达某个级别，人类 review 起来也一样困难，和代码差不多了  github 账号被封了，似乎是 gh 写评论调用被风控了，这也体现出 mcp 的优势， 封装了一套固有的客户端逻辑 claude mcp add-json github &#x27;&#123;&quot;type&quot;: &quot;http&quot;,&quot;url&quot;:...</div></div></div></a><a class="pagination-related" href="/posts/te413j/" title="血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录"><img class="cover" src="https://i.yuki.sh/img-original/img/2020/10/22/00/30/01/85158661_p0.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-27</div><div class="info-item-2">血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文。   写在前面 作为一个折腾爱好者，最近在弄让 AI Agent 自动跑项目、提 PR 的工作流。结果一开始没做频率限制，专门给 Agent 用的 GitHub 小号用裸的 gh CLI 短时间内狂刷 PR 和评论，直接被 GitHub 的防滥用风控当场封禁（Suspended）。 痛定思痛后，我决定引入 MCP（Model Context Protocol）来接管 GitHub 操作，因为官方 MCP 自带了完备的限流和退避机制。但同时，为了让 Agent 还能正常执行 git push，我依然在容器的环境变量里留了一个 PAT（Personal Access Token）。 结果在观察日志时，我发现了一个更危险的现象：大模型一旦发现 MCP 工具调用失败或者图省事，它就会直接去翻环境变量里的 PAT，然后自己手搓 curl 脚本去直连 GitHub API！而且它的脚本一旦报错，它为了修 Bug...</div></div></div></a><a class="pagination-related" href="/posts/tdfbcc/" title="代码里没写下来的那条规矩：AI 时代被放大的老 bug"><img class="cover" src="https://i.yuki.sh/img-original/img/2016/10/16/21/06/58/59502083_p0.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-13</div><div class="info-item-2">代码里没写下来的那条规矩：AI 时代被放大的老 bug</div></div><div class="info-2"><div class="info-item-1"> 如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步原文 本文部分内容采用 AI 辅助生成，核心素材与推演逻辑均提炼自排查该 Bug 时的真实 Session 对话文本。 越读越烂，返工一下 —— 2026.4.20   一个矛盾的回复 事情的起因源于 cc-connect 的一个 bug：同一分钟内，Telegram 群收到两条互相矛盾的回复  一条说&quot;会话已结束&quot; 另一条说“前一条请求仍在处理”。  显然这是矛盾的。 我很快梳理出了问题的链路，并提交了响应的 PR。  问题排查 第一层，agent 进程没死透。 agent/claudecode/session.go 的 readLoop 用 bufio.Scanner 读 stdout。Claude CLI 退出时，若有子孙进程继承了 stdout fd，管道不会 EOF，scanner 就一直阻塞。cs.ctx.Done() 触发时，defer 里虽然会关 channel，但那一路逻辑分支没有关 stdout，于是 readLoop...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://img.sentixx.top/2026/06/77d31ea0d9499bea27998a3dad6e6061.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Sentixxx</div><div class="author-info-description">记录点点滴滴</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">98</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Sentixxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss" style="color: #ff6600;"></i></a><a class="social-icon" href="https://github.com/Sentixxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:senticx@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://space.bilibili.com/12992364" target="_blank" title="bilibili"><i class="fab fa-bilibili" style="color: #74c0fC;"></i></a><a class="social-icon" href="https://www.zhihu.com/people/sentix" target="_blank" title="zhihu"><i class="fab fa-zhihu" style="color: #008EFF;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E6%BA%90%E5%A3%81%E7%BA%B8%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text"> 开源壁纸软件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB%E4%BC%BC%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text"> 类似的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%93-ai-%E8%B5%8B%E4%BA%88%E6%88%91%E4%BB%AC%E9%9A%8F%E6%89%8B%E5%A4%8D%E5%88%BB%E7%9A%84%E8%83%BD%E5%8A%9B"><span class="toc-number">3.</span> <span class="toc-text"> 当 AI 赋予我们随手复刻的能力</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E5%90%91-ai-%E7%9A%84%E6%96%B0%E8%BD%AF%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text"> 面向 AI 的新软件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E7%9A%84%E7%A8%80%E7%BC%BA%E5%93%81"><span class="toc-number">5.</span> <span class="toc-text"> 最后的稀缺品</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/tgqkz7/" title="AI 时代，什么样的软件还能留下用户？"><img src="https://i.yuki.sh/img-master/img/2019/12/28/00/40/52/78533060_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI 时代，什么样的软件还能留下用户？"/></a><div class="content"><a class="title" href="/posts/tgqkz7/" title="AI 时代，什么样的软件还能留下用户？">AI 时代，什么样的软件还能留下用户？</a><time datetime="2026-06-20T10:22:37.000Z" title="更新于 2026-06-20 18:22:37">2026-06-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/te7ppp/" title="我的 Github 凭证怎么总失效？原来是 VSCode 搞的鬼"><img src="https://i.yuki.sh/img-original/img/2022/01/03/19/11/34/95270930_p0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我的 Github 凭证怎么总失效？原来是 VSCode 搞的鬼"/></a><div class="content"><a class="title" href="/posts/te7ppp/" title="我的 Github 凭证怎么总失效？原来是 VSCode 搞的鬼">我的 Github 凭证怎么总失效？原来是 VSCode 搞的鬼</a><time datetime="2026-06-20T10:17:09.000Z" title="更新于 2026-06-20 18:17:09">2026-06-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/te413j/" title="血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录"><img src="https://i.yuki.sh/img-original/img/2020/10/22/00/30/01/85158661_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录"/></a><div class="content"><a class="title" href="/posts/te413j/" title="血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录">血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录</a><time datetime="2026-06-20T10:17:00.000Z" title="更新于 2026-06-20 18:17:00">2026-06-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/tdfbcc/" title="代码里没写下来的那条规矩：AI 时代被放大的老 bug"><img src="https://i.yuki.sh/img-original/img/2016/10/16/21/06/58/59502083_p0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="代码里没写下来的那条规矩：AI 时代被放大的老 bug"/></a><div class="content"><a class="title" href="/posts/tdfbcc/" title="代码里没写下来的那条规矩：AI 时代被放大的老 bug">代码里没写下来的那条规矩：AI 时代被放大的老 bug</a><time datetime="2026-06-20T10:16:47.000Z" title="更新于 2026-06-20 18:16:47">2026-06-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/tft9gu/" title="github 图床迁移记录"><img src="https://img.sentixx.top/pic/8dc8caf1b137b1db4055283c5b0c8be6_720.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="github 图床迁移记录"/></a><div class="content"><a class="title" href="/posts/tft9gu/" title="github 图床迁移记录">github 图床迁移记录</a><time datetime="2026-06-20T10:16:32.000Z" title="更新于 2026-06-20 18:16:32">2026-06-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2025 - 2026 By Sentixxx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn" target="_blank">沪ICP备2025112621号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script>(function(){if(!document.querySelector("pre.mermaid"))return;var s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js";s.onload=function(){window.mermaid.initialize({startOnLoad:false,theme:"dark"});window.mermaid.run({querySelector:"pre.mermaid"});};document.head.appendChild(s);})();</script><!-- hexo injector body_end end --></body></html>
