@@ -92,8 +92,8 @@
       <name>Sentixxx</name>
     </author>
     <category term="归档测试" scheme="https://sentixxx.github.io/categories/%E5%BD%92%E6%A1%A3%E6%B5%8B%E8%AF%95/"/>
-    <category term="碎碎念" scheme="https://sentixxx.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     <category term="日记" scheme="https://sentixxx.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    <category term="碎碎念" scheme="https://sentixxx.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     <category term="hide" scheme="https://sentixxx.github.io/tags/hide/"/>
     <id>https://sentixxx.github.io/posts/tftd0vam/</id>
     <link href="https://sentixxx.github.io/posts/tftd0vam/"/>
@@ -203,9 +203,9 @@
     <category term="工程方法" scheme="https://sentixxx.github.io/categories/%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95/"/>
     <category term="Agent" scheme="https://sentixxx.github.io/tags/Agent/"/>
     <category term="GitHub" scheme="https://sentixxx.github.io/tags/GitHub/"/>
+    <category term="AI-GENERATED" scheme="https://sentixxx.github.io/tags/AI-GENERATED/"/>
     <category term="MCP" scheme="https://sentixxx.github.io/tags/MCP/"/>
     <category term="风控" scheme="https://sentixxx.github.io/tags/%E9%A3%8E%E6%8E%A7/"/>
-    <category term="AI-GENERATED" scheme="https://sentixxx.github.io/tags/AI-GENERATED/"/>
     <id>https://sentixxx.github.io/posts/te413j/</id>
     <link href="https://sentixxx.github.io/posts/te413j/"/>
     <published>2026-04-26T16:42:00.000Z</published>
@@ -237,11 +237,11 @@
       <name>Sentixxx</name>
     </author>
     <category term="工程方法" scheme="https://sentixxx.github.io/categories/%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95/"/>
-    <category term="VibeCoding" scheme="https://sentixxx.github.io/tags/VibeCoding/"/>
-    <category term="AI-GENERATED" scheme="https://sentixxx.github.io/tags/AI-GENERATED/"/>
     <category term="AI编程" scheme="https://sentixxx.github.io/tags/AI%E7%BC%96%E7%A8%8B/"/>
     <category term="工程规范" scheme="https://sentixxx.github.io/tags/%E5%B7%A5%E7%A8%8B%E8%A7%84%E8%8C%83/"/>
     <category term="技术债" scheme="https://sentixxx.github.io/tags/%E6%8A%80%E6%9C%AF%E5%80%BA/"/>
+    <category term="VibeCoding" scheme="https://sentixxx.github.io/tags/VibeCoding/"/>
+    <category term="AI-GENERATED" scheme="https://sentixxx.github.io/tags/AI-GENERATED/"/>
     <id>https://sentixxx.github.io/posts/tdfbcc/</id>
     <link href="https://sentixxx.github.io/posts/tdfbcc/"/>
     <published>2026-04-13T08:24:00.000Z</published>
