@@ -102,11 +102,11 @@
             
             <tag> 软件开发 </tag>
             
+            <tag> 产品思考 </tag>
+            
             <tag> 软件架构 </tag>
             
             <tag> 开源 </tag>
-            
-            <tag> 产品思考 </tag>
             
         </tags>
       
@@ -631,9 +631,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> Markdown </tag>
-            
             <tag> Frontmatter </tag>
+            
+            <tag> Markdown </tag>
             
             <tag> 源码阅读 </tag>
             
