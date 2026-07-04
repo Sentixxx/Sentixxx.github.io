@@ -451,11 +451,11 @@
       
         <tags>
             
-            <tag> 论文阅读 </tag>
-            
             <tag> GFS </tag>
             
             <tag> 分布式存储 </tag>
+            
+            <tag> 论文阅读 </tag>
             
         </tags>
       
@@ -480,11 +480,11 @@
       
         <tags>
             
+            <tag> 论文阅读 </tag>
+            
             <tag> MapReduce </tag>
             
             <tag> 分布式系统 </tag>
-            
-            <tag> 论文阅读 </tag>
             
         </tags>
       
@@ -875,6 +875,8 @@
       
         <tags>
             
+            <tag> hide </tag>
+            
             <tag> Markdown </tag>
             
             <tag> 渲染测试 </tag>
@@ -882,8 +884,6 @@
             <tag> CommonMark </tag>
             
             <tag> GFM </tag>
-            
-            <tag> hide </tag>
             
         </tags>
       
