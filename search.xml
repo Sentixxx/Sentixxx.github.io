@@ -102,11 +102,11 @@
             
             <tag> 软件开发 </tag>
             
+            <tag> 产品思考 </tag>
+            
             <tag> 软件架构 </tag>
             
             <tag> 开源 </tag>
-            
-            <tag> 产品思考 </tag>
             
         </tags>
       
@@ -166,9 +166,9 @@
       
         <tags>
             
-            <tag> 日记 </tag>
-            
             <tag> 碎碎念 </tag>
+            
+            <tag> 日记 </tag>
             
             <tag> hide </tag>
             
@@ -197,13 +197,13 @@
             
             <tag> GitHub </tag>
             
+            <tag> 对象存储 </tag>
+            
             <tag> 图床 </tag>
             
             <tag> CloudflareR2 </tag>
             
             <tag> PicGo </tag>
-            
-            <tag> 对象存储 </tag>
             
             <tag> 图片迁移 </tag>
             
@@ -540,9 +540,9 @@
       
         <tags>
             
-            <tag> 对象存储 </tag>
-            
             <tag> 阿里云OSS </tag>
+            
+            <tag> 对象存储 </tag>
             
             <tag> URL编码 </tag>
             
