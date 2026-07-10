@@ -197,13 +197,13 @@
             
             <tag> GitHub </tag>
             
-            <tag> 对象存储 </tag>
-            
             <tag> 图床 </tag>
             
             <tag> CloudflareR2 </tag>
             
             <tag> PicGo </tag>
+            
+            <tag> 对象存储 </tag>
             
             <tag> 图片迁移 </tag>
             
@@ -540,9 +540,9 @@
       
         <tags>
             
-            <tag> 阿里云OSS </tag>
-            
             <tag> 对象存储 </tag>
+            
+            <tag> 阿里云OSS </tag>
             
             <tag> URL编码 </tag>
             

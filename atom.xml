@@ -111,10 +111,10 @@
     </author>
     <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
     <category term="GitHub" scheme="https://sentixxx.github.io/tags/GitHub/"/>
-    <category term="对象存储" scheme="https://sentixxx.github.io/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
     <category term="图床" scheme="https://sentixxx.github.io/tags/%E5%9B%BE%E5%BA%8A/"/>
     <category term="CloudflareR2" scheme="https://sentixxx.github.io/tags/CloudflareR2/"/>
     <category term="PicGo" scheme="https://sentixxx.github.io/tags/PicGo/"/>
+    <category term="对象存储" scheme="https://sentixxx.github.io/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
     <category term="图片迁移" scheme="https://sentixxx.github.io/tags/%E5%9B%BE%E7%89%87%E8%BF%81%E7%A7%BB/"/>
     <id>https://sentixxx.github.io/posts/tft9gu/</id>
     <link href="https://sentixxx.github.io/posts/tft9gu/"/>
@@ -306,8 +306,8 @@
       <name>Sentixxx</name>
     </author>
     <category term="技术实践" scheme="https://sentixxx.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
-    <category term="阿里云OSS" scheme="https://sentixxx.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91OSS/"/>
     <category term="对象存储" scheme="https://sentixxx.github.io/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
+    <category term="阿里云OSS" scheme="https://sentixxx.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91OSS/"/>
     <category term="URL编码" scheme="https://sentixxx.github.io/tags/URL%E7%BC%96%E7%A0%81/"/>
     <id>https://sentixxx.github.io/posts/10362/</id>
     <link href="https://sentixxx.github.io/posts/10362/"/>
