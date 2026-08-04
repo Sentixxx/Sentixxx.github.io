@@ -358,11 +358,11 @@
             
             <tag> GitHub </tag>
             
-            <tag> AI-GENERATED </tag>
-            
             <tag> MCP </tag>
             
             <tag> 风控 </tag>
+            
+            <tag> AI-GENERATED </tag>
             
         </tags>
       
@@ -418,15 +418,15 @@
       
         <tags>
             
+            <tag> VibeCoding </tag>
+            
+            <tag> AI-GENERATED </tag>
+            
             <tag> AI编程 </tag>
             
             <tag> 工程规范 </tag>
             
             <tag> 技术债 </tag>
-            
-            <tag> VibeCoding </tag>
-            
-            <tag> AI-GENERATED </tag>
             
         </tags>
       
@@ -451,11 +451,11 @@
       
         <tags>
             
+            <tag> 论文阅读 </tag>
+            
             <tag> GFS </tag>
             
             <tag> 分布式存储 </tag>
-            
-            <tag> 论文阅读 </tag>
             
         </tags>
       
@@ -480,11 +480,11 @@
       
         <tags>
             
-            <tag> 论文阅读 </tag>
-            
             <tag> MapReduce </tag>
             
             <tag> 分布式系统 </tag>
+            
+            <tag> 论文阅读 </tag>
             
         </tags>
       
