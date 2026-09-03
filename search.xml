@@ -631,9 +631,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> Markdown </tag>
-            
             <tag> Frontmatter </tag>
+            
+            <tag> Markdown </tag>
             
             <tag> 源码阅读 </tag>
             
@@ -875,9 +875,9 @@
       
         <tags>
             
-            <tag> hide </tag>
-            
             <tag> Markdown </tag>
+            
+            <tag> hide </tag>
             
             <tag> 渲染测试 </tag>
             
