@@ -102,11 +102,11 @@
             
             <tag> 软件开发 </tag>
             
-            <tag> 产品思考 </tag>
-            
             <tag> 软件架构 </tag>
             
             <tag> 开源 </tag>
+            
+            <tag> 产品思考 </tag>
             
         </tags>
       
@@ -166,9 +166,9 @@
       
         <tags>
             
-            <tag> 碎碎念 </tag>
-            
             <tag> 日记 </tag>
+            
+            <tag> 碎碎念 </tag>
             
             <tag> hide </tag>
             
@@ -325,11 +325,11 @@
             
             <tag> AI-GENERATED </tag>
             
+            <tag> 排障 </tag>
+            
             <tag> VSCode </tag>
             
             <tag> 凭证管理 </tag>
-            
-            <tag> 排障 </tag>
             
         </tags>
       
@@ -509,13 +509,13 @@
       
         <tags>
             
-            <tag> 排障 </tag>
-            
             <tag> Windows </tag>
             
             <tag> Socket </tag>
             
             <tag> 网络编程 </tag>
+            
+            <tag> 排障 </tag>
             
         </tags>
       
@@ -875,6 +875,8 @@
       
         <tags>
             
+            <tag> hide </tag>
+            
             <tag> Markdown </tag>
             
             <tag> 渲染测试 </tag>
@@ -882,8 +884,6 @@
             <tag> CommonMark </tag>
             
             <tag> GFM </tag>
-            
-            <tag> hide </tag>
             
         </tags>
       
