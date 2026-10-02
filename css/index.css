@@ -5147,6 +5147,20 @@ figure.highlight pre .javascript .function {
 .container hr {
   margin: 20px 0;
 }
+#post .post-source-notice {
+  margin: 0 0 24px;
+  padding: 10px 16px;
+  border-left: 3px solid #49b1f5;
+  background: var(--blockquote-bg);
+  color: var(--font-color);
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+  border-radius: 3px;
+}
+#post .post-source-notice a {
+  color: #49b1f5;
+  text-decoration: underline;
+}
 #post .tag_share:after {
   display: block;
   clear: both;
