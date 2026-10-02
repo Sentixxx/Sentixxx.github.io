@@ -11,7 +11,7 @@
   <rights>All rights reserved 2026, Sentixxx</rights>
   <subtitle>无名小站</subtitle>
   <title>墨池码窖 | Sentixxx's Blog</title>
-  <updated>2026-06-20T09:30:14.000Z</updated>
+  <updated>2026-10-02T15:41:44.000Z</updated>
   <entry>
     <author>
       <name>Sentixxx</name>
@@ -28,7 +28,7 @@
     <published>2026-06-16T04:29:00.000Z</published>
     <summary>记录 WOB Rainy75 在 macOS 下的 2.4G 开关和 Mac 模式键位问题，以及通过 VIA 调整键位映射的解决过程。</summary>
     <title>WOB rainy75键盘踩坑</title>
-    <updated>2026-06-20T09:30:14.000Z</updated>
+    <updated>2026-10-02T15:41:44.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -48,7 +48,7 @@
     <published>2026-06-16T03:06:00.000Z</published>
     <summary>从开源壁纸软件和 AI 辅助项目的观察出发，讨论当软件越来越容易被复刻时，独立软件还能靠什么让用户继续留下来。</summary>
     <title>AI 时代，什么样的软件还能留下用户？</title>
-    <updated>2026-06-20T10:22:37.000Z</updated>
+    <updated>2026-10-02T15:41:44.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -67,7 +67,7 @@
     <published>2026-06-11T06:11:00.000Z</published>
     <summary>从自定义 pi 状态栏插件的经历出发，探讨 LLM 如何填平软件高定制性的门槛，并提出 AI 原生时代软件架构的核心方向——模块化、声明式配置与框架化，而非大一统的功能堆砌。</summary>
     <title>从一个状态栏到一套框架：AI 如何改变了软件的写法</title>
-    <updated>2026-06-20T10:16:24.000Z</updated>
+    <updated>2026-10-02T15:41:45.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -85,7 +85,7 @@
     <published>2026-06-05T22:22:00.000Z</published>
     <summary>记录高强度使用 Codex 桌面端和 GitHub 插件时，插件 skill 覆盖项目规则导致输出偏离约定的一次踩坑经历。</summary>
     <title>谈谈Codex的一些坑</title>
-    <updated>2026-06-20T07:30:58.000Z</updated>
+    <updated>2026-10-02T15:41:44.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -103,7 +103,7 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>测试</title>
-    <updated>2026-06-20T07:18:46.000Z</updated>
+    <updated>2026-10-02T15:41:43.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -121,7 +121,7 @@
     <published>2026-05-29T18:17:00.000Z</published>
     <summary>记录从 GitHub 图床迁移到 Cloudflare R2 的原因、方案调研，以及通过 PicGo 将图片资源搬迁到 R2 的过程。</summary>
     <title>github 图床迁移记录</title>
-    <updated>2026-06-20T10:16:32.000Z</updated>
+    <updated>2026-10-02T15:41:44.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -140,7 +140,7 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>小小回顾一下过去的大学四年</title>
-    <updated>2026-05-29T18:59:15.000Z</updated>
+    <updated>2026-10-02T15:41:42.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -159,7 +159,7 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>聊聊我的 VibeCoding 环境配置记录</title>
-    <updated>2026-05-29T18:59:15.000Z</updated>
+    <updated>2026-10-02T15:41:43.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -177,7 +177,7 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>20260430215324</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
+    <updated>2026-10-02T15:41:42.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -194,7 +194,7 @@
     <published>2026-04-28T16:27:00.000Z</published>
     <summary>记录一次在 VS Code Attach 到运行中容器时，Git push 一直丢凭证的排障过程，以及为什么根因不在 PAT，而在 VS Code 自动注入的 Git credential helper。</summary>
     <title>我的 Github 凭证怎么总失效？原来是 VSCode 搞的鬼</title>
-    <updated>2026-06-20T10:17:09.000Z</updated>
+    <updated>2026-10-02T15:41:44.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -211,7 +211,7 @@
     <published>2026-04-26T16:42:00.000Z</published>
     <summary>记录为了防止 AI Agent 滥用 GitHub API 导致封号，通过 VS Code 凭证注入与 MCP 网络沙盒结合，彻底剥离容器内 PAT 的折腾过程。</summary>
     <title>血泪教训：Agent 提 PR 太快把号干封了，聊聊我的 MCP + 沙盒防封折腾记录</title>
-    <updated>2026-06-20T10:17:00.000Z</updated>
+    <updated>2026-10-02T15:41:43.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -230,7 +230,7 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>20260424003810</title>
-    <updated>2026-05-29T18:59:15.000Z</updated>
+    <updated>2026-10-02T15:41:41.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -250,7 +250,7 @@
 <p>如果你在其他平台看到这篇文章，这可能不是最终版本。为了获得更好的阅读体验（包含最新的评论讨论和勘误），欢迎移步<a]]>
     </summary>
     <title>代码里没写下来的那条规矩：AI 时代被放大的老 bug</title>
-    <updated>2026-06-20T10:16:47.000Z</updated>
+    <updated>2026-10-02T15:41:42.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -265,7 +265,7 @@
     <published>2026-02-15T06:06:00.000Z</published>
     <summary>GFS 深度笔记：一文读懂分布式系统如何平衡性能与一致性</summary>
     <title>论文阅读：The Google File System</title>
-    <updated>2026-05-29T18:59:15.000Z</updated>
+    <updated>2026-10-02T15:41:42.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -280,7 +280,7 @@
     <published>2025-12-10T06:45:00.000Z</published>
     <summary>阅读MapReduce的学习笔记</summary>
     <title>论文阅读：MapReduce</title>
-    <updated>2026-05-29T18:59:15.000Z</updated>
+    <updated>2026-10-02T15:41:42.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -299,7 +299,7 @@
 在管理员模式下运行 <code>netstat -ano | findstr]]>
     </summary>
     <title>以一种访问权限不允许的方式做了一个访问套接字的尝试处理</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
+    <updated>2026-10-02T15:41:44.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -316,7 +316,7 @@
       <![CDATA[<p>阿里云 OSS 在解析请求时会把 <code>+</code> 转义成 <code></code>（空格），这点与 S3]]>
     </summary>
     <title>阿里云OSS资源路径避坑</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
+    <updated>2026-10-02T15:41:44.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -332,7 +332,7 @@
     <published>2025-02-14T09:48:00.000Z</published>
     <summary>最近需要将第三方的 DLL 封装成 csharp 的模块，可是我没有源码，只有头文件，网上综合调查了方案，最后选择了 C++/CLI</summary>
     <title>CPPCLI将第三方DLL链接到CSharp项目</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
+    <updated>2026-10-02T15:41:43.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -347,7 +347,7 @@
     <published>2025-02-07T13:41:00.000Z</published>
     <summary>tcpdump抓包时从指定端口抓包不能抓到dst port相关的包解决方法</summary>
     <title>tcpdump指定dst端口抓包失败</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
+    <updated>2026-10-02T15:41:43.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -366,6 +366,6 @@
 <p>最近在搭建个人博客自动化时，我发现 Hexo 在生成时总会修改 <code>markdown</code> 文件的 <code>front-matter</code>]]>
     </summary>
     <title>为什么hexo在生成时会修改md文件</title>
-    <updated>2026-05-27T11:41:35.000Z</updated>
+    <updated>2026-10-02T15:41:44.000Z</updated>
   </entry>
 </feed>
