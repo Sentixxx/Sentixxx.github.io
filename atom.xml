@@ -35,8 +35,8 @@
       <name>Sentixxx</name>
     </author>
     <category term="随笔评论" scheme="https://blog.sentixx.top/categories/%E9%9A%8F%E7%AC%94%E8%AF%84%E8%AE%BA/"/>
-    <category term="VibeCoding" scheme="https://blog.sentixx.top/tags/VibeCoding/"/>
     <category term="Agent" scheme="https://blog.sentixx.top/tags/Agent/"/>
+    <category term="VibeCoding" scheme="https://blog.sentixx.top/tags/VibeCoding/"/>
     <category term="AI" scheme="https://blog.sentixx.top/tags/AI/"/>
     <category term="LLM" scheme="https://blog.sentixx.top/tags/LLM/"/>
     <category term="软件开发" scheme="https://blog.sentixx.top/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
@@ -148,9 +148,9 @@
       <name>Sentixxx</name>
     </author>
     <category term="工程方法" scheme="https://blog.sentixx.top/categories/%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95/"/>
+    <category term="Agent" scheme="https://blog.sentixx.top/tags/Agent/"/>
     <category term="VibeCoding" scheme="https://blog.sentixx.top/tags/VibeCoding/"/>
     <category term="开发环境" scheme="https://blog.sentixx.top/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <category term="Agent" scheme="https://blog.sentixx.top/tags/Agent/"/>
     <category term="工具链" scheme="https://blog.sentixx.top/tags/%E5%B7%A5%E5%85%B7%E9%93%BE/"/>
     <id>https://blog.sentixx.top/posts/teyg1w/</id>
     <link href="https://blog.sentixx.top/posts/teyg1w/"/>
@@ -189,8 +189,8 @@
       <name>Sentixxx</name>
     </author>
     <category term="技术实践" scheme="https://blog.sentixx.top/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
-    <category term="AI-GENERATED" scheme="https://blog.sentixx.top/tags/AI-GENERATED/"/>
     <category term="GitHub" scheme="https://blog.sentixx.top/tags/GitHub/"/>
+    <category term="AI-GENERATED" scheme="https://blog.sentixx.top/tags/AI-GENERATED/"/>
     <category term="排障" scheme="https://blog.sentixx.top/tags/%E6%8E%92%E9%9A%9C/"/>
     <category term="VSCode" scheme="https://blog.sentixx.top/tags/VSCode/"/>
     <category term="凭证管理" scheme="https://blog.sentixx.top/tags/%E5%87%AD%E8%AF%81%E7%AE%A1%E7%90%86/"/>
@@ -206,9 +206,9 @@
       <name>Sentixxx</name>
     </author>
     <category term="工程方法" scheme="https://blog.sentixx.top/categories/%E5%B7%A5%E7%A8%8B%E6%96%B9%E6%B3%95/"/>
-    <category term="AI-GENERATED" scheme="https://blog.sentixx.top/tags/AI-GENERATED/"/>
     <category term="Agent" scheme="https://blog.sentixx.top/tags/Agent/"/>
     <category term="GitHub" scheme="https://blog.sentixx.top/tags/GitHub/"/>
+    <category term="AI-GENERATED" scheme="https://blog.sentixx.top/tags/AI-GENERATED/"/>
     <category term="MCP" scheme="https://blog.sentixx.top/tags/MCP/"/>
     <category term="风控" scheme="https://blog.sentixx.top/tags/%E9%A3%8E%E6%8E%A7/"/>
     <id>https://blog.sentixx.top/posts/te413j/</id>
@@ -223,9 +223,9 @@
       <name>Sentixxx</name>
     </author>
     <category term="个人日记" scheme="https://blog.sentixx.top/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/"/>
+    <category term="碎碎念" scheme="https://blog.sentixx.top/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     <category term="Agent" scheme="https://blog.sentixx.top/tags/Agent/"/>
     <category term="GitHub" scheme="https://blog.sentixx.top/tags/GitHub/"/>
-    <category term="碎碎念" scheme="https://blog.sentixx.top/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     <category term="工具观察" scheme="https://blog.sentixx.top/tags/%E5%B7%A5%E5%85%B7%E8%A7%82%E5%AF%9F/"/>
     <id>https://blog.sentixx.top/posts/tdygvm/</id>
     <link href="https://blog.sentixx.top/posts/tdygvm/"/>
