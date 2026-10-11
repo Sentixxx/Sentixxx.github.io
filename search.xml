@@ -57,11 +57,11 @@
             
             <tag> Agent </tag>
             
-            <tag> VibeCoding </tag>
-            
             <tag> AI </tag>
             
             <tag> LLM </tag>
+            
+            <tag> VibeCoding </tag>
             
             <tag> 软件开发 </tag>
             
@@ -323,13 +323,13 @@
             
             <tag> GitHub </tag>
             
-            <tag> AI-GENERATED </tag>
-            
             <tag> 排障 </tag>
             
             <tag> VSCode </tag>
             
             <tag> 凭证管理 </tag>
+            
+            <tag> AI-GENERATED </tag>
             
         </tags>
       
@@ -418,15 +418,15 @@
       
         <tags>
             
+            <tag> AI-GENERATED </tag>
+            
+            <tag> VibeCoding </tag>
+            
             <tag> AI编程 </tag>
             
             <tag> 工程规范 </tag>
             
             <tag> 技术债 </tag>
-            
-            <tag> VibeCoding </tag>
-            
-            <tag> AI-GENERATED </tag>
             
         </tags>
       
@@ -629,11 +629,11 @@
       
         <tags>
             
+            <tag> Markdown </tag>
+            
             <tag> Hexo </tag>
             
             <tag> Frontmatter </tag>
-            
-            <tag> Markdown </tag>
             
             <tag> 源码阅读 </tag>
             
@@ -844,9 +844,9 @@
       
         <tags>
             
-            <tag> Obsidian </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> Obsidian </tag>
             
             <tag> GitHubPages </tag>
             
@@ -875,9 +875,9 @@
       
         <tags>
             
-            <tag> Markdown </tag>
-            
             <tag> hide </tag>
+            
+            <tag> Markdown </tag>
             
             <tag> 渲染测试 </tag>
             
