@@ -364,8 +364,8 @@
       <name>Sentixxx</name>
     </author>
     <category term="技术实践" scheme="https://blog.sentixx.top/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"/>
-    <category term="Hexo" scheme="https://blog.sentixx.top/tags/Hexo/"/>
     <category term="Markdown" scheme="https://blog.sentixx.top/tags/Markdown/"/>
+    <category term="Hexo" scheme="https://blog.sentixx.top/tags/Hexo/"/>
     <category term="Frontmatter" scheme="https://blog.sentixx.top/tags/Frontmatter/"/>
     <category term="源码阅读" scheme="https://blog.sentixx.top/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
     <id>https://blog.sentixx.top/posts/asgbxs/</id>
