@@ -55,13 +55,13 @@
       
         <tags>
             
+            <tag> VibeCoding </tag>
+            
             <tag> Agent </tag>
             
             <tag> AI </tag>
             
             <tag> LLM </tag>
-            
-            <tag> VibeCoding </tag>
             
             <tag> 软件开发 </tag>
             
@@ -261,11 +261,11 @@
       
         <tags>
             
-            <tag> Agent </tag>
-            
             <tag> VibeCoding </tag>
             
             <tag> 开发环境 </tag>
+            
+            <tag> Agent </tag>
             
             <tag> 工具链 </tag>
             
@@ -321,6 +321,8 @@
       
         <tags>
             
+            <tag> AI-GENERATED </tag>
+            
             <tag> GitHub </tag>
             
             <tag> 排障 </tag>
@@ -328,8 +330,6 @@
             <tag> VSCode </tag>
             
             <tag> 凭证管理 </tag>
-            
-            <tag> AI-GENERATED </tag>
             
         </tags>
       
@@ -354,11 +354,11 @@
       
         <tags>
             
+            <tag> AI-GENERATED </tag>
+            
             <tag> Agent </tag>
             
             <tag> GitHub </tag>
-            
-            <tag> AI-GENERATED </tag>
             
             <tag> MCP </tag>
             
@@ -387,11 +387,11 @@
       
         <tags>
             
-            <tag> 碎碎念 </tag>
-            
             <tag> Agent </tag>
             
             <tag> GitHub </tag>
+            
+            <tag> 碎碎念 </tag>
             
             <tag> 工具观察 </tag>
             
@@ -418,15 +418,15 @@
       
         <tags>
             
-            <tag> AI-GENERATED </tag>
-            
-            <tag> VibeCoding </tag>
-            
             <tag> AI编程 </tag>
             
             <tag> 工程规范 </tag>
             
             <tag> 技术债 </tag>
+            
+            <tag> VibeCoding </tag>
+            
+            <tag> AI-GENERATED </tag>
             
         </tags>
       
@@ -629,9 +629,9 @@
       
         <tags>
             
-            <tag> Markdown </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> Markdown </tag>
             
             <tag> Frontmatter </tag>
             
@@ -844,9 +844,9 @@
       
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> Obsidian </tag>
+            
+            <tag> Hexo </tag>
             
             <tag> GitHubPages </tag>
             
