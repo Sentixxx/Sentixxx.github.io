@@ -55,9 +55,9 @@
       
         <tags>
             
-            <tag> VibeCoding </tag>
-            
             <tag> Agent </tag>
+            
+            <tag> VibeCoding </tag>
             
             <tag> AI </tag>
             
@@ -166,9 +166,9 @@
       
         <tags>
             
-            <tag> 日记 </tag>
-            
             <tag> 碎碎念 </tag>
+            
+            <tag> 日记 </tag>
             
             <tag> hide </tag>
             
@@ -261,9 +261,9 @@
       
         <tags>
             
-            <tag> VibeCoding </tag>
-            
             <tag> Agent </tag>
+            
+            <tag> VibeCoding </tag>
             
             <tag> 开发环境 </tag>
             
@@ -321,9 +321,9 @@
       
         <tags>
             
-            <tag> AI-GENERATED </tag>
-            
             <tag> GitHub </tag>
+            
+            <tag> AI-GENERATED </tag>
             
             <tag> 排障 </tag>
             
@@ -354,11 +354,11 @@
       
         <tags>
             
-            <tag> AI-GENERATED </tag>
-            
             <tag> Agent </tag>
             
             <tag> GitHub </tag>
+            
+            <tag> AI-GENERATED </tag>
             
             <tag> MCP </tag>
             
@@ -387,11 +387,11 @@
       
         <tags>
             
+            <tag> 碎碎念 </tag>
+            
             <tag> Agent </tag>
             
             <tag> GitHub </tag>
-            
-            <tag> 碎碎念 </tag>
             
             <tag> 工具观察 </tag>
             
@@ -451,11 +451,11 @@
       
         <tags>
             
+            <tag> 论文阅读 </tag>
+            
             <tag> GFS </tag>
             
             <tag> 分布式存储 </tag>
-            
-            <tag> 论文阅读 </tag>
             
         </tags>
       
@@ -480,11 +480,11 @@
       
         <tags>
             
-            <tag> 论文阅读 </tag>
-            
             <tag> MapReduce </tag>
             
             <tag> 分布式系统 </tag>
+            
+            <tag> 论文阅读 </tag>
             
         </tags>
       
